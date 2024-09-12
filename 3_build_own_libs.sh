@@ -163,7 +163,7 @@ else
 	if [[ $? -eq 0 ]]; then
 		echo "$PKG already installed"
 	else
-		mkdir $INSTALL_E2DIR/lib/enigma2/python/Plugins/Extensions/$DIR
+		mkdir -p $INSTALL_E2DIR/lib/enigma2/python/Plugins/Extensions/$DIR
 		cd $PKG
 
 		#autoupdate
