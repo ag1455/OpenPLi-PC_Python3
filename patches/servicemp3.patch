@@ -1,7 +1,7 @@
 diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
---- a/servicemp3/servicemp3.cpp	2023-08-08 16:33:30.000000000 +0300
-+++ b/servicemp3/servicemp3.cpp	2023-10-05 21:08:54.526999277 +0300
-@@ -123,6 +123,9 @@
+--- a/servicemp3/servicemp3.cpp	2024-09-05 11:51:45.000000000 +0300
++++ b/servicemp3/servicemp3.cpp	2024-09-14 23:54:34.312356895 +0300
+@@ -125,6 +125,9 @@
  		extensions.push_back("wv");
  		extensions.push_back("pva");
  		extensions.push_back("wtv");
@@ -11,7 +11,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  		sc->addServiceFactory(eServiceFactoryMP3::id, this, extensions);
  	}
  
-@@ -506,7 +509,7 @@
+@@ -526,7 +529,7 @@
  		m_sourceinfo.containertype = ctMPEGPS;
  		m_sourceinfo.is_video = TRUE;
  	}
@@ -20,7 +20,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	{
  		m_sourceinfo.containertype = ctMPEGTS;
  		m_sourceinfo.is_video = TRUE;
-@@ -599,10 +602,10 @@
+@@ -619,10 +622,10 @@
  			if ( m_ref.getData(7) & PROGRESSIVE_DOWNLOAD )
  			{
  				/* progressive download buffering */
@@ -33,7 +33,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  				}
  			}
  		}
-@@ -709,6 +712,16 @@
+@@ -729,6 +732,16 @@
  	g_free(uri);
  	if (suburi != NULL)
  		g_free(suburi);
@@ -50,7 +50,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  }
  
  eServiceMP3::~eServiceMP3()
-@@ -819,29 +832,6 @@
+@@ -866,29 +879,6 @@
  {
  	ASSERT(m_state == stIdle);
  
@@ -80,7 +80,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	if (m_ref.path.find("://") == std::string::npos)
  	{
  		/* read event from .eit file */
-@@ -861,6 +851,8 @@
+@@ -908,6 +898,8 @@
  		}
  	}
  
@@ -89,7 +89,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	return 0;
  }
  
-@@ -888,6 +880,9 @@
+@@ -935,6 +927,9 @@
  	saveCuesheet();
  	m_nownext_timer->stop();
  
@@ -99,7 +99,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	return 0;
  }
  
-@@ -920,6 +915,8 @@
+@@ -967,6 +962,8 @@
  	eDebug("[eServiceMP3] pause");
  	trickSeek(0.0);
  
@@ -108,7 +108,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	return 0;
  }
  
-@@ -928,16 +925,11 @@
+@@ -975,16 +972,11 @@
  	if (!m_gst_playbin || m_state != stRunning)
  		return -1;
  
@@ -127,7 +127,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	return 0;
  }
  
-@@ -953,172 +945,41 @@
+@@ -1000,172 +992,41 @@
  	if (!m_gst_playbin || m_state != stRunning)
  		return -1;
  
@@ -313,7 +313,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  }
  
  gint eServiceMP3::match_sinktype(const GValue *velement, const gchar *type)
-@@ -1129,29 +990,12 @@
+@@ -1176,29 +1037,12 @@
  
  RESULT eServiceMP3::getPlayPosition(pts_t &pts)
  {
@@ -346,7 +346,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	return 0;
  }
  
-@@ -1203,13 +1047,20 @@
+@@ -1253,13 +1097,20 @@
  int eServiceMP3::getInfo(int w)
  {
  	const gchar *tag = 0;
@@ -370,7 +370,7 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  	case sProgressive: return m_progressive;
  	case sGamma: return m_gamma;
  	case sAspect: return m_aspect;
-@@ -1547,14 +1398,18 @@
+@@ -1606,14 +1457,18 @@
  
  int eServiceMP3::getNumberOfTracks()
  {
@@ -393,27 +393,17 @@ diff -ruN a/servicemp3/servicemp3.cpp b/servicemp3/servicemp3.cpp
  }
  
  RESULT eServiceMP3::selectTrack(unsigned int i)
-@@ -1578,16 +1433,9 @@
- 
- int eServiceMP3::selectAudioStream(int i)
- {
--	int current_audio;
--	g_object_set (G_OBJECT (m_gst_playbin), "current-audio", i, NULL);
--	g_object_get (G_OBJECT (m_gst_playbin), "current-audio", &current_audio, NULL);
--	if ( current_audio == i )
--	{
--		eDebug ("[eServiceMP3] switched to audio stream %i", current_audio);
--		m_currentAudioStream = i;
--		return 0;
--	}
--	return -1;
+@@ -1648,6 +1503,9 @@
+ 		return 0;
+ 	}
+ 	return -1;
 +	cXineLib *xineLib = cXineLib::getInstance();
 +	xineLib->selectAudioStream(i);
 +	return i;
  }
  
  int eServiceMP3::getCurrentChannel()
-@@ -1603,16 +1451,12 @@
+@@ -1663,16 +1521,12 @@
  
  RESULT eServiceMP3::getTrackInfo(struct iAudioTrackInfo &info, unsigned int i)
  {

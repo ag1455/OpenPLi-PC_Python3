@@ -146,7 +146,7 @@ rpl "//#define XINE_TEXTDOMAIN" "#define XINE_TEXTDOMAIN" /usr/include/xine/xine
 
 git clone https://github.com/OpenPLi/$PKG.git
 cd $PKG
-git reset --hard 8c4a772b
+git reset --hard 69a69f4b
 cd ..
 
 # Create symlinks in /usr diectory before compile enigma2
@@ -154,9 +154,9 @@ if [[ ! -d /usr/include/netlink ]]; then
 	ln -s /usr/include/libnl3/netlink /usr/include
 fi
 
-cp -fv patches/patch-8c4a772b-to-PC.patch $PKG
+cp -fv patches/patch-69a69f4b-to-PC.patch $PKG
 cd $PKG
-patch -p1 < patch-8c4a772b-to-PC.patch
+patch -p1 < patch-69a69f4b-to-PC.patch
 
 # Configure
 if [[ "$DO_CONFIGURE" -eq "1" ]]; then
