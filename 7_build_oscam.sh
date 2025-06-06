@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SOURCE="oscam-patched"
+SOURCE="oscam-trunk"
+EMU="oscam-emu"
 CONF="/etc/vdr/oscam"
 BIN="/usr/local/bin"
 
@@ -14,8 +15,16 @@ if [ -d $SOURCE ]; then
 	rm -fr $SOURCE
 fi
 
-git clone https://github.com/oscam-emu/oscam-patched.git
+git clone https://git.streamboard.tv/common/oscam.git $SOURCE
+
 cd $SOURCE
+wget https://sat-forum.net/download/file.php?id=24261
+mv file.php?id=24261 $EMU.patch.rar
+unrar x $EMU.patch.rar
+rm -f $EMU.patch.rar
+mv $EMU.patch.txt $EMU.patch
+
+patch -p1 < $EMU.patch
 ./config.sh -E WITH_SSL MODULE_CONSTCW
 make
 
