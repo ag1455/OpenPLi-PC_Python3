@@ -6,8 +6,8 @@
 
 release=$(lsb_release -a 2>/dev/null | grep -i release | awk ' { print $2 } ')
 
-HEADERS="/usr/src/linux-headers-`uname -r`/include/uapi/linux/dvb"
 HEADERSL="/usr/src/linux-lowlatency-headers-`uname -r`/include/uapi/linux/dvb"
+HEADERS="/usr/src/linux-headers-`uname -r`/include/uapi/linux/dvb"
 INCLUDE="/usr/include/linux/dvb"
 BUILD_DIR="libs"
 INSTALL_E2DIR="/usr/local/e2"
@@ -18,24 +18,26 @@ if [[ "$release" = "24.04" ]]; then
 	prefix3="/home/$(logname)/.venv/e2pc/lib/python3.12/site-packages"
 fi
 
-# Copy headers
+if [[ ! -d $BUILD_DIR ]]; then
+	mkdir -v $BUILD_DIR
+fi
+if [[ ! -d $INSTALL_E2DIR ]]; then
+	mkdir -p $INSTALL_E2DIR/lib/enigma2
+fi
+
+# Copy headers and src
+if [[ -d $HEADERSL ]]; then
+	cp -fv pre/dvb/* $HEADERSL
+fi
 cp -fv pre/dvb/* $INCLUDE
 cp -fv pre/dvb/* $HEADERS
-cp -fv pre/dvb/* $HEADERSL
+cp -fv pre/libxmlccwrap-0.0.12.tar.gz $BUILD_DIR
 
 # Download dvb-firmwares
 wget --no-check-certificate https://github.com/crazycat69/media_build/releases/download/latest/dvb-firmwares.tar.bz2
 tar -xvjf dvb-firmwares.tar.bz2 -C /lib/firmware
 rm -f dvb-firmwares.tar.bz2
 
-if [[ -d $BUILD_DIR ]]; then
-	rm -rf $BUILD_DIR
-fi
-if [[ ! -d $INSTALL_E2DIR ]]; then
-	mkdir -p $INSTALL_E2DIR/lib/enigma2
-fi
-
-mkdir -v $BUILD_DIR
 cd $BUILD_DIR
 
 # Build and install libdvbsi++-git:
@@ -84,15 +86,15 @@ else
 	else
 		echo "$PKG not installed"
 	fi
-	if [[ -d $PKG ]]; then
-		rm -rf $PKG
+	if [[ -d $PKG-0.0.12 ]]; then
+		rm -rf $PKG-0.0.12
 	fi
-	wget https://www.i-have-a-dreambox.com/Sources/$PKG-0.0.12.tar.gz
 	tar -xvf $PKG-0.0.12.tar.gz
 	rm -f $PKG-0.0.12.tar.gz
 	cd $PKG-0.0.12
 	./configure --prefix=/usr
-	checkinstall -D --install=yes --default --pkgname=$PKG --pkgversion=1.2.0 --maintainer=e2pc@gmail.com --pkggroup=video --gzman=yes
+	make -j8
+	checkinstall -D --install=yes --default --pkgname=$PKG --pkgversion=0.0.12 --maintainer=e2pc@gmail.com --pkggroup=video --gzman=yes
 	make distclean
 	cd ..
 fi
@@ -144,6 +146,7 @@ if [[ ! -d libtuxtxt ]]; then
 	set -e
 	set -o pipefail
 else
+	SET="$INSTALL_E2DIR/tuxtxt"
 	DIR="Tuxtxt"
 	echo ""
 	echo "**************************** OK. Go to the next step. ******************************"
@@ -155,6 +158,12 @@ else
 		dpkg -r $PKG_
 	fi
 	ln -sf $INSTALL_E2DIR/lib/enigma2 /usr/lib
+	if [[ -d $DIR ]]; then
+		rm -rf $DIR
+	fi
+	if [[ -f $SET ]]; then
+		rm -f $SET
+	fi
 	mkdir -p $INSTALL_E2DIR/lib/enigma2/python/Plugins/Extensions/$DIR
 	cd $PKG_
 	#autoupdate
