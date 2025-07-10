@@ -160,7 +160,7 @@ engine.buffers.video_num_buffers:800
 
 # default number of video frames
 # numeric, default: 22
-engine.buffers.video_num_frames:60
+engine.buffers.video_num_frames:22
 
 # disable decoder flush at discontinuity
 # bool, default: 0
