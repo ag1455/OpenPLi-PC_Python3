@@ -146,7 +146,7 @@ rpl "//#define XINE_TEXTDOMAIN" "#define XINE_TEXTDOMAIN" /usr/include/xine/xine
 
 git clone https://github.com/OpenPLi/$PKG.git
 cd $PKG
-git reset --hard 0117bdff
+git reset --hard 5a4f9cce
 cd ..
 
 # Create symlinks in /usr diectory before compile enigma2
@@ -154,9 +154,9 @@ if [[ ! -d /usr/include/netlink ]]; then
 	ln -s /usr/include/libnl3/netlink /usr/include
 fi
 
-cp -fv patches/patch-0117bdff-to-PC.patch $PKG
+cp -fv patches/patch-5a4f9cce-to-PC.patch $PKG
 cd $PKG
-patch -p1 < patch-0117bdff-to-PC.patch
+patch -p1 < patch-5a4f9cce-to-PC.patch
 
 # Configure
 if [[ "$DO_CONFIGURE" -eq "1" ]]; then
@@ -384,7 +384,7 @@ if [[ $GPU3 ]]; then
 fi
 
 # Strip binary
-strip $INSTALL_E2DIR/bin/enigma2
+#strip $INSTALL_E2DIR/bin/enigma2
 
 # Removing compiled now pyc files
 find $INSTALL_E2DIR/lib/enigma2/python/ -name "*.py[c]" -exec rm {} \;

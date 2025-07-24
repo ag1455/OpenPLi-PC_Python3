@@ -44,7 +44,7 @@ if [[ -d plugins ]]; then # This is the lock from the unpredictable script actio
 	echo "************************** OK. Let's build the plugins. ****************************"
 	echo ""
 	PKG="servicemp3"
-	VER="8e111caaf0ae72e2f5c153d8f02c97dfd8b06e48"
+	VER="bdb5a908276b69a913ca50cb8c274d1b5977ad82"
 	if [[ -d $PKG ]]; then
 		rm -rf $PKG
 	fi
