@@ -1,6 +1,6 @@
-diff -ruN a/examples/example.py b/examples/example.py
---- a/examples/example.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/examples/example.py	2022-10-19 12:31:10.719122087 +0300
+diff -ruN o/examples/example.py pc/examples/example.py
+--- o/examples/example.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/examples/example.py	2026-07-17 12:38:48.888462014 +0300
 @@ -8,43 +8,43 @@
  set_global_object(var)
  
@@ -69,9 +69,9 @@ diff -ruN a/examples/example.py b/examples/example.py
  
  
  # Add lib to the module scope
-diff -ruN a/examples/pyesprima.py b/examples/pyesprima.py
---- a/examples/pyesprima.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/examples/pyesprima.py	2022-10-19 12:32:45.339122463 +0300
+diff -ruN o/examples/pyesprima.py pc/examples/pyesprima.py
+--- o/examples/pyesprima.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/examples/pyesprima.py	2026-07-17 12:42:12.022201263 +0300
 @@ -37,4165 +37,4165 @@
  var.registers([])
  @Js
@@ -8727,9 +8727,9 @@ diff -ruN a/examples/pyesprima.py b/examples/pyesprima.py
  pass
  
  
-diff -ruN a/js2py/base.py b/js2py/base.py
---- a/js2py/base.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/base.py	2022-10-19 12:34:56.415122984 +0300
+diff -ruN o/js2py/base.py pc/js2py/base.py
+--- o/js2py/base.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/base.py	2026-07-17 12:43:40.873141441 +0300
 @@ -16,10 +16,10 @@
  # python 3 support
  import six
@@ -9232,9 +9232,9 @@ diff -ruN a/js2py/base.py b/js2py/base.py
      NUM_BANK[e] = Js(e)
  
  if __name__ == '__main__':
-diff -ruN a/js2py/constructors/jsdate.py b/js2py/constructors/jsdate.py
---- a/js2py/constructors/jsdate.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/constructors/jsdate.py	2022-10-19 12:35:33.767123132 +0300
+diff -ruN o/js2py/constructors/jsdate.py pc/js2py/constructors/jsdate.py
+--- o/js2py/constructors/jsdate.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/constructors/jsdate.py	2026-07-17 12:38:51.904324778 +0300
 @@ -531,7 +531,7 @@
              MonthFromTime(t) + 1), pad(DateFromTime(t)), pad(
                  HourFromTime(t)), pad(MinFromTime(t)), pad(
@@ -9253,9 +9253,9 @@ diff -ruN a/js2py/constructors/jsdate.py b/js2py/constructors/jsdate.py
      if len(s) < n:
          s = '0' * (n - len(s)) + s
      if not sign:
-diff -ruN a/js2py/constructors/jsfunction.py b/js2py/constructors/jsfunction.py
---- a/js2py/constructors/jsfunction.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/constructors/jsfunction.py	2022-10-19 12:35:33.847123132 +0300
+diff -ruN o/js2py/constructors/jsfunction.py pc/js2py/constructors/jsfunction.py
+--- o/js2py/constructors/jsfunction.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/constructors/jsfunction.py	2026-07-17 12:38:51.975321548 +0300
 @@ -24,7 +24,7 @@
      # define py function and return it
      temp = executor(py_func, globals())
@@ -9265,9 +9265,9 @@ diff -ruN a/js2py/constructors/jsfunction.py b/js2py/constructors/jsfunction.py
      return temp
  
  
-diff -ruN a/js2py/constructors/jsmath.py b/js2py/constructors/jsmath.py
---- a/js2py/constructors/jsmath.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/constructors/jsmath.py	2022-10-19 12:35:33.987123133 +0300
+diff -ruN o/js2py/constructors/jsmath.py pc/js2py/constructors/jsmath.py
+--- o/js2py/constructors/jsmath.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/constructors/jsmath.py	2026-07-17 12:38:52.045318363 +0300
 @@ -16,7 +16,7 @@
      'SQRT2': 1.4142135623730951
  }
@@ -9277,9 +9277,9 @@ diff -ruN a/js2py/constructors/jsmath.py b/js2py/constructors/jsmath.py
      Math.define_own_property(
          constant, {
              'value': Js(value),
-diff -ruN a/js2py/constructors/jsobject.py b/js2py/constructors/jsobject.py
---- a/js2py/constructors/jsobject.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/constructors/jsobject.py	2022-10-19 12:35:34.043123133 +0300
+diff -ruN o/js2py/constructors/jsobject.py pc/js2py/constructors/jsobject.py
+--- o/js2py/constructors/jsobject.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/constructors/jsobject.py	2026-07-17 12:38:52.084316588 +0300
 @@ -49,7 +49,7 @@
              raise MakeError(
                  'TypeError',
@@ -9325,9 +9325,9 @@ diff -ruN a/js2py/constructors/jsobject.py b/js2py/constructors/jsobject.py
              if desc['configurable']:
                  return False
              if is_data_descriptor(desc) and desc['writable']:
-diff -ruN a/js2py/constructors/jsstring.py b/js2py/constructors/jsstring.py
---- a/js2py/constructors/jsstring.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/constructors/jsstring.py	2022-10-19 12:35:34.067123133 +0300
+diff -ruN o/js2py/constructors/jsstring.py pc/js2py/constructors/jsstring.py
+--- o/js2py/constructors/jsstring.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/constructors/jsstring.py	2026-07-17 12:38:52.094316133 +0300
 @@ -2,15 +2,15 @@
  # python 3 support
  import six
@@ -9347,9 +9347,9 @@ diff -ruN a/js2py/constructors/jsstring.py b/js2py/constructors/jsstring.py
      return this.Js(res)
  
  
-diff -ruN a/js2py/es6/babel.py b/js2py/es6/babel.py
---- a/js2py/es6/babel.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/es6/babel.py	2022-10-19 12:37:16.751123541 +0300
+diff -ruN o/js2py/es6/babel.py pc/js2py/es6/babel.py
+--- o/js2py/es6/babel.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/es6/babel.py	2026-07-17 12:39:22.265942710 +0300
 @@ -11,4859 +11,4859 @@
  var.registers([])
  @Js
@@ -100240,9 +100240,9 @@ diff -ruN a/js2py/es6/babel.py b/js2py/es6/babel.py
  PyJs_e_4353_(PyJs_Object_0_, PyJs_Object_4352_, Js([Js(1.0)]))
  pass
  
-diff -ruN a/js2py/evaljs.py b/js2py/evaljs.py
---- a/js2py/evaljs.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/evaljs.py	2022-10-19 12:34:32.887122890 +0300
+diff -ruN o/js2py/evaljs.py pc/js2py/evaljs.py
+--- o/js2py/evaljs.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/evaljs.py	2026-07-17 12:44:31.859814110 +0300
 @@ -258,9 +258,9 @@
          """starts to interact (starts interactive console) Something like code.InteractiveConsole"""
          while True:
@@ -100255,9 +100255,9 @@ diff -ruN a/js2py/evaljs.py b/js2py/evaljs.py
              try:
                  print(self.eval(code))
              except KeyboardInterrupt:
-diff -ruN a/js2py/host/jseval.py b/js2py/host/jseval.py
---- a/js2py/host/jseval.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/host/jseval.py	2022-10-19 12:38:48.427123905 +0300
+diff -ruN o/js2py/host/jseval.py pc/js2py/host/jseval.py
+--- o/js2py/host/jseval.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/host/jseval.py	2026-07-17 12:39:22.289941618 +0300
 @@ -20,7 +20,7 @@
      lines = py_code.split('\n')
      # a simple way to return value from eval. Will not work in complex cases.
@@ -100267,9 +100267,9 @@ diff -ruN a/js2py/host/jseval.py b/js2py/host/jseval.py
          line = lines[len(lines) - n - 1]
          if line.strip():
              if line.startswith(' '):
-diff -ruN a/js2py/internals/base.py b/js2py/internals/base.py
---- a/js2py/internals/base.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/base.py	2022-10-19 12:41:05.259124448 +0300
+diff -ruN o/js2py/internals/base.py pc/js2py/internals/base.py
+--- o/js2py/internals/base.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/base.py	2026-07-17 12:39:22.482932830 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100434,9 +100434,9 @@ diff -ruN a/js2py/internals/base.py b/js2py/internals/base.py
          my_ctx.registers(self.definitions)
          my_ctx.THIS_BINDING = this
          if not self.arguments_in_params:
-diff -ruN a/js2py/internals/byte_trans.py b/js2py/internals/byte_trans.py
---- a/js2py/internals/byte_trans.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/byte_trans.py	2022-10-19 12:41:56.631124652 +0300
+diff -ruN o/js2py/internals/byte_trans.py pc/js2py/internals/byte_trans.py
+--- o/js2py/internals/byte_trans.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/byte_trans.py	2026-07-17 12:45:31.837077068 +0300
 @@ -406,9 +406,9 @@
              self.emit('LOAD_NULL')
          elif isinstance(value, bool):
@@ -100479,27 +100479,27 @@ diff -ruN a/js2py/internals/byte_trans.py b/js2py/internals/byte_trans.py
  
      from pyjsparser import parse
      import json
-diff -ruN a/js2py/internals/constructors/jsarray.py b/js2py/internals/constructors/jsarray.py
---- a/js2py/internals/constructors/jsarray.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsarray.py	2022-10-19 12:39:50.279124150 +0300
+diff -ruN o/js2py/internals/constructors/jsarray.py pc/js2py/internals/constructors/jsarray.py
+--- o/js2py/internals/constructors/jsarray.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsarray.py	2026-07-17 12:39:23.073905920 +0300
 @@ -25,4 +25,4 @@
  
  def isArray(this, args):
      x = get_arg(args, 0)
 -    return is_object(x) and x.Class == u'Array'
 +    return is_object(x) and x.Class == 'Array'
-diff -ruN a/js2py/internals/constructors/jsconsole.py b/js2py/internals/constructors/jsconsole.py
---- a/js2py/internals/constructors/jsconsole.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsconsole.py	2022-10-19 12:39:50.303124150 +0300
+diff -ruN o/js2py/internals/constructors/jsconsole.py pc/js2py/internals/constructors/jsconsole.py
+--- o/js2py/internals/constructors/jsconsole.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsconsole.py	2026-07-17 12:39:23.087905282 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
  
  from js2py.internals.conversions import *
  from js2py.internals.func_utils import *
-diff -ruN a/js2py/internals/constructors/jsdate.py b/js2py/internals/constructors/jsdate.py
---- a/js2py/internals/constructors/jsdate.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsdate.py	2022-10-19 12:39:50.511124151 +0300
+diff -ruN o/js2py/internals/constructors/jsdate.py pc/js2py/internals/constructors/jsdate.py
+--- o/js2py/internals/constructors/jsdate.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsdate.py	2026-07-17 12:39:23.215899454 +0300
 @@ -512,7 +512,7 @@
              MonthFromTime(t) + 1), pad(DateFromTime(t)), pad(
                  HourFromTime(t)), pad(MinFromTime(t)), pad(
@@ -100518,9 +100518,9 @@ diff -ruN a/js2py/internals/constructors/jsdate.py b/js2py/internals/constructor
      if len(s) < n:
          s = '0' * (n - len(s)) + s
      if not sign:
-diff -ruN a/js2py/internals/constructors/jsfunction.py b/js2py/internals/constructors/jsfunction.py
---- a/js2py/internals/constructors/jsfunction.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsfunction.py	2022-10-19 12:40:16.027124253 +0300
+diff -ruN o/js2py/internals/constructors/jsfunction.py pc/js2py/internals/constructors/jsfunction.py
+--- o/js2py/internals/constructors/jsfunction.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsfunction.py	2026-07-17 12:46:38.395037131 +0300
 @@ -8,16 +8,16 @@
  def Function(this, args):
      # convert arguments to python list of strings
@@ -100541,9 +100541,9 @@ diff -ruN a/js2py/internals/constructors/jsfunction.py b/js2py/internals/constru
  
      co = executable_code(
          code_str=func_str, space=space, global_context=global_context)
-diff -ruN a/js2py/internals/constructors/jsmath.py b/js2py/internals/constructors/jsmath.py
---- a/js2py/internals/constructors/jsmath.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsmath.py	2022-10-19 12:39:50.619124152 +0300
+diff -ruN o/js2py/internals/constructors/jsmath.py pc/js2py/internals/constructors/jsmath.py
+--- o/js2py/internals/constructors/jsmath.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsmath.py	2026-07-17 12:39:23.272896859 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100565,18 +100565,18 @@ diff -ruN a/js2py/internals/constructors/jsmath.py b/js2py/internals/constructor
  
      def random(this, args):
          return random.random()
-diff -ruN a/js2py/internals/constructors/jsnumber.py b/js2py/internals/constructors/jsnumber.py
---- a/js2py/internals/constructors/jsnumber.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsnumber.py	2022-10-19 12:39:50.651124152 +0300
+diff -ruN o/js2py/internals/constructors/jsnumber.py pc/js2py/internals/constructors/jsnumber.py
+--- o/js2py/internals/constructors/jsnumber.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsnumber.py	2026-07-17 12:39:23.287896176 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
  
  from ..conversions import *
  from ..func_utils import *
-diff -ruN a/js2py/internals/constructors/jsobject.py b/js2py/internals/constructors/jsobject.py
---- a/js2py/internals/constructors/jsobject.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsobject.py	2022-10-19 12:39:50.715124152 +0300
+diff -ruN o/js2py/internals/constructors/jsobject.py pc/js2py/internals/constructors/jsobject.py
+--- o/js2py/internals/constructors/jsobject.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsobject.py	2026-07-17 12:39:23.340893763 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100652,9 +100652,9 @@ diff -ruN a/js2py/internals/constructors/jsobject.py b/js2py/internals/construct
              if d.get('enumerable')
          ])
  
-diff -ruN a/js2py/internals/constructors/jsregexp.py b/js2py/internals/constructors/jsregexp.py
---- a/js2py/internals/constructors/jsregexp.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsregexp.py	2022-10-19 12:39:50.731124152 +0300
+diff -ruN o/js2py/internals/constructors/jsregexp.py pc/js2py/internals/constructors/jsregexp.py
+--- o/js2py/internals/constructors/jsregexp.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsregexp.py	2026-07-17 12:39:23.355893080 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100674,9 +100674,9 @@ diff -ruN a/js2py/internals/constructors/jsregexp.py b/js2py/internals/construct
      for flag in flags:
          if flag not in REG_EXP_FLAGS:
              raise MakeError(
-diff -ruN a/js2py/internals/constructors/jsstring.py b/js2py/internals/constructors/jsstring.py
---- a/js2py/internals/constructors/jsstring.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/jsstring.py	2022-10-19 12:39:50.743124152 +0300
+diff -ruN o/js2py/internals/constructors/jsstring.py pc/js2py/internals/constructors/jsstring.py
+--- o/js2py/internals/constructors/jsstring.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/jsstring.py	2026-07-17 12:39:23.363892715 +0300
 @@ -1,17 +1,17 @@
  from ..conversions import *
  from ..func_utils import *
@@ -100706,27 +100706,27 @@ diff -ruN a/js2py/internals/constructors/jsstring.py b/js2py/internals/construct
 -    temp.value = to_string(get_arg(args, 0)) if len(args) > 0 else u''
 +    temp.value = to_string(get_arg(args, 0)) if len(args) > 0 else ''
      return temp
-diff -ruN a/js2py/internals/constructors/time_helpers.py b/js2py/internals/constructors/time_helpers.py
---- a/js2py/internals/constructors/time_helpers.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/constructors/time_helpers.py	2022-10-19 12:39:50.783124152 +0300
+diff -ruN o/js2py/internals/constructors/time_helpers.py pc/js2py/internals/constructors/time_helpers.py
+--- o/js2py/internals/constructors/time_helpers.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/constructors/time_helpers.py	2026-07-17 12:39:23.396891213 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
  
  # NOTE: t must be INT!!!
  import time
-diff -ruN a/js2py/internals/conversions.py b/js2py/internals/conversions.py
---- a/js2py/internals/conversions.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/conversions.py	2022-10-19 12:41:05.715124450 +0300
+diff -ruN o/js2py/internals/conversions.py pc/js2py/internals/conversions.py
+--- o/js2py/internals/conversions.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/conversions.py	2026-07-17 12:39:22.730921538 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
  # Type Conversions. to_type. All must return PyJs subclass instance
  from .simplex import *
  
-diff -ruN a/js2py/internals/fill_space.py b/js2py/internals/fill_space.py
---- a/js2py/internals/fill_space.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/fill_space.py	2022-10-19 12:41:06.007124451 +0300
+diff -ruN o/js2py/internals/fill_space.py pc/js2py/internals/fill_space.py
+--- o/js2py/internals/fill_space.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/fill_space.py	2026-07-17 12:39:22.806918077 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100875,9 +100875,9 @@ diff -ruN a/js2py/internals/fill_space.py b/js2py/internals/fill_space.py
 -    for k, v in builtins.items():
 +    for k, v in list(builtins.items()):
          set_non_enumerable(global_scope, k, v)
-diff -ruN a/js2py/internals/func_utils.py b/js2py/internals/func_utils.py
---- a/js2py/internals/func_utils.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/func_utils.py	2022-10-19 12:41:06.047124451 +0300
+diff -ruN o/js2py/internals/func_utils.py pc/js2py/internals/func_utils.py
+--- o/js2py/internals/func_utils.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/func_utils.py	2026-07-17 12:39:22.819917485 +0300
 @@ -3,10 +3,10 @@
  
  import six
@@ -100934,9 +100934,9 @@ diff -ruN a/js2py/internals/func_utils.py b/js2py/internals/func_utils.py
  def js_arr_length(arr):
 -    return to_uint32(arr.get(u'length'))
 +    return to_uint32(arr.get('length'))
-diff -ruN a/js2py/internals/opcodes.py b/js2py/internals/opcodes.py
---- a/js2py/internals/opcodes.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/opcodes.py	2022-10-19 12:41:06.215124452 +0300
+diff -ruN o/js2py/internals/opcodes.py pc/js2py/internals/opcodes.py
+--- o/js2py/internals/opcodes.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/opcodes.py	2026-07-17 12:39:22.929912477 +0300
 @@ -255,8 +255,8 @@
      _params = ['val']
  
@@ -100957,9 +100957,9 @@ diff -ruN a/js2py/internals/opcodes.py b/js2py/internals/opcodes.py
          self.val = float(val)
  
      def eval(self, ctx):
-diff -ruN a/js2py/internals/operations.py b/js2py/internals/operations.py
---- a/js2py/internals/operations.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/operations.py	2022-10-19 12:41:06.279124452 +0300
+diff -ruN o/js2py/internals/operations.py pc/js2py/internals/operations.py
+--- o/js2py/internals/operations.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/operations.py	2026-07-17 12:39:22.971910565 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -100995,9 +100995,9 @@ diff -ruN a/js2py/internals/operations.py b/js2py/internals/operations.py
          return to_string(a) + to_string(b)
      return to_number(a) + to_number(b)
  
-diff -ruN a/js2py/internals/prototypes/jsarray.py b/js2py/internals/prototypes/jsarray.py
---- a/js2py/internals/prototypes/jsarray.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsarray.py	2022-10-19 12:40:36.863124335 +0300
+diff -ruN o/js2py/internals/prototypes/jsarray.py pc/js2py/internals/prototypes/jsarray.py
+--- o/js2py/internals/prototypes/jsarray.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsarray.py	2026-07-17 12:39:23.501886432 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101321,9 +101321,9 @@ diff -ruN a/js2py/internals/prototypes/jsarray.py b/js2py/internals/prototypes/j
                  accumulator = callbackfn.call(
                      undefined, (accumulator, kValue, float(k), array))
              k -= 1
-diff -ruN a/js2py/internals/prototypes/jsboolean.py b/js2py/internals/prototypes/jsboolean.py
---- a/js2py/internals/prototypes/jsboolean.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsboolean.py	2022-10-19 12:40:36.875124335 +0300
+diff -ruN o/js2py/internals/prototypes/jsboolean.py pc/js2py/internals/prototypes/jsboolean.py
+--- o/js2py/internals/prototypes/jsboolean.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsboolean.py	2026-07-17 12:39:23.518885658 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101339,9 +101339,9 @@ diff -ruN a/js2py/internals/prototypes/jsboolean.py b/js2py/internals/prototypes
  
      def valueOf(this, args):
          if GetClass(this) != 'Boolean':
-diff -ruN a/js2py/internals/prototypes/jserror.py b/js2py/internals/prototypes/jserror.py
---- a/js2py/internals/prototypes/jserror.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jserror.py	2022-10-19 12:40:36.887124335 +0300
+diff -ruN o/js2py/internals/prototypes/jserror.py pc/js2py/internals/prototypes/jserror.py
+--- o/js2py/internals/prototypes/jserror.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jserror.py	2026-07-17 12:39:23.526885294 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101357,9 +101357,9 @@ diff -ruN a/js2py/internals/prototypes/jserror.py b/js2py/internals/prototypes/j
          msg = this.get('message')
          msg = '' if is_undefined(msg) else to_string(msg)
          return name + (name and msg and ': ') + msg
-diff -ruN a/js2py/internals/prototypes/jsfunction.py b/js2py/internals/prototypes/jsfunction.py
---- a/js2py/internals/prototypes/jsfunction.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsfunction.py	2022-10-19 12:40:36.915124336 +0300
+diff -ruN o/js2py/internals/prototypes/jsfunction.py pc/js2py/internals/prototypes/jsfunction.py
+--- o/js2py/internals/prototypes/jsfunction.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsfunction.py	2026-07-17 12:39:23.547884337 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101404,9 +101404,9 @@ diff -ruN a/js2py/internals/prototypes/jsfunction.py b/js2py/internals/prototype
 -        js_bound.put(u'name', u'boundFunc')
 +        js_bound.put('name', 'boundFunc')
          return js_bound
-diff -ruN a/js2py/internals/prototypes/jsjson.py b/js2py/internals/prototypes/jsjson.py
---- a/js2py/internals/prototypes/jsjson.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsjson.py	2022-10-19 12:40:36.987124336 +0300
+diff -ruN o/js2py/internals/prototypes/jsjson.py pc/js2py/internals/prototypes/jsjson.py
+--- o/js2py/internals/prototypes/jsjson.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsjson.py	2026-07-17 12:39:23.590882380 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101466,9 +101466,9 @@ diff -ruN a/js2py/internals/prototypes/jsjson.py b/js2py/internals/prototypes/js
          ]:
              new_element = walk(val, key, reviver)
              if is_undefined(new_element):
-diff -ruN a/js2py/internals/prototypes/jsnumber.py b/js2py/internals/prototypes/jsnumber.py
---- a/js2py/internals/prototypes/jsnumber.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsnumber.py	2022-10-19 12:40:37.035124336 +0300
+diff -ruN o/js2py/internals/prototypes/jsnumber.py pc/js2py/internals/prototypes/jsnumber.py
+--- o/js2py/internals/prototypes/jsnumber.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsnumber.py	2026-07-17 12:39:23.625880785 +0300
 @@ -1,13 +1,13 @@
 -from __future__ import unicode_literals
 +
@@ -101506,9 +101506,9 @@ diff -ruN a/js2py/internals/prototypes/jsnumber.py b/js2py/internals/prototypes/
              raise MakeError(
                  'RangeError',
                  'Number.prototype.toString() radix argument must be an integer between 2 and 36'
-diff -ruN a/js2py/internals/prototypes/jsobject.py b/js2py/internals/prototypes/jsobject.py
---- a/js2py/internals/prototypes/jsobject.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsobject.py	2022-10-19 12:40:37.075124336 +0300
+diff -ruN o/js2py/internals/prototypes/jsobject.py pc/js2py/internals/prototypes/jsobject.py
+--- o/js2py/internals/prototypes/jsobject.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsobject.py	2026-07-17 12:39:23.646879830 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101537,9 +101537,9 @@ diff -ruN a/js2py/internals/prototypes/jsobject.py b/js2py/internals/prototypes/
          if not is_callable(toString):
              raise MakeError('TypeError', 'toString of this is not callcable')
          else:
-diff -ruN a/js2py/internals/prototypes/jsregexp.py b/js2py/internals/prototypes/jsregexp.py
---- a/js2py/internals/prototypes/jsregexp.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsregexp.py	2022-10-19 12:40:37.091124336 +0300
+diff -ruN o/js2py/internals/prototypes/jsregexp.py pc/js2py/internals/prototypes/jsregexp.py
+--- o/js2py/internals/prototypes/jsregexp.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsregexp.py	2026-07-17 12:39:23.657879329 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101582,9 +101582,9 @@ diff -ruN a/js2py/internals/prototypes/jsregexp.py b/js2py/internals/prototypes/
 -    arr.put('input', unicode(string))
 +    arr.put('input', str(string))
      return arr
-diff -ruN a/js2py/internals/prototypes/jsstring.py b/js2py/internals/prototypes/jsstring.py
---- a/js2py/internals/prototypes/jsstring.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsstring.py	2022-10-19 12:40:37.203124337 +0300
+diff -ruN o/js2py/internals/prototypes/jsstring.py pc/js2py/internals/prototypes/jsstring.py
+--- o/js2py/internals/prototypes/jsstring.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsstring.py	2026-07-17 12:39:23.724876278 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -101643,18 +101643,18 @@ diff -ruN a/js2py/internals/prototypes/jsstring.py b/js2py/internals/prototypes/
  
      def indexOf(this, args):
          cok(this)
-diff -ruN a/js2py/internals/prototypes/jsutils.py b/js2py/internals/prototypes/jsutils.py
---- a/js2py/internals/prototypes/jsutils.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/prototypes/jsutils.py	2022-10-19 12:40:37.231124337 +0300
+diff -ruN o/js2py/internals/prototypes/jsutils.py pc/js2py/internals/prototypes/jsutils.py
+--- o/js2py/internals/prototypes/jsutils.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/prototypes/jsutils.py	2026-07-17 12:39:23.751875048 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
  from ..conversions import *
  from ..func_utils import *
  
-diff -ruN a/js2py/internals/seval.py b/js2py/internals/seval.py
---- a/js2py/internals/seval.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/seval.py	2022-10-19 12:41:06.335124452 +0300
+diff -ruN o/js2py/internals/seval.py pc/js2py/internals/seval.py
+--- o/js2py/internals/seval.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/seval.py	2026-07-17 12:39:22.992909608 +0300
 @@ -6,7 +6,7 @@
  from .simplex import *
  
@@ -101664,9 +101664,9 @@ diff -ruN a/js2py/internals/seval.py b/js2py/internals/seval.py
  
  def get_js_bytecode(js):
      a = ByteCodeGenerator(Code())
-diff -ruN a/js2py/internals/simplex.py b/js2py/internals/simplex.py
---- a/js2py/internals/simplex.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/simplex.py	2022-10-19 12:41:06.387124453 +0300
+diff -ruN o/js2py/internals/simplex.py pc/js2py/internals/simplex.py
+--- o/js2py/internals/simplex.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/simplex.py	2026-07-17 12:39:23.024908151 +0300
 @@ -1,10 +1,10 @@
 -from __future__ import unicode_literals
 +
@@ -101737,9 +101737,9 @@ diff -ruN a/js2py/internals/simplex.py b/js2py/internals/simplex.py
 +    elif isinstance(number, int) or number.is_integer():  # dont print .0
 +        return str(int(number))
 +    return str(repr(number))  # python representation should be equivalent.
-diff -ruN a/js2py/internals/space.py b/js2py/internals/space.py
---- a/js2py/internals/space.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/space.py	2022-10-19 12:41:06.407124453 +0300
+diff -ruN o/js2py/internals/space.py pc/js2py/internals/space.py
+--- o/js2py/internals/space.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/space.py	2026-07-17 12:39:23.042907331 +0300
 @@ -87,6 +87,6 @@
      def ConstructObject(self, py_obj):
          ''' note py_obj items are NOT converted to PyJs types! '''
@@ -101749,9 +101749,9 @@ diff -ruN a/js2py/internals/space.py b/js2py/internals/space.py
 +        for k, v in list(py_obj.items()):
 +            obj.put(str(k), v)
          return obj
-diff -ruN a/js2py/internals/speed.py b/js2py/internals/speed.py
---- a/js2py/internals/speed.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/speed.py	2022-10-19 12:41:06.443124453 +0300
+diff -ruN o/js2py/internals/speed.py pc/js2py/internals/speed.py
+--- o/js2py/internals/speed.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/speed.py	2026-07-17 12:39:23.055906740 +0300
 @@ -1,11 +1,11 @@
 -from __future__ import print_function
 +
@@ -101766,9 +101766,9 @@ diff -ruN a/js2py/internals/speed.py b/js2py/internals/speed.py
  except ImportError:
      pass
  
-diff -ruN a/js2py/internals/trans_utils.py b/js2py/internals/trans_utils.py
---- a/js2py/internals/trans_utils.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/internals/trans_utils.py	2022-10-19 12:41:06.455124453 +0300
+diff -ruN o/js2py/internals/trans_utils.py pc/js2py/internals/trans_utils.py
+--- o/js2py/internals/trans_utils.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/internals/trans_utils.py	2026-07-17 12:39:23.063906376 +0300
 @@ -1,9 +1,9 @@
  import six
  if six.PY3:
@@ -101813,9 +101813,9 @@ diff -ruN a/js2py/internals/trans_utils.py b/js2py/internals/trans_utils.py
 -    return unicode(repr(f))
 +        return str(repr(int(f)))
 +    return str(repr(f))
-diff -ruN a/js2py/legecy_translators/constants.py b/js2py/legecy_translators/constants.py
---- a/js2py/legecy_translators/constants.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/constants.py	2022-10-19 12:42:56.471124890 +0300
+diff -ruN o/js2py/legecy_translators/constants.py pc/js2py/legecy_translators/constants.py
+--- o/js2py/legecy_translators/constants.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/constants.py	2026-07-17 12:39:23.804872635 +0300
 @@ -1,9 +1,9 @@
 -from __future__ import print_function
 +
@@ -101848,9 +101848,9 @@ diff -ruN a/js2py/legecy_translators/constants.py b/js2py/legecy_translators/con
          if identifier.startswith('PyJsConstantRegExp'):
              py_source = py_source.replace(identifier,
                                            'JsRegExp(%s)' % repr(value))
-diff -ruN a/js2py/legecy_translators/exps.py b/js2py/legecy_translators/exps.py
---- a/js2py/legecy_translators/exps.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/exps.py	2022-10-19 12:42:56.487124890 +0300
+diff -ruN o/js2py/legecy_translators/exps.py pc/js2py/legecy_translators/exps.py
+--- o/js2py/legecy_translators/exps.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/exps.py	2026-07-17 12:39:23.834871269 +0300
 @@ -16,10 +16,10 @@
  NOTES:
  Strings and other literals are not present so each = means assignment
@@ -101874,9 +101874,9 @@ diff -ruN a/js2py/legecy_translators/exps.py b/js2py/legecy_translators/exps.py
      res = last
      for e in ass:
          op = ''
-diff -ruN a/js2py/legecy_translators/flow.py b/js2py/legecy_translators/flow.py
---- a/js2py/legecy_translators/flow.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/flow.py	2022-10-19 12:42:56.639124890 +0300
+diff -ruN o/js2py/legecy_translators/flow.py pc/js2py/legecy_translators/flow.py
+--- o/js2py/legecy_translators/flow.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/flow.py	2026-07-17 12:39:23.905868036 +0300
 @@ -9,11 +9,11 @@
  FOR iter
  CONTINUE, BREAK, RETURN, LABEL, THROW, TRY, SWITCH
@@ -101911,9 +101911,9 @@ diff -ruN a/js2py/legecy_translators/flow.py b/js2py/legecy_translators/flow.py
                  break
          end = start + len(rev) - rpos + 1
  
-diff -ruN a/js2py/legecy_translators/functions.py b/js2py/legecy_translators/functions.py
---- a/js2py/legecy_translators/functions.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/functions.py	2022-10-19 12:42:56.667124890 +0300
+diff -ruN o/js2py/legecy_translators/functions.py pc/js2py/legecy_translators/functions.py
+--- o/js2py/legecy_translators/functions.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/functions.py	2026-07-17 12:39:23.931866852 +0300
 @@ -1,8 +1,8 @@
  """This module removes JS functions from source code"""
 -from __future__ import print_function
@@ -101926,9 +101926,9 @@ diff -ruN a/js2py/legecy_translators/functions.py b/js2py/legecy_translators/fun
  
  INLINE_NAME = 'PyJsLvalInline%d_'
  INLINE_COUNT = 0
-diff -ruN a/js2py/legecy_translators/jsparser.py b/js2py/legecy_translators/jsparser.py
---- a/js2py/legecy_translators/jsparser.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/jsparser.py	2022-10-19 12:42:56.763124891 +0300
+diff -ruN o/js2py/legecy_translators/jsparser.py pc/js2py/legecy_translators/jsparser.py
+--- o/js2py/legecy_translators/jsparser.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/jsparser.py	2026-07-17 12:39:23.978864713 +0300
 @@ -45,9 +45,9 @@
  
  
@@ -101956,9 +101956,9 @@ diff -ruN a/js2py/legecy_translators/jsparser.py b/js2py/legecy_translators/jspa
              return res, start + len(cand) + len(res)
          except StopIteration:
              return None, None
-diff -ruN a/js2py/legecy_translators/nodevisitor.py b/js2py/legecy_translators/nodevisitor.py
---- a/js2py/legecy_translators/nodevisitor.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/nodevisitor.py	2022-10-19 12:42:56.891124891 +0300
+diff -ruN o/js2py/legecy_translators/nodevisitor.py pc/js2py/legecy_translators/nodevisitor.py
+--- o/js2py/legecy_translators/nodevisitor.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/nodevisitor.py	2026-07-17 12:39:24.053861298 +0300
 @@ -1,9 +1,9 @@
 -from __future__ import print_function
  
@@ -102036,9 +102036,9 @@ diff -ruN a/js2py/legecy_translators/nodevisitor.py b/js2py/legecy_translators/n
          print(exp_translator('jk = kk.ik++'))
      #First line translated with PyJs:  PyJsStrictEq(PyJsAdd((Js(100)*Js(50)),Js(30)), Js("5030")), yay!
      print(exp_translator('delete a.f'))
-diff -ruN a/js2py/legecy_translators/nparser.py b/js2py/legecy_translators/nparser.py
---- a/js2py/legecy_translators/nparser.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/nparser.py	2022-10-19 12:42:57.539124894 +0300
+diff -ruN o/js2py/legecy_translators/nparser.py pc/js2py/legecy_translators/nparser.py
+--- o/js2py/legecy_translators/nparser.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/nparser.py	2026-07-17 12:39:24.435843903 +0300
 @@ -31,7 +31,7 @@
  #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
@@ -102187,9 +102187,9 @@ diff -ruN a/js2py/legecy_translators/nparser.py b/js2py/legecy_translators/npars
                      index += 1
                      index
          elif isLineTerminator((ord(ch[0]) if 0 < len(ch) else None)):
-diff -ruN a/js2py/legecy_translators/objects.py b/js2py/legecy_translators/objects.py
---- a/js2py/legecy_translators/objects.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/objects.py	2022-10-19 12:42:57.643124894 +0300
+diff -ruN o/js2py/legecy_translators/objects.py pc/js2py/legecy_translators/objects.py
+--- o/js2py/legecy_translators/objects.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/objects.py	2026-07-17 12:39:24.481841809 +0300
 @@ -1,15 +1,15 @@
  """ This module removes all objects/arrays from JS source code and replace them with LVALS.
  Also it has  s function translating removed object/array to python code.
@@ -102270,9 +102270,9 @@ diff -ruN a/js2py/legecy_translators/objects.py b/js2py/legecy_translators/objec
          new_def, obj_count, arr_count = translate_array(
              obj, lval, obj_count, arr_count)
          # add object definition BEFORE array definition
-diff -ruN a/js2py/legecy_translators/tokenize.py b/js2py/legecy_translators/tokenize.py
---- a/js2py/legecy_translators/tokenize.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/tokenize.py	2022-10-19 12:42:57.651124894 +0300
+diff -ruN o/js2py/legecy_translators/tokenize.py pc/js2py/legecy_translators/tokenize.py
+--- o/js2py/legecy_translators/tokenize.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/tokenize.py	2026-07-17 12:39:24.489841445 +0300
 @@ -1,4 +1,4 @@
 -from jsparser import *
 -from utils import *
@@ -102280,9 +102280,9 @@ diff -ruN a/js2py/legecy_translators/tokenize.py b/js2py/legecy_translators/toke
 +from .utils import *
  # maybe I will try rewriting my parser in the future... Tokenizer makes things much easier and faster, unfortunately I
  # did not know anything about parsers when I was starting this project so I invented my own.
-diff -ruN a/js2py/legecy_translators/translator.py b/js2py/legecy_translators/translator.py
---- a/js2py/legecy_translators/translator.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/translator.py	2022-10-19 12:42:57.683124894 +0300
+diff -ruN o/js2py/legecy_translators/translator.py pc/js2py/legecy_translators/translator.py
+--- o/js2py/legecy_translators/translator.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/translator.py	2026-07-17 12:39:24.537839259 +0300
 @@ -1,10 +1,10 @@
 -from __future__ import print_function
  
@@ -102364,9 +102364,9 @@ diff -ruN a/js2py/legecy_translators/translator.py b/js2py/legecy_translators/tr
          nested_block, nested_args = info
          new_code = translate_func(nested_name, nested_block, nested_args)
          # Inject definitions of inline functions just before usage
-diff -ruN a/js2py/legecy_translators/utils.py b/js2py/legecy_translators/utils.py
---- a/js2py/legecy_translators/utils.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/legecy_translators/utils.py	2022-10-19 12:42:57.727124895 +0300
+diff -ruN o/js2py/legecy_translators/utils.py pc/js2py/legecy_translators/utils.py
+--- o/js2py/legecy_translators/utils.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/legecy_translators/utils.py	2026-07-17 12:39:24.565837984 +0300
 @@ -8,7 +8,7 @@
      if not t:
          return False
@@ -102411,9 +102411,9 @@ diff -ruN a/js2py/legecy_translators/utils.py b/js2py/legecy_translators/utils.p
      U_CATEGORIES[unicodedata.category(c)].append(c)
  
  UNICODE_LETTER = set(U_CATEGORIES['Lu'] + U_CATEGORIES['Ll'] +
-diff -ruN a/js2py/prototypes/jsarraybuffer.py b/js2py/prototypes/jsarraybuffer.py
---- a/js2py/prototypes/jsarraybuffer.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsarraybuffer.py	2022-10-19 12:43:38.555125057 +0300
+diff -ruN o/js2py/prototypes/jsarraybuffer.py pc/js2py/prototypes/jsarraybuffer.py
+--- o/js2py/prototypes/jsarraybuffer.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsarraybuffer.py	2026-07-17 12:39:24.666833385 +0300
 @@ -9,7 +9,7 @@
  
  def to_arr(this):
@@ -102423,9 +102423,9 @@ diff -ruN a/js2py/prototypes/jsarraybuffer.py b/js2py/prototypes/jsarraybuffer.p
  
  
  ARR_STACK = set({})
-diff -ruN a/js2py/prototypes/jsarray.py b/js2py/prototypes/jsarray.py
---- a/js2py/prototypes/jsarray.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsarray.py	2022-10-19 12:43:38.675125057 +0300
+diff -ruN o/js2py/prototypes/jsarray.py pc/js2py/prototypes/jsarray.py
+--- o/js2py/prototypes/jsarray.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsarray.py	2026-07-17 12:39:24.658833749 +0300
 @@ -7,7 +7,7 @@
  
  def to_arr(this):
@@ -102489,9 +102489,9 @@ diff -ruN a/js2py/prototypes/jsarray.py b/js2py/prototypes/jsarray.py
              this.put(six.text_type(i), arr[i])
  
          return this
-diff -ruN a/js2py/prototypes/jsfunction.py b/js2py/prototypes/jsfunction.py
---- a/js2py/prototypes/jsfunction.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsfunction.py	2022-10-19 12:43:38.695125057 +0300
+diff -ruN o/js2py/prototypes/jsfunction.py pc/js2py/prototypes/jsfunction.py
+--- o/js2py/prototypes/jsfunction.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsfunction.py	2026-07-17 12:39:24.694832110 +0300
 @@ -1,10 +1,10 @@
  # python 3 support
  import six
@@ -102539,9 +102539,9 @@ diff -ruN a/js2py/prototypes/jsfunction.py b/js2py/prototypes/jsfunction.py
 -            args = tuple([arguments_[e] for e in xrange(1, len(arguments_))])
 +            args = tuple([arguments_[e] for e in range(1, len(arguments_))])
          return this.PyJsBoundFunction(target, thisArg, args)
-diff -ruN a/js2py/prototypes/jsjson.py b/js2py/prototypes/jsjson.py
---- a/js2py/prototypes/jsjson.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsjson.py	2022-10-19 12:43:38.767125058 +0300
+diff -ruN o/js2py/prototypes/jsjson.py pc/js2py/prototypes/jsjson.py
+--- o/js2py/prototypes/jsjson.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsjson.py	2026-07-17 12:39:24.740830016 +0300
 @@ -4,10 +4,10 @@
  # python 3 support
  import six
@@ -102575,9 +102575,9 @@ diff -ruN a/js2py/prototypes/jsjson.py b/js2py/prototypes/jsjson.py
              new_element = walk(val, i, reviver)
              if new_element.is_undefined():
                  val.delete(i)
-diff -ruN a/js2py/prototypes/jsnumber.py b/js2py/prototypes/jsnumber.py
---- a/js2py/prototypes/jsnumber.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsnumber.py	2022-10-19 12:43:38.823125058 +0300
+diff -ruN o/js2py/prototypes/jsnumber.py pc/js2py/prototypes/jsnumber.py
+--- o/js2py/prototypes/jsnumber.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsnumber.py	2026-07-17 12:39:24.763828968 +0300
 @@ -1,9 +1,9 @@
  import six
  if six.PY3:
@@ -102612,9 +102612,9 @@ diff -ruN a/js2py/prototypes/jsnumber.py b/js2py/prototypes/jsnumber.py
              raise this.MakeError(
                  'RangeError',
                  'Number.prototype.toString() radix argument must be between 2 and 36'
-diff -ruN a/js2py/prototypes/jsregexp.py b/js2py/prototypes/jsregexp.py
---- a/js2py/prototypes/jsregexp.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsregexp.py	2022-10-19 12:43:38.855125058 +0300
+diff -ruN o/js2py/prototypes/jsregexp.py pc/js2py/prototypes/jsregexp.py
+--- o/js2py/prototypes/jsregexp.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsregexp.py	2026-07-17 12:39:24.784828012 +0300
 @@ -1,17 +1,17 @@
  class RegExpPrototype:
      def toString():
@@ -102638,9 +102638,9 @@ diff -ruN a/js2py/prototypes/jsregexp.py b/js2py/prototypes/jsregexp.py
  
      def test(string):
          return Exec(this, string) is not this.null
-diff -ruN a/js2py/prototypes/jsstring.py b/js2py/prototypes/jsstring.py
---- a/js2py/prototypes/jsstring.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jsstring.py	2022-10-19 12:43:38.943125058 +0300
+diff -ruN o/js2py/prototypes/jsstring.py pc/js2py/prototypes/jsstring.py
+--- o/js2py/prototypes/jsstring.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jsstring.py	2026-07-17 12:39:24.849825052 +0300
 @@ -2,7 +2,7 @@
  from .jsregexp import Exec
  import re
@@ -102659,9 +102659,9 @@ diff -ruN a/js2py/prototypes/jsstring.py b/js2py/prototypes/jsstring.py
                      res += replaceValue(*args).to_string().value
                  else:
                      res += replacement_template(replaceValue, s, e.span(),
-diff -ruN a/js2py/prototypes/jstypedarray.py b/js2py/prototypes/jstypedarray.py
---- a/js2py/prototypes/jstypedarray.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/prototypes/jstypedarray.py	2022-10-19 12:43:39.059125059 +0300
+diff -ruN o/js2py/prototypes/jstypedarray.py pc/js2py/prototypes/jstypedarray.py
+--- o/js2py/prototypes/jstypedarray.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/prototypes/jstypedarray.py	2026-07-17 12:39:24.914822092 +0300
 @@ -13,7 +13,7 @@
  
  def to_arr(this):
@@ -102716,9 +102716,9 @@ diff -ruN a/js2py/prototypes/jstypedarray.py b/js2py/prototypes/jstypedarray.py
              this.put(six.text_type(i), arr[i])
  
          return this
-diff -ruN a/js2py/pyjs.py b/js2py/pyjs.py
---- a/js2py/pyjs.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/pyjs.py	2022-10-19 12:33:52.043122728 +0300
+diff -ruN o/js2py/pyjs.py pc/js2py/pyjs.py
+--- o/js2py/pyjs.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/pyjs.py	2026-07-17 12:38:51.774330694 +0300
 @@ -90,11 +90,11 @@
      obj.put('window', this)
  
@@ -102734,9 +102734,9 @@ diff -ruN a/js2py/pyjs.py b/js2py/pyjs.py
  scope['JSON'] = JSON
 -JS_BUILTINS = dict((k, v) for k, v in scope.items())
 +JS_BUILTINS = dict((k, v) for k, v in list(scope.items()))
-diff -ruN a/js2py/translators/friendly_nodes.py b/js2py/translators/friendly_nodes.py
---- a/js2py/translators/friendly_nodes.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/translators/friendly_nodes.py	2022-10-19 12:44:41.787125308 +0300
+diff -ruN o/js2py/translators/friendly_nodes.py pc/js2py/translators/friendly_nodes.py
+--- o/js2py/translators/friendly_nodes.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/translators/friendly_nodes.py	2026-07-17 12:39:24.964819816 +0300
 @@ -3,10 +3,10 @@
  from pyjsparser import PyJsParser
  import six
@@ -102759,9 +102759,9 @@ diff -ruN a/js2py/translators/friendly_nodes.py b/js2py/translators/friendly_nod
  
  
  def float_repr(f):
-diff -ruN a/js2py/translators/translating_nodes.py b/js2py/translators/translating_nodes.py
---- a/js2py/translators/translating_nodes.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/translators/translating_nodes.py	2022-10-19 12:45:02.095125388 +0300
+diff -ruN o/js2py/translators/translating_nodes.py pc/js2py/translators/translating_nodes.py
+--- o/js2py/translators/translating_nodes.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/translators/translating_nodes.py	2026-07-17 12:47:39.261255057 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import unicode_literals
 +
@@ -102813,9 +102813,9 @@ diff -ruN a/js2py/translators/translating_nodes.py b/js2py/translators/translati
      arg_map.update({'this': 'this', 'arguments': 'arguments'})
      if id:  # make self available from inside...
          if id['name'] not in arg_map:
-diff -ruN a/js2py/translators/translator.py b/js2py/translators/translator.py
---- a/js2py/translators/translator.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/translators/translator.py	2022-10-19 12:44:42.059125309 +0300
+diff -ruN o/js2py/translators/translator.py pc/js2py/translators/translator.py
+--- o/js2py/translators/translator.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/translators/translator.py	2026-07-17 12:39:25.138811893 +0300
 @@ -42,7 +42,7 @@
  # del js2py.pyjs
  # del js2py
@@ -102825,10 +102825,10 @@ diff -ruN a/js2py/translators/translator.py b/js2py/translators/translator.py
  # setting scope
  var = Scope( JS_BUILTINS )
  set_global_object(var)
-diff -ruN a/js2py/utils/injector.py b/js2py/utils/injector.py
---- a/js2py/utils/injector.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/js2py/utils/injector.py	2022-10-19 12:46:27.939125729 +0300
-@@ -67,7 +67,7 @@
+diff -ruN o/js2py/utils/injector.py pc/js2py/utils/injector.py
+--- o/js2py/utils/injector.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/js2py/utils/injector.py	2026-07-17 12:48:42.700353502 +0300
+@@ -69,7 +69,7 @@
  
      # Build the dictionary that maps indices of entries in the old co_varnames
      # to their indices in the new co_varnames
@@ -102837,7 +102837,16 @@ diff -ruN a/js2py/utils/injector.py b/js2py/utils/injector.py
      varname_translations = dict((i, i) for i in range1)
      varname_translations.update((i, i + new_locals_len) for i in range2)
  
-@@ -137,7 +137,7 @@
+@@ -112,7 +112,7 @@
+                     tgt = 2*tgt + (inst.arg % 2)
+                 arg = tgt
+             else:
+-                raise(ValueError("a name was lost in translation last instruction %s" % str(inst)))
++                raise ValueError
+         # If it accesses co_varnames or co_names then update its argument.
+         elif inst.opcode in opcode.haslocal:
+             arg = varname_translations[inst.arg]
+@@ -167,7 +167,7 @@
          code = code_obj.co_code
          NewInstruction = namedtuple('Instruction', ('opcode', 'arg'))
          if six.PY2:
@@ -102846,9 +102855,45 @@ diff -ruN a/js2py/utils/injector.py b/js2py/utils/injector.py
          i, L = 0, len(code)
          extended_arg = 0
          while i < L:
-diff -ruN a/tests/node_eval.py b/tests/node_eval.py
---- a/tests/node_eval.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/tests/node_eval.py	2022-10-19 12:50:46.407126756 +0300
+@@ -304,7 +304,7 @@
+         if not this.Class in ('Array', 'Arguments'):
+             return this.to_object()  # do nothing
+         arr = []
+-        for i in xrange(len(this)):
++        for i in range(len(this)):
+             arr.append(this.get(six.text_type(i)))
+ 
+         if not arr:
+@@ -317,7 +317,7 @@
+             arr.sort(key=key)
+         else:
+             arr.sort(cmp=cmp)
+-        for i in xrange(len(arr)):
++        for i in range(len(arr)):
+             this.put(six.text_type(i), arr[i])
+ 
+         return this
+@@ -327,7 +327,7 @@
+         if not this.Class in ('Array', 'Arguments'):
+             return this.to_object()  # do nothing
+         arr = []
+-        for i in xrange(len(this)):
++        for i in range(len(this)):
+             arr.append(this.get(six.text_type(i)))
+ 
+         if not arr:
+@@ -340,7 +340,7 @@
+             arr.sort(key=key)
+         else:
+             arr.sort(cmp=cmp)
+-        for i in xrange(len(arr)):
++        for i in range(len(arr)):
+             this.put(six.text_type(i), arr[i])
+ 
+         return this
+diff -ruN o/tests/node_eval.py pc/tests/node_eval.py
+--- o/tests/node_eval.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/tests/node_eval.py	2026-07-17 12:49:10.929061828 +0300
 @@ -25,7 +25,7 @@
      f.write(interceptor_code.encode('utf-8') if six.PY3 else interceptor_code)
      f.close()
@@ -102858,9 +102903,9 @@ diff -ruN a/tests/node_eval.py b/tests/node_eval.py
      os.unlink(f.name)
      if not p.returncode:
          return out
-diff -ruN a/tests/run.py b/tests/run.py
---- a/tests/run.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/tests/run.py	2022-10-19 12:50:22.167126659 +0300
+diff -ruN o/tests/run.py pc/tests/run.py
+--- o/tests/run.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/tests/run.py	2026-07-17 12:39:25.279805472 +0300
 @@ -1,4 +1,4 @@
 -from __future__ import print_function
 +
@@ -102876,9 +102921,9 @@ diff -ruN a/tests/run.py b/tests/run.py
  
  
  
-diff -ruN a/tests/test_cases/testCompilationPlan.py b/tests/test_cases/testCompilationPlan.py
---- a/tests/test_cases/testCompilationPlan.py	2021-09-18 16:29:34.000000000 +0300
-+++ b/tests/test_cases/testCompilationPlan.py	2022-10-19 12:48:16.383126160 +0300
+diff -ruN o/tests/test_cases/testCompilationPlan.py pc/tests/test_cases/testCompilationPlan.py
+--- o/tests/test_cases/testCompilationPlan.py	2022-11-06 13:12:00.000000000 +0300
++++ pc/tests/test_cases/testCompilationPlan.py	2026-07-17 12:49:51.024226641 +0300
 @@ -19,12 +19,12 @@
  start = now()
  for cnt in range(10000):

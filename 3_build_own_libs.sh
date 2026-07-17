@@ -351,7 +351,6 @@ if [[ ! -d pythonwifi ]]; then
 else
 	PKG="Js2Py"
 	PKG1="js2py"
-	VER="b16d7ce90ac9c03358010c1599c3e87698c9993f"
 	echo ""
 	echo "**************************** OK. Go to the next step. ******************************"
 	echo ""
@@ -360,10 +359,10 @@ else
 	if [[ -d $PKG ]]; then
 		rm -rf $PKG
 	fi
-	wget --no-check-certificate https://github.com/PiotrDabkowski/Js2Py/archive/$VER.zip
-	unzip $VER.zip
-	rm $VER.zip
-	mv $PKG-$VER $PKG
+	wget --no-check-certificate https://github.com/PiotrDabkowski/Js2Py/archive/refs/heads/master.zip
+	unzip master.zip
+	mv -f $PKG-master $PKG
+	rm master.zip
 	cd ..
 	cp patches/$PKG.patch libs/$PKG
 	cd libs/$PKG
