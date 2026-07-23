@@ -52,7 +52,7 @@ if [[ "$release" = "24.04" ]]; then
 	subversion texi2html texinfo unclutter unzip uchardet yt-dlp w3m vsftpd xmlto xterm ubuntu-restricted-extras wavpack libset-scalar-perl libpython3.12-dev libdvbcsa-dev \
 	flake8 gcc-13 g++-13 libdav1d-dev libssl3t64 libdca-dev libsdl2-dev libtool-bin libpng-dev libqt5gstreamer-dev libva-glx2 libva-dev liba52-0.7.4-dev libffi8 libfuture-perl \
 	ntpsec pycodestyle sqlite3 sphinx-rtd-theme-common libupnp-dev libvdpau1 libvdpau-va-gl1 libv4l-dev dh-exec libgnutls28-dev libaom-dev libsdl1.2-dev swig libsigc++-3.0-dev \
-	streamlink yamllint ntpsec-ntpdate pkg-kde-tools neurodebian-popularity-contest popularity-contest pylint python3-full python3-transmissionrpc python3-flickrapi \
+	streamlink yamllint ntpsec-ntpdate pkg-kde-tools neurodebian-popularity-contest popularity-contest pylint python3-full python3-transmissionrpc python3-flickrapi python3-netifaces\
 	python3-demjson python3-mechanize python3-sendfile python3-blessings python3-httpretty python3-mutagen python3-urllib3 python3-pymysql python3-sphinxcontrib.websupport \
 	python3-sphinxcontrib.httpdomain python3-langdetect python3-restructuredtext-lint python3-ntplib python3-ntp python3-pysnmp4 python3-asn1crypto python3-attr python3-autobahn \
 	python3-biplist python3-cheroot python3-cheetah python3-cherrypy3 python3-circuits python3-cssselect python3-dnspython python3-feedparser python3-fuzzywuzzy python3-guessit \
@@ -71,7 +71,7 @@ if [[ "$release" = "24.04" ]]; then
 		fi
 	done
 
-	apt install -y python3-venv
+	apt install -y python3-venv pipx
 	python3 -m venv /home/$(logname)/.venv/e2pc
 	/home/$(logname)/.venv/e2pc/bin/pip install pysmb zope.interface pycryptodomex pysocks rbtranslations soco tenjin tcpbridge pyserial PyHamcrest pyexecjs py3amf pillow gdata-python3 \
 	futures3 cfscrape bluetool pyopenssl pyusb websockets PyCryptodome
