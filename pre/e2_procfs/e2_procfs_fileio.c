@@ -20,31 +20,18 @@
  */
 
 #include "e2_procfs.h"
+#include <linux/namei.h>
+#include <linux/version.h>
 
 struct file* file_open(const char* path, int flags, int rights) {
 	struct file* filp = NULL;
-
-#ifdef set_fs
-	mm_segment_t oldfs;
-#endif
-
 	int err = 0;
 
-#ifdef set_fs
-	oldfs = get_fs();
-	set_fs(KERNEL_DS);
-#endif
-
 	filp = filp_open(path, flags, rights);
-
-#ifdef set_fs
-	set_fs(oldfs);
-#endif
 
 	if (IS_ERR(filp))
 	{
 		err = PTR_ERR(filp);
-
 		return NULL;
 	}
 
@@ -61,24 +48,7 @@ void file_close(struct file* file)
 
 int file_read(struct file* file, unsigned char* data, unsigned int size)
 {
-#ifdef set_fs
-	mm_segment_t oldfs;
-#endif
-
 	int ret;
-
-#ifdef set_fs
-	oldfs = get_fs();
-	set_fs(KERNEL_DS);
-//#else
-//	ssize_t kernel_read(struct file *file, void *buf, size_t count, loff_t *pos);
-#endif
-
-	ret = kernel_read(file, data, size, &file->f_pos);
-
-#ifdef set_fs
-	set_fs(oldfs);
-#endif
 
 	ret = kernel_read(file, data, size, &file->f_pos);
 
@@ -87,42 +57,18 @@ int file_read(struct file* file, unsigned char* data, unsigned int size)
 
 int file_write(struct file* file, unsigned char* data, unsigned int size)
 {
-#ifdef set_fs
-	mm_segment_t oldfs;
-#endif
-
 	int ret;
 
-#ifdef set_fs
-	oldfs = get_fs();
-	set_fs(KERNEL_DS);
-//#else
-//	ssize_t kernel_write(struct file *file, const void *buf, size_t count, loff_t *pos);
-#endif
-
 	ret = kernel_write(file, data, size, &file->f_pos);
-
-#ifdef set_fs
-	set_fs(oldfs);
-#endif
 
 	return ret;
 }
 
 int remove_file(char *path)
 {
-#ifdef set_fs
-	mm_segment_t oldfs;
-#endif
-
 	int ret;
 	struct path ndpath;
 	struct dentry *dentry;
-
-#ifdef set_fs
-	oldfs = get_fs();
-	set_fs(KERNEL_DS);
-#endif
 
 	ret = kern_path(path, LOOKUP_PARENT, &ndpath);
 	if (ret != 0)
@@ -130,23 +76,30 @@ int remove_file(char *path)
 		return -ENOENT;
 	}
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 16, 0)
+	/* В новых ядрах lookup_one_len была заменена на работу через struct qstr */
+	struct qstr q = QSTR_INIT(path, strlen(path));
+	/* Используем unlocked-версию, так как родительский семафор i_rwsem не залочен */
+	dentry = lookup_noperm_unlocked(&q, ndpath.dentry);
+#else
 	dentry = lookup_one_len(path, ndpath.dentry, strlen(path));
+#endif
+
 	if (IS_ERR(dentry))
 	{
+		path_put(&ndpath);
 		return -EACCES;
 	}
 
-#ifdef set_fs
-	vfs_unlink(ndpath.dentry->d_inode, dentry,NULL);
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 12, 0)
+	/* Современная vfs_unlink требует передавать idmap (в большинстве случаев &nop_mnt_idmap) */
+	vfs_unlink(&nop_mnt_idmap, d_inode(ndpath.dentry), dentry, NULL);
+#else
+	vfs_unlink(ndpath.dentry->d_inode, dentry, NULL);
 #endif
 
 	dput(dentry);
-
-#ifdef set_fs
-	set_fs(oldfs);
-#endif
-
-	dput(dentry);
+	path_put(&ndpath); // Освобождаем path, полученный из kern_path
 
 	return ret;
 }
@@ -208,3 +161,4 @@ char * basename(char * name)
 
 	return name + pos;
 }
+
