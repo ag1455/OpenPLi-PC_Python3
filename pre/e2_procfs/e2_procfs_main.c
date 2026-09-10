@@ -262,7 +262,7 @@ struct ProcStructure_s e2Proc[] =
 	{cProcEntry, "stb/ir/rc/type"                                                   , NULL, NULL, NULL, NULL, ""},
 };
 
-struct proc_dir_entry * find_proc_dir(char * name)
+static struct proc_dir_entry * find_proc_dir(char * name)
 {
 	int i;
 
