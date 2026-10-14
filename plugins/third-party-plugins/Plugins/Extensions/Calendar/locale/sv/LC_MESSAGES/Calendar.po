@@ -1,0 +1,1817 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Celndar\n"
+"POT-Creation-Date: 2025-12-22 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Warder <ciksa@seznam.cz>\n"
+"Language-Team: lululla [ekekaz@gmail.com]\n"
+"Language: sv_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "(Search: '{0}')"
+msgstr ""
+
+msgid "(truncated)"
+msgstr ""
+
+msgid "--- CONTACTS ---"
+msgstr ""
+
+msgid "--- DATABASE ---"
+msgstr ""
+
+msgid "--- EVENTS ---"
+msgstr ""
+
+msgid "--- HOLIDAYS ---"
+msgstr ""
+
+msgid "--- PERSONAL DATA ---"
+msgstr ""
+
+msgid "--- SYSTEM ---"
+msgstr ""
+
+msgid "..."
+msgstr ""
+
+msgid ".............."
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active:"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add Contact"
+msgstr ""
+
+msgid "Add Event"
+msgstr ""
+
+msgid "Add date and time to exported filenames"
+msgstr ""
+
+msgid "Add timestamp to filename"
+msgstr ""
+
+msgid "Alert sound"
+msgstr ""
+
+msgid "Already on today's event"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "Automatically clean old notified events"
+msgstr ""
+
+msgid "Autostart delay"
+msgstr ""
+
+msgid "Back"
+msgstr "Späť"
+
+msgid "Birthday (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Birthdays: {0}"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Browse ICS Files"
+msgstr ""
+
+msgid "CONTACTS WITH BIRTHDAYS TODAY:"
+msgstr ""
+
+msgid "CSV format"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Calendar Planner"
+msgstr ""
+
+msgid "Calendar Planner | Ready"
+msgstr ""
+
+msgid "Calendar Settings"
+msgstr ""
+
+msgid "Calendar with events and notifications"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancelling..."
+msgstr ""
+
+msgid "Cannot delete: Contact has no ID"
+msgstr ""
+
+msgid "Cannot initialize event system: {0}"
+msgstr ""
+
+msgid "Categories (comma separated)"
+msgstr ""
+
+msgid "Check for Updates"
+msgstr "Skontrolovať aktualizácie"
+
+msgid "Checking for updates..."
+msgstr "Kontrola aktualizácií..."
+
+msgid "Choose between legacy text files or standard vCard format"
+msgstr ""
+
+msgid "Choose where to save exported files"
+msgstr ""
+
+msgid "Clean after days"
+msgstr ""
+
+msgid "Clean old notifications"
+msgstr ""
+
+msgid "Cleaned {0} duplicate events"
+msgstr ""
+
+msgid "Cleaned {0} old ICS files"
+msgstr ""
+
+msgid "Cleanup Old Files"
+msgstr ""
+
+msgid "Cleanup duplicate events"
+msgstr ""
+
+msgid "Cleanup past events"
+msgstr ""
+
+msgid "Clear ALL holiday entries from all date files?"
+msgstr ""
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Clear Holiday Database"
+msgstr ""
+
+msgid "Close"
+msgstr "Zatvoriť"
+
+msgid "Color days with holidays"
+msgstr ""
+
+msgid "Color for days with events"
+msgstr ""
+
+msgid "Color for holiday days"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact '{0}' deleted successfully"
+msgstr ""
+
+msgid "Contact:"
+msgstr ""
+
+msgid "Contacts directory not found"
+msgstr ""
+
+msgid "Contacts imported from ICS file!"
+msgstr ""
+
+msgid "Contacts: 0"
+msgstr ""
+
+msgid "Contacts: {0}/{1}"
+msgstr ""
+
+msgid "Conversion error: {0}"
+msgstr ""
+
+msgid "Convert all existing data to vCard format?"
+msgstr ""
+
+msgid "Convert to ICS format"
+msgstr ""
+
+msgid "Convert to legacy format"
+msgstr ""
+
+msgid "Convert to vCard format"
+msgstr ""
+
+msgid "Converted {0} events to {1}"
+msgstr ""
+
+msgid "Could not check for updates. Check internet connection."
+msgstr "Nepodarilo sa skontrolovať aktualizácie. Skontrolujte internetové pripojenie."
+
+msgid "Could not check for updates: %s"
+msgstr "Nepodarilo sa skontrolovať aktualizácie: %s"
+
+msgid "Could not read file"
+msgstr ""
+
+msgid "Cyan"
+msgstr ""
+
+msgid "Database converted to vCard format"
+msgstr ""
+
+msgid "Database format"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Date range: {0} to {1}"
+msgstr ""
+
+msgid "Date:"
+msgstr ""
+
+msgid "Day +"
+msgstr ""
+
+msgid "Day -"
+msgstr ""
+
+msgid "Days to keep notifications in cache"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Default event time"
+msgstr ""
+
+msgid "Default format for exported files"
+msgstr ""
+
+msgid "Default minutes before event to show notification"
+msgstr ""
+
+msgid "Default notification minutes"
+msgstr ""
+
+msgid "Default time for new events (HH:MM format)"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete ALL ICS events"
+msgstr ""
+
+msgid "Delete ALL contacts"
+msgstr ""
+
+msgid "Delete ALL events"
+msgstr ""
+
+msgid "Delete File"
+msgstr ""
+
+msgid "Delete ICS files older than 30 days?"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "Delete {0}?"
+msgstr ""
+
+msgid "Delete: {0}"
+msgstr ""
+
+msgid "Deleted {0} ICS events"
+msgstr ""
+
+msgid "Deleted {0} contacts from database"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Directory: {0}"
+msgstr ""
+
+msgid "Disk"
+msgstr ""
+
+msgid "Duplicates cleaned: %d"
+msgstr ""
+
+msgid "E:{0}"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Contact"
+msgstr ""
+
+msgid "Edit Contact ({0}/{1})"
+msgstr ""
+
+msgid "Edit Date"
+msgstr ""
+
+msgid "Edit Description"
+msgstr ""
+
+msgid "Edit Event"
+msgstr ""
+
+msgid "Edit Event ({0}/{1})"
+msgstr ""
+
+msgid "Edit Event ({0}/{1}) - Today"
+msgstr ""
+
+msgid "Edit Holiday"
+msgstr ""
+
+msgid "Edit ICS Event"
+msgstr ""
+
+msgid "Edit Note"
+msgstr ""
+
+msgid "Edit Sign"
+msgstr ""
+
+msgid "Edit: {0}"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+#, fuzzy
+msgid "Enable autostart"
+msgstr "Povoliť export"
+
+msgid "Enable debug mode"
+msgstr ""
+
+msgid "Enable event management with date/time"
+msgstr ""
+
+msgid "Enable event system"
+msgstr ""
+
+msgid "Enable holiday coloring"
+msgstr ""
+
+msgid "Enable notifications"
+msgstr ""
+
+msgid "Enter"
+msgstr ""
+
+msgid "Error deleting contact"
+msgstr ""
+
+msgid "Error deleting contact '{0}'"
+msgstr ""
+
+msgid "Error deleting database: {0}"
+msgstr ""
+
+msgid "Error getting ICS statistics"
+msgstr ""
+
+msgid "Error opening ICS browser: %s"
+msgstr ""
+
+msgid "Error opening ICS importer: {0}"
+msgstr ""
+
+msgid "Error opening event dialog"
+msgstr ""
+
+msgid "Error saving ICS data"
+msgstr ""
+
+msgid "Error saving contact"
+msgstr ""
+
+msgid "Error saving data"
+msgstr ""
+
+msgid "Error saving event"
+msgstr ""
+
+msgid "Error: {0}"
+msgstr ""
+
+msgid "Errors: %d"
+msgstr ""
+
+msgid "Errors: {0}"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Event '{0}' deleted successfully"
+msgstr ""
+
+msgid "Event '{0}' saved successfully"
+msgstr ""
+
+msgid "Event check interval"
+msgstr ""
+
+msgid "Event color"
+msgstr ""
+
+msgid "Event manager not available"
+msgstr ""
+
+msgid "Event manager not initialized"
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings first."
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings."
+msgstr ""
+
+msgid "Event system is not enabled"
+msgstr ""
+
+msgid "Events found: {0}"
+msgstr ""
+
+msgid "Events imported successfully"
+msgstr ""
+
+msgid "Export All to ICS File"
+msgstr ""
+
+msgid "Export error: {0}"
+msgstr ""
+
+msgid "Export failed or no contacts to export"
+msgstr ""
+
+msgid "Export format"
+msgstr ""
+
+msgid "Export location"
+msgstr ""
+
+msgid "Export subdirectory"
+msgstr ""
+
+msgid "Export vCard File"
+msgstr ""
+
+msgid "Exporting contacts..."
+msgstr ""
+
+msgid "Failed to create backup. Update cancelled."
+msgstr "Vytvorenie zálohy zlyhalo. Aktualizácia zrušená."
+
+msgid "Failed to start import"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "Field {0}/{1}: {2}"
+msgstr ""
+
+msgid "File deleted"
+msgstr ""
+
+msgid "File not found!"
+msgstr ""
+
+msgid "File re-imported successfully"
+msgstr ""
+
+msgid "File re-imported. Found {0} potential duplicates."
+msgstr ""
+
+msgid "File: {0}"
+msgstr ""
+
+msgid "Files is Empty..."
+msgstr ""
+
+msgid "Found {0} ICS files"
+msgstr ""
+
+msgid "Fri"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Hard Disk"
+msgstr ""
+
+msgid "Hard Disk (/media/hdd)"
+msgstr ""
+
+msgid "Holiday"
+msgstr ""
+
+msgid "Holiday color"
+msgstr ""
+
+msgid "Holiday:"
+msgstr ""
+
+msgid "Holidays imported"
+msgstr ""
+
+msgid "I:{0}"
+msgstr ""
+
+msgid "ICS Events: 0"
+msgstr ""
+
+msgid "ICS Events: {0}/{1}"
+msgstr ""
+
+msgid "ICS format"
+msgstr ""
+
+msgid "ICS format (google calendar)"
+msgstr ""
+
+msgid "ICS import feature not yet available: {0}"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Import All"
+msgstr ""
+
+msgid "Import Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import Holidays"
+msgstr ""
+
+msgid "Import ICS Contacts Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import completed"
+msgstr ""
+
+msgid "Import completed - Sorting contacts..."
+msgstr ""
+
+msgid "Import completed!"
+msgstr ""
+
+msgid "Import completed. Ready."
+msgstr ""
+
+msgid "Import error: {0}"
+msgstr ""
+
+msgid "Import events to calendar"
+msgstr ""
+
+msgid "Import vCard File"
+msgstr ""
+
+msgid "Imported ICS Files"
+msgstr ""
+
+msgid "Imported: %d"
+msgstr ""
+
+msgid "Imported: {0}"
+msgstr ""
+
+msgid "Imported: {0} contacts"
+msgstr ""
+
+msgid "Importing iCalendar File"
+msgstr ""
+
+msgid "Importing vCard File"
+msgstr ""
+
+msgid "Initializing..."
+msgstr ""
+
+msgid "Invalid birthday format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid date format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid time format! Use HH:MM (00:00 to 23:59)"
+msgstr ""
+
+msgid "Invalid time format. Use HH:MM"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "Labels (comma separated)"
+msgstr ""
+
+msgid "Legacy format (text files)"
+msgstr ""
+
+msgid "Manage Contacts"
+msgstr ""
+
+msgid "Manage Event"
+msgstr ""
+
+msgid "Manage ICS Events"
+msgstr ""
+
+msgid "Manage ICS Files"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Modified: {0}"
+msgstr ""
+
+msgid "Mon"
+msgstr ""
+
+msgid "Month +"
+msgstr ""
+
+msgid "Month -"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name is required"
+msgstr ""
+
+msgid "Network Share"
+msgstr ""
+
+msgid "New Date"
+msgstr ""
+
+msgid "Newest file: {0}"
+msgstr ""
+
+msgid "Next Field"
+msgstr ""
+
+msgid "No ICS directory found"
+msgstr ""
+
+msgid "No ICS events found"
+msgstr ""
+
+msgid "No ICS files found"
+msgstr ""
+
+msgid "No ICS files in archive"
+msgstr ""
+
+msgid "No TV service currently playing"
+msgstr ""
+
+msgid "No contact files found"
+msgstr ""
+
+msgid "No contact selected"
+msgstr ""
+
+msgid "No contacts found in database"
+msgstr ""
+
+msgid "No data found to convert"
+msgstr ""
+
+msgid "No data to export"
+msgstr ""
+
+msgid "No duplicates found"
+msgstr ""
+
+msgid "No event selected"
+msgstr ""
+
+msgid "No events database found"
+msgstr ""
+
+msgid "No events for today"
+msgstr ""
+
+msgid "No events to convert"
+msgstr ""
+
+msgid "No file in database..."
+msgstr ""
+
+msgid "No file selected"
+msgstr ""
+
+msgid "No past events to remove"
+msgstr ""
+
+msgid "No sorting (original order)"
+msgstr ""
+
+msgid "No sound"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Note:"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Notification sound type"
+msgstr ""
+
+msgid "Notification tone"
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Notify:"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "Oldest file: {0}\n"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "P:{0}/{1}"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Play a sound when event notification appears"
+msgstr ""
+
+msgid "Play sound with notifications"
+msgstr ""
+
+msgid "Please restart Enigma2 manually."
+msgstr "Prosím, reštartujte Enigmu2 manuálne."
+
+msgid "Plugin Directory"
+msgstr ""
+
+msgid "Plugin is up to date"
+msgstr "Plugin je aktuálny"
+
+msgid "Press GREEN to import"
+msgstr ""
+
+msgid "Press TEXT to search"
+msgstr ""
+
+msgid "Preview file content"
+msgstr ""
+
+msgid "Progress: {0}%"
+msgstr ""
+
+msgid "Re-import"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Refresh"
+msgstr "Aktualizovať"
+
+msgid "Refreshed"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove Date"
+msgstr ""
+
+msgid "Removed {0} past events"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Repeat (none/daily/weekly/monthly/yearly)"
+msgstr ""
+
+msgid "Repeat:"
+msgstr ""
+
+msgid "Repeat: {0}"
+msgstr ""
+
+msgid "Root Home (/home/root)"
+msgstr ""
+
+msgid "S:{0}"
+msgstr ""
+
+msgid "SCHEDULED EVENTS:"
+msgstr ""
+
+msgid "Sat"
+msgstr ""
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Search contacts"
+msgstr ""
+
+msgid "Search events"
+msgstr ""
+
+msgid "Search:"
+msgstr ""
+
+msgid "Seconds between event checks (advanced)"
+msgstr ""
+
+msgid "Seconds to wait after boot before starting notifications"
+msgstr ""
+
+msgid "Select .ics file to import"
+msgstr ""
+
+msgid "Select a file, not a folder"
+msgstr ""
+
+msgid "Select vCard file to import"
+msgstr ""
+
+msgid "Selected: {0}"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Short beep"
+msgstr ""
+
+msgid "Show 'H' marker on holiday days"
+msgstr ""
+
+msgid "Show Statistics"
+msgstr ""
+
+msgid "Show Today's Holidays"
+msgstr ""
+
+msgid "Show Upcoming Holidays"
+msgstr ""
+
+msgid "Show debug messages in console/log"
+msgstr ""
+
+msgid "Show event indicators"
+msgstr ""
+
+msgid "Show event statistics"
+msgstr ""
+
+msgid "Show holiday indicators"
+msgstr ""
+
+msgid "Show markers on days with events"
+msgstr ""
+
+msgid "Show notifications for upcoming events"
+msgstr ""
+
+msgid "Sign"
+msgstr ""
+
+msgid "Sign:"
+msgstr ""
+
+msgid "Size: {0:.1f} KB"
+msgstr ""
+
+msgid "Size: {0:.1f} MB"
+msgstr ""
+
+msgid "Skipped: %d"
+msgstr ""
+
+msgid "Skipped: {0}"
+msgstr ""
+
+msgid "Skipped: {0} (duplicates)"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Sort by birthday (month/day)"
+msgstr ""
+
+msgid "Sort by category"
+msgstr ""
+
+msgid "Sort by name (alphabetical)"
+msgstr ""
+
+msgid "Sorted by birthday"
+msgstr ""
+
+msgid "Sorted by category"
+msgstr ""
+
+msgid "Sorted by date"
+msgstr ""
+
+msgid "Sorted by name"
+msgstr ""
+
+msgid "Sorted by title"
+msgstr ""
+
+msgid "Sorted by: Birthday"
+msgstr ""
+
+msgid "Sorted by: Category"
+msgstr ""
+
+msgid "Sorted by: Date"
+msgstr ""
+
+msgid "Sorted by: Name"
+msgstr ""
+
+msgid "Sorted by: Title"
+msgstr ""
+
+msgid "Start event notifications in background (recommended)"
+msgstr ""
+
+msgid "Subdirectory name for exports (created automatically)"
+msgstr ""
+
+msgid "Successfully converted {0} entries to ICS format"
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "Tags: {0}"
+msgstr ""
+
+msgid "Temporary Storage (/tmp)"
+msgstr ""
+
+#, fuzzy
+msgid "Test error: %s"
+msgstr "Chyba aktualizácie: %s"
+
+msgid "Text format"
+msgstr ""
+
+msgid "Thu"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Time (HH:MM)"
+msgstr ""
+
+msgid "Time:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title and date are required!"
+msgstr ""
+
+msgid "Title is required"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Total events: {0}"
+msgstr ""
+
+msgid "Total files: {0}\n"
+msgstr ""
+
+msgid "Total size: {0:.1f} KB\n"
+msgstr ""
+
+msgid "Total: %d"
+msgstr ""
+
+msgid "Total: {0}"
+msgstr ""
+
+msgid "Tue"
+msgstr ""
+
+msgid "Type of sound to play with notifications"
+msgstr ""
+
+msgid "U:{0}"
+msgstr ""
+
+msgid "USB Drive"
+msgstr ""
+
+msgid "USB Drive (/media/usb)"
+msgstr ""
+
+msgid "Unable to play test sound"
+msgstr ""
+
+msgid "Update available!"
+msgstr "Aktualizácia k dispozícii!"
+
+msgid "Update cancelled"
+msgstr "Aktualizácia zrušená"
+
+msgid "Update check error"
+msgstr "Chyba kontroly aktualizácií"
+
+msgid "Update check failed"
+msgstr "Kontrola aktualizácií zlyhala"
+
+msgid "Update completed successfully!"
+msgstr "Aktualizácia bola úspešne dokončená!"
+
+msgid "Update error: %s"
+msgstr "Chyba aktualizácie: %s"
+
+msgid "Update failed"
+msgstr "Aktualizácia zlyhala"
+
+msgid "Update failed and backup restore also failed!"
+msgstr "Aktualizácia zlyhala a obnovenie zálohy tiež zlyhalo!"
+
+msgid "Update failed. Restored from backup."
+msgstr "Aktualizácia zlyhala. Obnovené zo zálohy."
+
+msgid "Update successful!"
+msgstr "Aktualizácia úspešná!"
+
+msgid "Updated: {0}"
+msgstr ""
+
+msgid "Updating plugin... Please wait"
+msgstr "Aktualizácia pluginu... Čakajte prosím"
+
+msgid "Using legacy database format"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Waiting for thread to stop..."
+msgstr ""
+
+msgid "Wed"
+msgstr ""
+
+msgid "White"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "You have the latest version of Calendar."
+msgstr ""
+
+msgid "not sorted"
+msgstr ""
+
+msgid "sorted by birthday"
+msgstr ""
+
+msgid "sorted by category"
+msgstr ""
+
+msgid "sorted by name"
+msgstr ""
+
+msgid "vCard format"
+msgstr ""
+
+msgid "vCard format (standard)"
+msgstr ""
+
+msgid "vCard import feature not available: {0}"
+msgstr ""
+
+#, python-format
+#~ msgid "%d favorite channels"
+#~ msgstr "%d obľúbených kanálov"
+
+#, python-format
+#~ msgid "%d favorites"
+#~ msgstr "%d obľúbených"
+
+#, python-format
+#~ msgid ""
+#~ "%s\n"
+#~ "\n"
+#~ "Restart Enigma2 now for changes to take effect."
+#~ msgstr ""
+#~ "%s\n"
+#~ "\n"
+#~ "Reštartujte Enigmu2, aby sa zmeny prejavili."
+
+#, python-format
+#~ msgid "(filtered %d problematic)"
+#~ msgstr "(filtrované %d problematické)"
+
+#, python-format
+#~ msgid "(limited to first %d)"
+#~ msgstr "(obmedzené na prvých %d)"
+
+#, python-format
+#~ msgid "(skipped %d YouTube)"
+#~ msgstr "(preskočené %d YouTube)"
+
+#~ msgid "1 MB"
+#~ msgstr "1 MB"
+
+#~ msgid "100 channels"
+#~ msgstr "100 kanálov"
+
+#~ msgid "1000 channels"
+#~ msgstr "1000 kanálov"
+
+#~ msgid "2 MB"
+#~ msgstr "2 MB"
+
+#, fuzzy
+#~| msgid "1000 channels"
+#~ msgid "2000 channels"
+#~ msgstr "1000 kanálov"
+
+#~ msgid "250 channels"
+#~ msgstr "250 kanálov"
+
+#~ msgid "4 MB"
+#~ msgstr "4 MB"
+
+#~ msgid "50 channels"
+#~ msgstr "50 kanálov"
+
+#~ msgid "500 channels"
+#~ msgstr "500 kanálov"
+
+#, fuzzy
+#~| msgid "500 channels"
+#~ msgid "5000 channels"
+#~ msgstr "500 kanálov"
+
+#~ msgid "512 KB"
+#~ msgstr "512 kB"
+
+#~ msgid "8 MB"
+#~ msgstr "8 MB"
+
+#~ msgid "=== Browser Settings ==="
+#~ msgstr "=== Nastavenia prehliadača ==="
+
+#~ msgid "=== Cache Settings ==="
+#~ msgstr "=== Nastavenia vyrovnávacej pamäte ==="
+
+#~ msgid "=== Display Settings ==="
+#~ msgstr "=== Nastavenia zobrazenia ==="
+
+#~ msgid "=== Export Settings ==="
+#~ msgstr "=== Nastavenia exportu ==="
+
+#~ msgid "=== Favorites Settings ==="
+#~ msgstr "=== Nastavenia obľúbených položiek ==="
+
+#~ msgid "=== Log Maintenance ==="
+#~ msgstr "--- Údržba protokolov ---"
+
+#~ msgid "=== Logging Settings ==="
+#~ msgstr "=== Nastavenia protokolovania ==="
+
+#~ msgid "=== Network Settings ==="
+#~ msgstr "=== Nastavenia siete ==="
+
+#~ msgid "=== Performance Settings ==="
+#~ msgstr "=== Nastavenia výkonu ==="
+
+#~ msgid "=== Player Settings ==="
+#~ msgstr "=== Nastavenia prehrávača ==="
+
+#~ msgid "=== Update Settings ==="
+#~ msgstr "=== Aktualizovať nastavenia ==="
+
+#~ msgid ""
+#~ "A new version is available!\n"
+#~ "\n"
+#~ "Update now?\n"
+#~ "\n"
+#~ "(Recommended to backup first)"
+#~ msgstr ""
+#~ "Je k dispozícii nová verzia!\n"
+#~ "\n"
+#~ "Aktualizovať teraz?\n"
+#~ "\n"
+#~ "(Odporúča sa najskôr zálohovať)"
+
+#~ msgid "About"
+#~ msgstr "O nás"
+
+#~ msgid "About TV Garden"
+#~ msgstr "O doplnku TV Garden"
+
+#~ msgid "About TV Garden plugin"
+#~ msgstr "O doplnku TV Garden"
+
+#~ msgid "Access free IPTV channels from around the world"
+#~ msgstr "Získajte prístup k bezplatným IPTV kanálom z celého sveta"
+
+#~ msgid "Add to Favorites"
+#~ msgstr "Pridať k obľúbeným"
+
+#, python-format
+#~ msgid "Added to favorites: %s"
+#~ msgstr "Pridané k obľúbeným: %s"
+
+#~ msgid "All channels"
+#~ msgstr "Všetky kanály"
+
+#~ msgid "Already in favorites"
+#~ msgstr "Už v obľúbených"
+
+#~ msgid "Animation"
+#~ msgstr "Animácia"
+
+#~ msgid "Are you sure you want to clear all log files?"
+#~ msgstr "Naozaj chcete vymazať všetky súbory denníka?"
+
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgid "Auto-Refresh Bouquet"
+#~ msgstr "Automaticky obnovovacia kytica"
+
+#, python-format
+#~ msgid "Auto-refresh: %s"
+#~ msgstr "Automatické obnovenie: %s"
+
+#~ msgid "Bouquet Name Prefix"
+#~ msgstr "Predpona názvu kytice"
+
+#~ msgid "Browse by Country"
+#~ msgstr "Prehľadávať podľa krajiny"
+
+#~ msgid "Browse channels by category"
+#~ msgstr "Prehliadanie kanálov podľa kategórie"
+
+#~ msgid "Browse channels by country"
+#~ msgstr "Prehliadať kanály podľa krajiny"
+
+#~ msgid "Buffer Size"
+#~ msgstr "Veľkosť zásobníka"
+
+#~ msgid "Business"
+#~ msgstr "Živnostník / Firma"
+
+#~ msgid "Cache Size"
+#~ msgstr "Veľkosť vyrovnávacej pamäte"
+
+#~ msgid "Cache TTL (hours)"
+#~ msgstr "TTL vyrovnávacej pamäte (hodiny)"
+
+#~ msgid "Cache cleared"
+#~ msgstr "Vyrovnávacia pamäť bola vymazaná"
+
+#~ msgid "Categories"
+#~ msgstr "Kategórie"
+
+#~ msgid "Channel Information"
+#~ msgstr "Informácie o kanáli"
+
+#~ msgid "Channel Menu"
+#~ msgstr "Ponuka kanálov"
+
+#~ msgid "Channel added to bouquet"
+#~ msgstr "Kanál pridaný do kytice"
+
+#~ msgid "Channel not found in favorites"
+#~ msgstr "Kanál sa nenašiel v obľúbených"
+
+#~ msgid "Channels"
+#~ msgstr "Kanály"
+
+#~ msgid "Check for plugin updates"
+#~ msgstr "Skontrolujte aktualizácie pluginov"
+
+#~ msgid "Classic"
+#~ msgstr "Klasický"
+
+#~ msgid "Clear ALL favorites?"
+#~ msgstr "Vymazať VŠETKY obľúbené?"
+
+#~ msgid "Clear All Favorites"
+#~ msgstr "Vymazať všetky obľúbené"
+
+#, python-format
+#~ msgid "Cleared %d favorites"
+#~ msgstr "Vymazané obľúbené položky (%d)"
+
+#~ msgid "Comedy"
+#~ msgstr "Komédia"
+
+#~ msgid "Confirm Before Export"
+#~ msgstr "Potvrdiť pred exportom"
+
+#, python-format
+#~ msgid "Confirm before export: %s"
+#~ msgstr "Potvrdiť pred exportom: %s"
+
+#~ msgid "Cooking"
+#~ msgstr "Varenie"
+
+#~ msgid "Countries"
+#~ msgstr "Krajiny"
+
+#~ msgid "Critical"
+#~ msgstr "Kritická"
+
+#~ msgid "Culture"
+#~ msgstr "Kultúra"
+
+#~ msgid "DISABLED"
+#~ msgstr "Súkromné pre tento sledovač -- DHT a PEX vypnuté"
+
+#~ msgid "Debug"
+#~ msgstr "Debug"
+
+#, fuzzy
+#~ msgid "Debug Settings"
+#~ msgstr "Nastavenia"
+
+#~ msgid "Documentary"
+#~ msgstr "Dokumentárny film"
+
+#~ msgid "ENABLED"
+#~ msgstr "Ukladanie do vyrovnávacej pamäte povolené(1)"
+
+#~ msgid "Education"
+#~ msgstr "Vzdelanie"
+
+#~ msgid "Empty database"
+#~ msgstr "Prázdna databáza"
+
+#~ msgid "Entertainment"
+#~ msgstr "Zábava"
+
+#~ msgid "Error"
+#~ msgstr "Chyba"
+
+#~ msgid "Error clearing favorites"
+#~ msgstr "Chyba pri vymazávaní obľúbených položiek"
+
+#, python-format
+#~ msgid "Error clearing logs: %s"
+#~ msgstr "Chyba pri vymazaní protokolov: %s"
+
+#~ msgid "Error loading channels"
+#~ msgstr "Chyba pri načítavaní kanálov"
+
+#~ msgid "Error loading information"
+#~ msgstr "Chyba pri načítavaní informácií"
+
+#, fuzzy
+#~ msgid "Event Settings"
+#~ msgstr "Export - nastavenia"
+
+#~ msgid "Exit"
+#~ msgstr "Ukončiť"
+
+#, python-format
+#~ msgid "Export '%s' to Enigma2 bouquet?"
+#~ msgstr "Exportovať '%s' do kytice Enigma2?"
+
+#, python-format
+#~ msgid "Export ALL %d favorites to Enigma2 bouquet?"
+#~ msgstr "Exportovať VŠETKY obľúbené položky (%d) do kytice Enigma2?"
+
+#~ msgid ""
+#~ "Export ALL channels from TV Garden database?\n"
+#~ "This may take some time."
+#~ msgstr ""
+#~ "Exportovať VŠETKY kanály z databázy TV Garden?\n"
+#~ "Môže to chvíľu trvať."
+
+#~ msgid "Export Current View"
+#~ msgstr "Exportovať aktuálne zobrazenie"
+
+#~ msgid "Export to Enigma2 Bouquet"
+#~ msgstr "Exportovať do Enigma2 Bouquet"
+
+#, python-brace-format
+#~ msgid "Export {count} channels to bouquet '{name}'?"
+#~ msgstr "Exportovať {count} kanálov do skupiny '{name}'?"
+
+#, python-format
+#~ msgid "Exported %d channels to bouquet"
+#~ msgstr "Exportovaných %d kanálov do bouquetu"
+
+#, python-brace-format
+#~ msgid "Exported {count} channels from {countries} countries"
+#~ msgstr "Exportované kanály ({count}) z {countries} krajín"
+
+#~ msgid "ExtePlayer3"
+#~ msgstr "ExtePlayer3"
+
+#~ msgid "FHD"
+#~ msgstr "Full HD"
+
+#~ msgid "Family"
+#~ msgstr "Rodina"
+
+#~ msgid "Favorite"
+#~ msgstr "Obľúbené"
+
+#~ msgid "Favorites"
+#~ msgstr "Moje obľúbené"
+
+#, python-format
+#~ msgid "Found %d channels"
+#~ msgstr "Nájdených kanálov: %d"
+
+#, python-format
+#~ msgid "Found %d playable channels"
+#~ msgstr "Nájdených %d prehrávateľných kanálov"
+
+#~ msgid "GStreamer"
+#~ msgstr "GStreamer"
+
+#~ msgid "General"
+#~ msgstr "Všeobecné"
+
+#~ msgid "HD"
+#~ msgstr "HD"
+
+#~ msgid "History"
+#~ msgstr "História"
+
+#~ msgid "Hobby"
+#~ msgstr "Koníček"
+
+#~ msgid "Items per page"
+#~ msgstr "Počet položiek na stránku"
+
+#~ msgid "Keyboard"
+#~ msgstr "Klávesnica"
+
+#~ msgid "Kids"
+#~ msgstr "Deti"
+
+#~ msgid "Legislative"
+#~ msgstr "Legislatíva"
+
+#~ msgid "Lifestyle"
+#~ msgstr "Lifestyle"
+
+#~ msgid "Loading all channels..."
+#~ msgstr "Načítavajú sa všetky kanály..."
+
+#~ msgid "Loading categories..."
+#~ msgstr "Načítavajú sa kategórie..."
+
+#~ msgid "Loading channels..."
+#~ msgstr "Načítavajú sa kanály..."
+
+#~ msgid "Loading countries..."
+#~ msgstr "Načítavajú sa krajiny..."
+
+#~ msgid "Loading favorites..."
+#~ msgstr "Načítavajú sa obľúbené položky..."
+
+#~ msgid "Local"
+#~ msgstr "Lokálne"
+
+#~ msgid "Log Backup Files"
+#~ msgstr "Záložné súbory protokolov"
+
+#~ msgid "Log Level"
+#~ msgstr "Úroveň záznamu"
+
+#~ msgid "Log file is empty or not found"
+#~ msgstr "Súbor denníka je prázdny alebo sa nenašiel"
+
+#~ msgid "Log to File"
+#~ msgstr "Zaznamenať do súboru"
+
+#~ msgid "Logs cleared"
+#~ msgstr "Denníky boli vymazané"
+
+#, fuzzy
+#~| msgid "Max Channels per Bouquet"
+#~ msgid "Max Channels for Bouquet"
+#~ msgstr "Maximálny počet kanálov na kyticu"
+
+#, fuzzy
+#~| msgid "Max Channels per Bouquet"
+#~ msgid "Max Channels for Sub-Bouquet"
+#~ msgstr "Maximálny počet kanálov na kyticu"
+
+#~ msgid "Max Favorites"
+#~ msgstr "Max Obľúbené"
+
+#~ msgid "Max Log Size (MB)"
+#~ msgstr "Maximálna veľkosť protokolu (MB)"
+
+#, fuzzy
+#~| msgid "Max channels per country"
+#~ msgid "Max channels for country"
+#~ msgstr "Maximálny počet kanálov na krajinu"
+
+#~ msgid "Movies"
+#~ msgstr "Filmy"
+
+#~ msgid "Music"
+#~ msgstr "Hudba"
+
+#~ msgid "News"
+#~ msgstr "Aktuality"
+
+#, python-format
+#~ msgid "No channels found for: %s"
+#~ msgstr "Nenašli sa žiadne kanály pre: %s"
+
+#~ msgid "No channels in this category"
+#~ msgstr "Žiadne kanály v tejto kategórii"
+
+#~ msgid "No channels loaded"
+#~ msgstr "Žiadne načítané kanály"
+
+#~ msgid "No countries with channels found"
+#~ msgstr "Nenašli sa žiadne krajiny s kanálmi"
+
+#~ msgid "No favorite channels"
+#~ msgstr "Žiadne obľúbené kanály"
+
+#~ msgid "No stream URL"
+#~ msgstr "Žiadna URL adresa streamu"
+
+#~ msgid "No stream URL available"
+#~ msgstr "Nie je k dispozícii žiadna URL adresa streamu"
+
+#~ msgid "OFF"
+#~ msgstr "Vypnúť"
+
+#~ msgid "ON"
+#~ msgstr "ZAPNUTÉ"
+
+#~ msgid "Options"
+#~ msgstr "Nastavenia"
+
+#, python-format
+#~ msgid "Options for: %s"
+#~ msgstr "Možnosti pre: %s"
+
+#~ msgid "Play"
+#~ msgstr "Prehrať"
+
+#~ msgid "Play Channel"
+#~ msgstr "Prehrať kanál"
+
+#~ msgid "Player"
+#~ msgstr "Prehrávač"
+
+#~ msgid "Plugin settings and configuration"
+#~ msgstr "Nastavenia a konfigurácia pluginu"
+
+#~ msgid "Politics"
+#~ msgstr "Politika"
+
+#, python-format
+#~ msgid "Press GREEN for keyboard... Ready - %d channels"
+#~ msgstr "Stlačte ZELENÉ tlačidlo pre klávesnicu... Pripravené - %d kanálov"
+
+#~ msgid "Press OK to check for updates"
+#~ msgstr "Stlačte OK pre kontrolu aktualizácií"
+
+#~ msgid "Press OK to view logs"
+#~ msgstr "Stlačte OK pre zobrazenie protokolov"
+
+#, python-format
+#~ msgid ""
+#~ "Refresh completed!\n"
+#~ "Loaded %d countries"
+#~ msgstr ""
+#~ "Obnovenie dokončené!\n"
+#~ "Načítaných %d krajín"
+
+#~ msgid "Refresh failed"
+#~ msgstr "Obnovenie zlyhalo"
+
+#, python-format
+#~ msgid "Refresh failed: %s"
+#~ msgstr "Obnovenie zlyhalo: %s"
+
+#~ msgid "Refreshing cache..."
+#~ msgstr "Obnovuje sa vyrovnávacia pamäť..."
+
+#~ msgid "Refreshing..."
+#~ msgstr "Osviežujúce..."
+
+#~ msgid "Religious"
+#~ msgstr "Náboženské"
+
+#, python-format
+#~ msgid "Remove '%s' from favorites?"
+#~ msgstr "Odstrániť „%s“ z obľúbených?"
+
+#~ msgid "Remove Bouquet from Enigma2"
+#~ msgstr "Odstrániť Kyticu z Enigmy2"
+
+#~ msgid "Remove TV Garden bouquet from Enigma2?"
+#~ msgstr "Odstrániť kyticu TV Garden z Enigmy2?"
+
+#~ msgid "Removed from favorites"
+#~ msgstr "Odstránené z obľúbených"
+
+#, python-format
+#~ msgid "Removed from favorites: %s"
+#~ msgstr "Odstránené z obľúbených: %s"
+
+#~ msgid "Retries"
+#~ msgstr "Opakované pokusy"
+
+#~ msgid "Science"
+#~ msgstr "Veda"
+
+#~ msgid "Search channels by name"
+#~ msgstr "Vyhľadávanie kanálov podľa názvu"
+
+#~ msgid "Select a category"
+#~ msgstr "Vyberte kategóriu"
+
+#~ msgid "Select a country"
+#~ msgstr "Vyberte krajinu"
+
+#~ msgid "Series"
+#~ msgstr "Séria"
+
+#~ msgid "Set options"
+#~ msgstr "Nastavenie možností"
+
+#~ msgid "Shop"
+#~ msgstr "Obchod"
+
+#~ msgid "Show Flags"
+#~ msgstr "Zobraziť vlajky"
+
+#~ msgid "Show Logos"
+#~ msgstr "Zobraziť logá"
+
+#, python-brace-format
+#~ msgid "Showing {shown} of {total} channels"
+#~ msgstr "Zobrazuje sa {shown} z {total} kanálov"
+
+#, python-brace-format
+#~ msgid "Showing {shown} of {total} results"
+#~ msgstr "Zobrazuje sa {shown} z {total} výsledkov"
+
+#~ msgid "Skin"
+#~ msgstr "Vzhľad"
+
+#, python-format
+#~ msgid "Stream: %s"
+#~ msgstr "Stream: %s"
+
+#, python-format
+#~ msgid "Stream: %s..."
+#~ msgstr "Stream: %s..."
+
+#~ msgid "TV Garden"
+#~ msgstr "TV záhrada"
+
+#~ msgid "TV Garden Logs"
+#~ msgstr "TV Záhradné polená"
+
+#~ msgid "TV Garden Plugin"
+#~ msgstr "Plugin TV Garden"
+
+#~ msgid "Test Export (1 channel)"
+#~ msgstr "Testovací export (1 kanál)"
+
+#~ msgid "Timeout (seconds)"
+#~ msgstr "Časový limit (sekundy)"
+
+#~ msgid "Travel"
+#~ msgstr "Cestovanie"
+
+#~ msgid "Unknown"
+#~ msgstr "Neznáme"
+
+#~ msgid "Use Hardware Acceleration"
+#~ msgstr "Používajte hardvérovú akceleráciu"
+
+#~ msgid "User Agent"
+#~ msgstr "Agent používateľa"
+
+#~ msgid "View Channel Info"
+#~ msgstr "Zobraziť informácie o kanáli"
+
+#~ msgid "View Log File"
+#~ msgstr "Zobraziť súbor denníka"
+
+#~ msgid "Volume"
+#~ msgstr "Objem"
+
+#~ msgid "WQHD"
+#~ msgstr "WQHD"
+
+#~ msgid "Warning"
+#~ msgstr "Upozornenie"
+
+#~ msgid "Weather"
+#~ msgstr "Počasie"
+
+#~ msgid "Your favorite channels"
+#~ msgstr "Vaše obľúbené kanály"
+
+#~ msgid "bouquet references"
+#~ msgstr "odkazy na kytice"
+
+#~ msgid "files and"
+#~ msgstr "súbory a"

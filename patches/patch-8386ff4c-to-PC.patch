@@ -1,11 +1,11 @@
 diff -ruN o/autogen.sh pc/autogen.sh
---- o/autogen.sh	2026-01-07 12:56:09.448623870 +0300
+--- o/autogen.sh	2026-01-07 12:56:09.000000000 +0300
 +++ pc/autogen.sh	1970-01-01 03:00:00.000000000 +0300
 @@ -1,2 +0,0 @@
 -#!/bin/sh
 -autoreconf -i
 diff -ruN o/configure.ac pc/configure.ac
---- o/configure.ac	2026-01-07 15:18:21.362623115 +0300
+--- o/configure.ac	2026-01-07 15:18:21.000000000 +0300
 +++ pc/configure.ac	2026-01-07 15:19:42.000000000 +0300
 @@ -1,4 +1,4 @@
 -AC_INIT([enigma2],[4],[forum@openpli.org])
@@ -61,7 +61,7 @@ diff -ruN o/configure.ac pc/configure.ac
  
  ARFLAGS="cr"
 diff -ruN o/data/keymap.xml pc/data/keymap.xml
---- o/data/keymap.xml	2026-01-07 12:56:09.522618819 +0300
+--- o/data/keymap.xml	2026-01-07 12:56:09.000000000 +0300
 +++ pc/data/keymap.xml	2026-01-07 15:19:42.000000000 +0300
 @@ -36,7 +36,6 @@
  	-->
@@ -154,7 +154,7 @@ diff -ruN o/data/keymap.xml pc/data/keymap.xml
  		<key id="KEY_NEXT" mapto="moveDown" flags="m" />
  	</map>
 diff -ruN o/data/menu.xml pc/data/menu.xml
---- o/data/menu.xml	2026-01-07 12:56:09.523618750 +0300
+--- o/data/menu.xml	2026-01-07 12:56:09.000000000 +0300
 +++ pc/data/menu.xml	2026-01-07 15:19:42.000000000 +0300
 @@ -39,8 +39,7 @@
  				<item key="fallbacktuner_settings" text="Fallback remote receiver setup"><screen module="SetupFallbacktuner"/></item>
@@ -192,7 +192,7 @@ diff -ruN o/data/menu.xml pc/data/menu.xml
  </menu>
 +
 diff -ruN o/data/setup.xml pc/data/setup.xml
---- o/data/setup.xml	2026-01-07 15:18:21.362623115 +0300
+--- o/data/setup.xml	2026-01-07 15:18:21.000000000 +0300
 +++ pc/data/setup.xml	2026-01-07 15:19:42.000000000 +0300
 @@ -3,9 +3,6 @@
  		<item level="0" text="Time zone area" description="Select your time zone area or region.">config.timezone.area</item>
@@ -532,7 +532,7 @@ diff -ruN o/lib/base/condVar.h pc/lib/base/condVar.h
 +
 +#endif
 diff -ruN o/lib/base/Makefile.inc pc/lib/base/Makefile.inc
---- o/lib/base/Makefile.inc	2026-01-07 12:56:09.546617181 +0300
+--- o/lib/base/Makefile.inc	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/base/Makefile.inc	2026-01-07 15:19:42.000000000 +0300
 @@ -24,7 +24,9 @@
  	base/thread.cpp \
@@ -554,7 +554,7 @@ diff -ruN o/lib/base/Makefile.inc pc/lib/base/Makefile.inc
 +	base/tsRingbuffer.h \
 +	base/condVar.h
 diff -ruN o/lib/base/rawfile.cpp pc/lib/base/rawfile.cpp
---- o/lib/base/rawfile.cpp	2026-01-07 12:56:09.551616839 +0300
+--- o/lib/base/rawfile.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/base/rawfile.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -3,6 +3,7 @@
  #include <fcntl.h>
@@ -704,7 +704,7 @@ diff -ruN o/lib/base/rawfile.cpp pc/lib/base/rawfile.cpp
 +	return ret;
 +}
 diff -ruN o/lib/base/rawfile.h pc/lib/base/rawfile.h
---- o/lib/base/rawfile.h	2026-01-07 12:56:09.551616839 +0300
+--- o/lib/base/rawfile.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/base/rawfile.h	2026-01-07 15:19:42.000000000 +0300
 @@ -3,23 +3,27 @@
  
@@ -1202,8 +1202,8 @@ diff -ruN o/lib/base/tsRingbuffer.h pc/lib/base/tsRingbuffer.h
 +
 +#endif // __RINGBUFFER_H
 diff -ruN o/lib/driver/avswitch.cpp pc/lib/driver/avswitch.cpp
---- o/lib/driver/avswitch.cpp	2026-01-07 12:56:09.551616839 +0300
-+++ pc/lib/driver/avswitch.cpp	2026-01-07 15:19:42.000000000 +0300
+--- o/lib/driver/avswitch.cpp	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/driver/avswitch.cpp	2026-10-11 12:18:03.000000000 +0300
 @@ -9,6 +9,7 @@
  #include <lib/base/eerror.h>
  #include <lib/base/ebase.h>
@@ -1220,60 +1220,77 @@ diff -ruN o/lib/driver/avswitch.cpp pc/lib/driver/avswitch.cpp
  		m_fp_notifier=0;
  	}
  	else
-@@ -184,6 +184,9 @@
+@@ -184,15 +184,16 @@
  
  void eAVSwitch::setAspectRatio(int ratio)
  {
-+	cXineLib *xineLib = cXineLib::getInstance();
+-	/*
+-	0-4:3 Letterbox
+-	1-4:3 PanScan
+-	2-16:9
+-	3-16:9 forced ("panscan")
+-	4-16:10 Letterbox
+-	5-16:10 PanScan
+-	6-16:9 forced ("letterbox")
+-	*/
 +	cXineLib::getInstance()->setAspectRatio(ratio);
 +
- 	/*
- 	0-4:3 Letterbox
- 	1-4:3 PanScan
-@@ -302,5 +305,41 @@
++	//0-4:3 Letterbox
++	//1-4:3 PanScan
++	//2-16:9
++	//3-16:9 forced ("panscan")
++	//4-16:10 Letterbox
++	//5-16:10 PanScan
++	//6-16:9 forced ("letterbox")
++
+ 	const char *aspect[] = {"4:3", "4:3", "any", "16:9", "16:10", "16:10", "16:9", "16:9"};
+ 	const char *policy[] = {"letterbox", "panscan", "bestfit", "panscan", "letterbox", "panscan", "letterbox"};
+ 
+@@ -218,7 +219,6 @@
+ 		eDebug("[eAVSwitch] setAspectRatio policy failed %m");
+ 	}
+ 	close(fd);
+-
+ }
+ 
+ void eAVSwitch::setVideomode(int mode)
+@@ -302,5 +302,34 @@
  	close(fd);
  }
  
 +void eAVSwitch::setPolicy43(int mode) {
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->setPolicy43(mode);
 +}
 +
 +void eAVSwitch::setPolicy169(int mode) {
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->setPolicy169(mode);
 +}
 +
 +void eAVSwitch::setZoom(int zoom43_x, int zoom43_y, int zoom169_x, int zoom169_y) {
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->setZoom(zoom43_x, zoom43_y, zoom169_x, zoom169_y);
 +}
 +
 +void eAVSwitch::updateScreen() {
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->adjust_policy();
 +}
 +
 +void eAVSwitch::setDeinterlace(int global, int sd, int hd)
 +{
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->setDeinterlace(global, sd, hd);
 +}
 +
 +void eAVSwitch::setSDfeatures(int sharpness, int noise) {
-+	cXineLib *xineLib = cXineLib::getInstance();
 +	cXineLib::getInstance()->setSDfeatures(sharpness, noise);
 +}
 +
 +void eAVSwitch::setBufMetronom(int hevc, int avc, int mpeg2) {
-+        cXineLib *xineLib = cXineLib::getInstance();
 +        cXineLib::getInstance()->setBufMetronom(hevc, avc, mpeg2);
 +}
 +
  //FIXME: correct "run/startlevel"
  eAutoInitP0<eAVSwitch> init_avswitch(eAutoInitNumbers::rc, "AVSwitch Driver");
 diff -ruN o/lib/driver/avswitch.h pc/lib/driver/avswitch.h
---- o/lib/driver/avswitch.h	2026-01-07 12:56:09.551616839 +0300
+--- o/lib/driver/avswitch.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/avswitch.h	2026-01-07 15:19:42.000000000 +0300
 @@ -29,9 +29,16 @@
  	int getVCRSlowBlanking();
@@ -1293,7 +1310,7 @@ diff -ruN o/lib/driver/avswitch.h pc/lib/driver/avswitch.h
  	PSignal1<void, int> vcr_sb_notifier;
  };
 diff -ruN o/lib/driver/hdmi_cec.cpp pc/lib/driver/hdmi_cec.cpp
---- o/lib/driver/hdmi_cec.cpp	2026-01-07 12:56:09.552616771 +0300
+--- o/lib/driver/hdmi_cec.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/hdmi_cec.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -154,10 +154,6 @@
  		messageNotifier = eSocketNotifier::create(eApp, hdmiFd, eSocketNotifier::Read | eSocketNotifier::Priority);
@@ -1307,7 +1324,7 @@ diff -ruN o/lib/driver/hdmi_cec.cpp pc/lib/driver/hdmi_cec.cpp
  	getAddressInfo();
  }
 diff -ruN o/lib/driver/Makefile.inc pc/lib/driver/Makefile.inc
---- o/lib/driver/Makefile.inc	2026-01-07 12:56:09.551616839 +0300
+--- o/lib/driver/Makefile.inc	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/Makefile.inc	2026-01-07 15:19:42.000000000 +0300
 @@ -31,3 +31,12 @@
  	driver/rcsdl.cpp \
@@ -1323,7 +1340,7 @@ diff -ruN o/lib/driver/Makefile.inc pc/lib/driver/Makefile.inc
 +endif
 +
 diff -ruN o/lib/driver/rcconsole.cpp pc/lib/driver/rcconsole.cpp
---- o/lib/driver/rcconsole.cpp	2026-01-07 12:56:09.552616771 +0300
+--- o/lib/driver/rcconsole.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/rcconsole.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -111,4 +111,6 @@
  	}
@@ -1333,7 +1350,7 @@ diff -ruN o/lib/driver/rcconsole.cpp pc/lib/driver/rcconsole.cpp
  eAutoInitP0<eRCConsoleInit> init_rcconsole(eAutoInitNumbers::rc+1, "Console RC Driver");
 +#endif
 diff -ruN o/lib/driver/rcinput.cpp pc/lib/driver/rcinput.cpp
---- o/lib/driver/rcinput.cpp	2026-01-07 12:56:09.552616771 +0300
+--- o/lib/driver/rcinput.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/rcinput.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -215,6 +215,7 @@
  	}
@@ -2257,7 +2274,7 @@ diff -ruN o/lib/driver/rcxlib.h pc/lib/driver/rcxlib.h
 +
 +#endif
 diff -ruN o/lib/driver/rfmod.cpp pc/lib/driver/rfmod.cpp
---- o/lib/driver/rfmod.cpp	2026-01-07 12:56:09.552616771 +0300
+--- o/lib/driver/rfmod.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/driver/rfmod.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -23,8 +23,6 @@
  	instance = this;
@@ -2450,7 +2467,7 @@ diff -ruN o/lib/dvb/ca_connector.h pc/lib/dvb/ca_connector.h
 +
 +#endif
 diff -ruN o/lib/dvb/decoder.cpp pc/lib/dvb/decoder.cpp
---- o/lib/dvb/decoder.cpp	2026-01-07 12:56:09.554616635 +0300
+--- o/lib/dvb/decoder.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/decoder.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -7,6 +7,7 @@
  #include <linux/dvb/audio.h>
@@ -2851,7 +2868,7 @@ diff -ruN o/lib/dvb/decoder.cpp pc/lib/dvb/decoder.cpp
  			{
  				bool seq_end_avail = false;
 diff -ruN o/lib/dvb/decoder.h pc/lib/dvb/decoder.h
---- o/lib/dvb/decoder.h	2026-01-07 12:56:09.554616635 +0300
+--- o/lib/dvb/decoder.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/decoder.h	2026-01-07 15:19:42.000000000 +0300
 @@ -3,6 +3,7 @@
  
@@ -3206,8 +3223,8 @@ diff -ruN o/lib/dvb/decsa.h pc/lib/dvb/decsa.h
 +
 +#endif
 diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
---- o/lib/dvb/demux.cpp	2026-01-07 12:56:09.554616635 +0300
-+++ pc/lib/dvb/demux.cpp	2026-01-07 15:19:42.000000000 +0300
+--- o/lib/dvb/demux.cpp	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/dvb/demux.cpp	2026-10-11 22:31:49.329811095 +0300
 @@ -44,7 +44,11 @@
  	}
  	unsigned int megabytes = si.totalram >> 20;
@@ -3240,7 +3257,7 @@ diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
  	int res = ::ioctl(fd, DMX_SET_SOURCE, &n);
  	if (res)
 -		eDebug("[eDVBDemux] DMX_SET_SOURCE Frontend%d failed: %m", fenum);
-+		eDebug("[eDVBDemux] DMX_SET_SOURCE demux%d");
++		eDebug("[eDVBDemux] DMX_SET_SOURCE demux");
  	else
  		source = fenum;
  	::close(fd);
@@ -3265,7 +3282,34 @@ diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
  void eDVBSectionReader::data(int)
  {
  	uint8_t data[4096] = {}; // max. section size
-@@ -781,6 +800,7 @@
+@@ -525,10 +544,11 @@
+ 
+ int eDVBRecordFileThread::AsyncIO::start(int fd, off_t offset, size_t nbytes, void* buffer)
+ {
+-	memset(&aio, 0, sizeof(aiocb)); // Documentation says "zero it before call".
++	// Безопасное обнуление структуры aiocb с учетом 64-битного размера
++	memset(&aio, 0, sizeof(struct aiocb));
+ 	aio.aio_fildes = fd;
+ 	aio.aio_nbytes = nbytes;
+-	aio.aio_offset = offset;   // Offset can be omitted with O_APPEND
++	aio.aio_offset = offset;
+ 	aio.aio_buf = buffer;
+ 	return aio_write(&aio);
+ }
+@@ -669,9 +689,11 @@
+ 	eDebug("[eDVBRecordStreamThread] allocated %zu buffers of %zu kB", m_aio.size(), m_buffersize>>10);
+ }
+ 
+-
+ int eDVBRecordStreamThread::writeData(int len)
+ {
++	// На ПК направляем стриминг через базовый рабочий синхронный метод
++	return eDVBRecordFileThread::writeData(len);
++
+ 	if(m_sync_mode)
+ 	{
+ 		struct pollfd pfd = {};
+@@ -781,6 +803,7 @@
  
  RESULT eDVBTSRecorder::start()
  {
@@ -3273,7 +3317,7 @@ diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
  	std::map<int,int>::iterator i(m_pids.begin());
  
  	if (m_running)
-@@ -794,6 +814,7 @@
+@@ -794,6 +817,7 @@
  
  	char filename[128];
  	snprintf(filename, 128, "/dev/dvb/adapter%d/demux%d", m_demux->adapter, m_demux->demux);
@@ -3281,7 +3325,7 @@ diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
  
  	m_source_fd = ::open(filename, O_RDONLY | O_CLOEXEC);
  
-@@ -826,14 +847,14 @@
+@@ -826,14 +850,14 @@
  	if (!m_target_filename.empty())
  		m_thread->startSaveMetaInformation(m_target_filename);
  
@@ -3300,8 +3344,8 @@ diff -ruN o/lib/dvb/demux.cpp pc/lib/dvb/demux.cpp
  }
  
 diff -ruN o/lib/dvb/demux.h pc/lib/dvb/demux.h
---- o/lib/dvb/demux.h	2026-01-07 12:56:09.554616635 +0300
-+++ pc/lib/dvb/demux.h	2026-01-07 15:19:42.000000000 +0300
+--- o/lib/dvb/demux.h	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/dvb/demux.h	2026-10-11 22:32:00.502121791 +0300
 @@ -6,52 +6,7 @@
  #include <lib/dvb/idemux.h>
  #include <lib/dvb/pvrparse.h>
@@ -3357,7 +3401,7 @@ diff -ruN o/lib/dvb/demux.h pc/lib/dvb/demux.h
  class eDVBSectionReader: public iDVBSectionReader, public sigc::trackable
  {
 diff -ruN o/lib/dvb/dvb.cpp pc/lib/dvb/dvb.cpp
---- o/lib/dvb/dvb.cpp	2026-01-07 12:56:09.554616635 +0300
+--- o/lib/dvb/dvb.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/dvb.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -100,7 +100,14 @@
  		if (eDVBAdapterLinux::isusb(num_adapter))
@@ -3444,7 +3488,7 @@ diff -ruN o/lib/dvb/dvb.cpp pc/lib/dvb/dvb.cpp
  	}
  	m_source = NULL;
 diff -ruN o/lib/dvb/dvb.h pc/lib/dvb/dvb.h
---- o/lib/dvb/dvb.h	2026-01-07 12:56:09.555616566 +0300
+--- o/lib/dvb/dvb.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/dvb.h	2026-01-07 15:19:42.000000000 +0300
 @@ -244,6 +244,7 @@
  	bool frontendIsMultistream(int index);
@@ -3518,77 +3562,255 @@ diff -ruN o/lib/dvb/edvbdemux.h pc/lib/dvb/edvbdemux.h
 +
 +#endif
 diff -ruN o/lib/dvb/filepush.cpp pc/lib/dvb/filepush.cpp
---- o/lib/dvb/filepush.cpp	2026-01-07 12:56:09.557616430 +0300
-+++ pc/lib/dvb/filepush.cpp	2026-01-07 15:19:42.000000000 +0300
-@@ -359,11 +359,6 @@
+--- o/lib/dvb/filepush.cpp	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/dvb/filepush.cpp	2026-10-11 22:31:16.982823871 +0300
+@@ -45,9 +45,9 @@
+ 
+ 	setIoPrio(IOPRIO_CLASS_BE, 0);
+ 
+-	/* Only allow SIGUSR1 to be delivered to our thread, don't let any
+-	 * other signals (like SIGHCHLD) interrupt our system calls.
+-	 * NOTE: signal block masks are per thread, so set it in the thread itself. */
++	// Only allow SIGUSR1 to be delivered to our thread, don't let any
++	// other signals (like SIGHCHLD) interrupt our system calls.
++	// NOTE: signal block masks are per thread, so set it in the thread itself.
+ 	sigfillset(&sigmask);
+ 	sigdelset(&sigmask, SIGUSR1);
+ 	pthread_sigmask(SIG_SETMASK, &sigmask, nullptr);
+@@ -148,9 +148,9 @@
+ 				if (m_stop)
+ 					break;
+ 
+-				/* in stream_mode, we are sending EOF events
+-				   over and over until somebody responds.
+-				   in stream_mode, think of evtEOF as "buffer underrun occurred". */
++				// in stream_mode, we are sending EOF events
++				// over and over until somebody responds.
++				// in stream_mode, think of evtEOF as "buffer underrun occurred".
+ 				if (m_sof == 0)
+ 					sendEvent(evtEOF);
+ 				else
+@@ -234,13 +234,13 @@
+ 	m_stop = 0;
+ 	m_stopped = false;
+ 
+-	/* Use a signal to interrupt blocking systems calls (like read()).
+-	 * We don't want to get enigma killed by the signal (default action),
+-	 * so install a handler. Don't use SIG_IGN (ignore signal) because
+-	 * then the system calls won't be interrupted by the signal.
+-	 * NOTE: signal options and handlers (except for a block mask) are
+-	 * global for the process, so install the handler here and not
+-	 * in the thread. */
++	// Use a signal to interrupt blocking systems calls (like read()).
++	// We don't want to get enigma killed by the signal (default action),
++	// so install a handler. Don't use SIG_IGN (ignore signal) because
++	// then the system calls won't be interrupted by the signal.
++	// NOTE: signal options and handlers (except for a block mask) are
++	// global for the process, so install the handler here and not
++	// in the thread.
+ 	struct sigaction act = {};
+ 	act.sa_handler = signal_handler;
+ 	act.sa_flags = 0;
+@@ -306,8 +306,8 @@
+ 		eWarning("[eFilePushThread] resume called while not paused");
+ 		return;
+ 	}
+-	/* Resume the paused thread by resetting the flag and
+-	 * signal the thread to release it */
++	// Resume the paused thread by resetting the flag and
++	// signal the thread to release it
+ 	eSingleLocker lock(m_run_mutex);
+ 	m_stop = 0;
+ 	m_run_cond.signal(); /* Tell we're ready to resume */
+@@ -359,117 +359,71 @@
  
  void eFilePushThreadRecorder::thread()
  {
 -	ssize_t bytes;
 -	int rv;
 -	struct pollfd pfd = {};
--	sigset_t sigmask;
+ 	sigset_t sigmask;
 -
- 	eDebug("[eFilePushThreadRecorder] THREAD START");
+-	eDebug("[eFilePushThreadRecorder] THREAD START");
++	eDebug("[eFilePushThreadRecorder] THREAD START - Safe 64-bit mask initialized");
  
  	setIoPrio(IOPRIO_CLASS_RT, 7);
-@@ -371,16 +366,22 @@
- 	/* Only allow SIGUSR1 to be delivered to our thread, don't let any
- 	 * other signals (like SIGHCHLD) interrupt our system calls.
- 	 * NOTE: signal block masks are per thread, so set it in the thread itself. */
--	sigfillset(&sigmask);
-+/*	sigfillset(&sigmask);
- 	sigdelset(&sigmask, SIGUSR1);
--	pthread_sigmask(SIG_SETMASK, &sigmask, nullptr);
-+	pthread_sigmask(SIG_SETMASK, &sigmask, nullptr);*/
-+
-+	/* we set the signal to not restart syscalls, so we can detect our signal. */
-+	struct sigaction act;
-+	act.sa_handler = signal_handler; // no, SIG_IGN doesn't do it. we want to receive the -EINTR
-+	act.sa_flags = 0;
-+	sigaction(SIGUSR1, &act, 0);
  
+-	/* Only allow SIGUSR1 to be delivered to our thread, don't let any
+-	 * other signals (like SIGHCHLD) interrupt our system calls.
+-	 * NOTE: signal block masks are per thread, so set it in the thread itself. */
++	// ВОЗВРАЩАЕМ И ВЫРАВНИВАЕМ МАСКУ СИГНАЛОВ ПОД 64 БИТА
++	// Разрешаем ТОЛЬКО SIGUSR1 прерывать системные вызовы в этом конкретном потоке
+ 	sigfillset(&sigmask);
+ 	sigdelset(&sigmask, SIGUSR1);
+ 	pthread_sigmask(SIG_SETMASK, &sigmask, nullptr);
+ 
++	/* Настраиваем обработчик сигналов, запрещая автоматический перезапуск системных вызовов (без SA_RESTART) */
++	struct sigaction act;
++	act.sa_handler = signal_handler; 
++	sigemptyset(&act.sa_mask);
++	act.sa_flags = 0; // Нам критически важно получить -EINTR при остановке
++	sigaction(SIGUSR1, &act, nullptr);
++
  	hasStarted();
  
- 	/* m_stop must be evaluated after each syscall. */
+-	/* m_stop must be evaluated after each syscall. */
++	/* m_stop должен проверяться на каждой итерации */
  	while (!m_stop)
  	{
 -		bytes = ::read(m_fd_source, m_buffer, m_buffersize);
++		// Используем явный тип ssize_t (8 байт на x86_64) для чтения
 +		ssize_t bytes = m_source->read(0, m_buffer, 0);
  
  		if (bytes < 0)
  		{
-@@ -389,7 +390,7 @@
- 			/* EAGAIN can happen on the Broadcom encoder, even though the fd is not opened nonblocking */
- 			if(errno == EAGAIN)
- 			{
+-			bytes = 0;
+-
+-			/* EAGAIN can happen on the Broadcom encoder, even though the fd is not opened nonblocking */
+-			if(errno == EAGAIN)
+-			{
 -				pfd.fd = m_fd_source;
-+/*				pfd.fd = m_fd_source;
- 				pfd.events = POLLIN;
- 				pfd.revents = 0;
- 
-@@ -438,7 +439,7 @@
- 					sendEvent(evtWriteError);
- 
- 					break;
+-				pfd.events = POLLIN;
+-				pfd.revents = 0;
+-
+-				errno = 0;
+-				rv = poll(&pfd, 1, 30000);
+-
+-				if(rv < 0)
+-				{
+-					if(errno == EINTR)
+-					{
+-						eDebug("[eFilePushThreadRecorder] poll got interrupted by signal, stop: %d", m_stop);
+-						continue;
+-					}
+-
+-					eWarning("[eFilePushThreadRecorder] POLL ERROR, aborting thread: %m");
+-					sendEvent(evtWriteError);
+-
+-					break;
 -				}
-+				} */
+-
+-				if(rv == 0)
+-				{
+-					eDebug("[eFilePushThreadRecorder] no fds ready %d", pfd.fd);
+-					continue;
+-				}
+-
+-				if(rv != 1)
+-				{
+-					eWarning("[eFilePushThreadRecorder] POLL WEIRDNESS, fds != 1: %d, aborting thread", rv);
+-					sendEvent(evtWriteError);
+-
+-					break;
+-				}
+-
+-				if(pfd.revents & (POLLRDHUP | POLLERR | POLLHUP | POLLNVAL))
+-				{
+-					eWarning("[eFilePushThreadRecorder] POLL STATUS ERROR, aborting thread: %x, fd: %d\n", pfd.revents, pfd.fd);
+-					sendEvent(evtWriteError);
+-
+-					break;
+-				}
++		bytes = 0;
  
- 				continue;
- 			}
-@@ -497,14 +498,25 @@
- 	 * NOTE: signal options and handlers (except for a block mask) are
- 	 * global for the process, so install the handler here and not
- 	 * in the thread. */
--	struct sigaction act = {};
-+/*	struct sigaction act;
- 	act.sa_handler = signal_handler;
- 	act.sa_flags = 0;
--	sigaction(SIGUSR1, &act, nullptr);
-+	sigaction(SIGUSR1, &act, nullptr);*/
+-				if(!(pfd.revents & POLLIN))
+-				{
+-					eWarning("[eFilePushThreadRecorder] POLL WEIRDNESS, fd not ready, aborting thread: %x\n", pfd.revents);
+-					sendEvent(evtWriteError);
+-
+-					break;
+-				}
+-
+-				continue;
+-			}
++		if(errno == EAGAIN)
++		{
++		continue;
++		}
  
- 	run();
+-			if (errno == EINTR || errno == EBUSY)
+-			{
+-				eDebug("[eFilePushThreadRecorder] read got interrupted by signal, stop: %d", m_stop);
+-				continue;
+-			}
++		if (errno == EINTR || errno == EBUSY)
++		{
++		eDebug("[eFilePushThreadRecorder] read got interrupted by signal, stopping gracefully (stop flag: %d)", m_stop);
++		continue;
++		}
+ 
+-			if (errno == EOVERFLOW)
+-			{
+-				eWarning("[eFilePushThreadRecorder] OVERFLOW while recording");
+-				++m_overflow_count;
+-				continue;
+-			}
+-			eDebug("[eFilePushThreadRecorder] *read error* (%m) - aborting thread because i don't know what else to do.");
+-			sendEvent(evtReadError);
+-			break;
++		if (errno == EOVERFLOW)
++		{
++			eWarning("[eFilePushThreadRecorder] OVERFLOW while recording");
++			++m_overflow_count;
++			continue;
+ 		}
++		eDebug("[eFilePushThreadRecorder] *read error* (%m) - aborting thread.");
++		sendEvent(evtReadError);
++		break;
++	}
+ 
+ #ifdef SHOW_WRITE_TIME
+ 		struct timeval starttime = {};
+ 		struct timeval now = {};
+ 		gettimeofday(&starttime, NULL);
+ #endif
+-		int w = writeData(bytes);
++		// Безопасное приведение типов: кастуем 8-байтный ssize_t к int, контролируя размер данных
++		int bytes_to_write = (bytes > INT_MAX) ? INT_MAX : (int)bytes;
++		int w = writeData(bytes_to_write);
++
+ #ifdef SHOW_WRITE_TIME
+ 		gettimeofday(&now, NULL);
+ 		suseconds_t diff = (1000000 * (now.tv_sec - starttime.tv_sec)) + now.tv_usec - starttime.tv_usec;
+-		eDebug("[eFilePushThreadRecorder] write %d bytes time: %9u us", bytes, (unsigned int)diff);
++		eDebug("[eFilePushThreadRecorder] write %d bytes time: %9u us", bytes_to_write, (unsigned int)diff);
+ #endif
+ 		if (w < 0)
+ 		{
+@@ -480,7 +434,7 @@
+ 	}
+ 	flush();
+ 	sendEvent(evtStopped);
+-	eDebug("[eFilePushThreadRecorder] THREAD STOP");
++	eDebug("[eFilePushThreadRecorder] THREAD STOP - Graceful termination completed");
+ 	m_stopped = true;
  }
+ 
+@@ -490,18 +444,25 @@
+ 	m_stop = 0;
+ 	m_stopped = false;
+ 
+-	/* Use a signal to interrupt blocking systems calls (like read()).
+-	 * We don't want to get enigma killed by the signal (default action),
+-	 * so install a handler. Don't use SIG_IGN (ignore signal) because
+-	 * then the system calls won't be interrupted by the signal.
+-	 * NOTE: signal options and handlers (except for a block mask) are
+-	 * global for the process, so install the handler here and not
+-	 * in the thread. */
+-	struct sigaction act = {};
+-	act.sa_handler = signal_handler;
+-	act.sa_flags = 0;
+-	sigaction(SIGUSR1, &act, nullptr);
++	// Use a signal to interrupt blocking systems calls (like read()).
++	// We don't want to get enigma killed by the signal (default action),
++	// so install a handler. Don't use SIG_IGN (ignore signal) because
++	// then the system calls won't be interrupted by the signal.
++	// NOTE: signal options and handlers (except for a block mask) are
++	// global for the process, so install the handler here and not
++	// in the thread.
++
++	run();
++}
  
 +void eFilePushThreadRecorder::start(int fd, ePtr<eDVBDemux> &demux)
 +{
@@ -3598,16 +3820,21 @@ diff -ruN o/lib/dvb/filepush.cpp pc/lib/dvb/filepush.cpp
 +	f->setDemux(demux);
 +	m_fd_source = 0;
 +	m_stop = 0;
-+	run();
-+}
-+
- void eFilePushThreadRecorder::stop()
- {
- 	static const struct timespec timespec_1 = { .tv_sec =  0, .tv_nsec = 1000000000 / 10 };
+ 	run();
+ }
+ 
 diff -ruN o/lib/dvb/filepush.h pc/lib/dvb/filepush.h
---- o/lib/dvb/filepush.h	2026-01-07 12:56:09.557616430 +0300
-+++ pc/lib/dvb/filepush.h	2026-01-07 15:19:42.000000000 +0300
-@@ -70,6 +70,7 @@
+--- o/lib/dvb/filepush.h	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/dvb/filepush.h	2026-10-11 22:31:29.760025751 +0300
+@@ -7,6 +7,7 @@
+ #include <lib/base/message.h>
+ #include <sys/types.h>
+ #include <lib/base/rawfile.h>
++#include <climits>
+ 
+ class iFilePushScatterGather
+ {
+@@ -70,6 +71,7 @@
  	void thread();
  	void stop();
  	void start(int sourcefd);
@@ -3615,7 +3842,7 @@ diff -ruN o/lib/dvb/filepush.h pc/lib/dvb/filepush.h
  
  	enum { evtEOF, evtReadError, evtWriteError, evtUser, evtStopped };
  	sigc::signal<void(int)> m_event;
-@@ -92,6 +93,7 @@
+@@ -92,6 +94,7 @@
  	int m_stop;
  	bool m_stopped;
  	eFixedMessagePump<int> m_messagepump;
@@ -3624,7 +3851,7 @@ diff -ruN o/lib/dvb/filepush.h pc/lib/dvb/filepush.h
  };
  
 diff -ruN o/lib/dvb/frontend.cpp pc/lib/dvb/frontend.cpp
---- o/lib/dvb/frontend.cpp	2026-01-07 15:18:21.367622877 +0300
+--- o/lib/dvb/frontend.cpp	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/dvb/frontend.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -562,6 +562,7 @@
  	,m_state(stateClosed), m_timeout(0), m_tuneTimer(0)
@@ -3651,7 +3878,7 @@ diff -ruN o/lib/dvb/frontend.cpp pc/lib/dvb/frontend.cpp
  	}
  
 diff -ruN o/lib/dvb/idvb.h pc/lib/dvb/idvb.h
---- o/lib/dvb/idvb.h	2026-01-07 12:56:09.558616361 +0300
+--- o/lib/dvb/idvb.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/idvb.h	2026-01-07 15:19:42.000000000 +0300
 @@ -710,11 +710,11 @@
  public:
@@ -3668,7 +3895,7 @@ diff -ruN o/lib/dvb/idvb.h pc/lib/dvb/idvb.h
  	enum { ac_left, ac_stereo, ac_right };
  		/** Set Displayed Audio Channel */
 diff -ruN o/lib/dvb/Makefile.inc pc/lib/dvb/Makefile.inc
---- o/lib/dvb/Makefile.inc	2026-01-07 12:56:09.552616771 +0300
+--- o/lib/dvb/Makefile.inc	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/Makefile.inc	2026-01-07 15:19:42.000000000 +0300
 @@ -37,7 +37,9 @@
  	dvb/fbc.cpp \
@@ -3691,7 +3918,7 @@ diff -ruN o/lib/dvb/Makefile.inc pc/lib/dvb/Makefile.inc
 +	dvb/ca_connector.h \
 +	dvb/decsa.h
 diff -ruN o/lib/dvb/pmtparse.cpp pc/lib/dvb/pmtparse.cpp
---- o/lib/dvb/pmtparse.cpp	2026-01-07 15:18:21.367622877 +0300
+--- o/lib/dvb/pmtparse.cpp	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/dvb/pmtparse.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -103,6 +103,7 @@
  				video.type = videoStream::vtMPEG2;
@@ -3702,7 +3929,7 @@ diff -ruN o/lib/dvb/pmtparse.cpp pc/lib/dvb/pmtparse.cpp
  				switch (streamtype)
  				{
 diff -ruN o/lib/dvb/pmtparse.h pc/lib/dvb/pmtparse.h
---- o/lib/dvb/pmtparse.h	2026-01-07 12:56:09.560616225 +0300
+--- o/lib/dvb/pmtparse.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/pmtparse.h	2026-01-07 15:19:42.000000000 +0300
 @@ -26,6 +26,7 @@
  		int component_tag;
@@ -3713,7 +3940,7 @@ diff -ruN o/lib/dvb/pmtparse.h pc/lib/dvb/pmtparse.h
  
  	struct audioStream
 diff -ruN o/lib/dvb/volume.cpp pc/lib/dvb/volume.cpp
---- o/lib/dvb/volume.cpp	2026-01-07 12:56:09.562616089 +0300
+--- o/lib/dvb/volume.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/dvb/volume.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -5,16 +5,15 @@
  #include <fcntl.h>
@@ -3774,7 +4001,7 @@ diff -ruN o/lib/dvb/volume.cpp pc/lib/dvb/volume.cpp
  
  void eDVBVolumecontrol::volumeToggleMute()
 diff -ruN o/lib/gdi/gpixmap.cpp pc/lib/gdi/gpixmap.cpp
---- o/lib/gdi/gpixmap.cpp	2026-01-07 12:56:09.566615815 +0300
+--- o/lib/gdi/gpixmap.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gdi/gpixmap.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -210,12 +210,6 @@
  gSurface::gSurface(int width, int height, int _bpp, int accel):
@@ -3790,7 +4017,7 @@ diff -ruN o/lib/gdi/gpixmap.cpp pc/lib/gdi/gpixmap.cpp
  	{
  		data = new unsigned char [y * stride];
 diff -ruN o/lib/gdi/grc.cpp pc/lib/gdi/grc.cpp
---- o/lib/gdi/grc.cpp	2026-01-07 12:56:09.566615815 +0300
+--- o/lib/gdi/grc.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gdi/grc.cpp	2026-01-09 14:06:14.000000000 +0300
 @@ -212,12 +212,12 @@
  
@@ -4284,7 +4511,7 @@ diff -ruN o/lib/gdi/gxlibdc.h pc/lib/gdi/gxlibdc.h
 +
 +#endif
 diff -ruN o/lib/gdi/lcd.cpp pc/lib/gdi/lcd.cpp
---- o/lib/gdi/lcd.cpp	2026-01-07 12:56:09.566615815 +0300
+--- o/lib/gdi/lcd.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gdi/lcd.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -162,7 +162,6 @@
  	int fp;
@@ -4303,7 +4530,7 @@ diff -ruN o/lib/gdi/lcd.cpp pc/lib/gdi/lcd.cpp
  		}
  #ifndef FP_IOCTL_LCD_DIMM
 diff -ruN o/lib/gdi/Makefile.inc pc/lib/gdi/Makefile.inc
---- o/lib/gdi/Makefile.inc	2026-01-07 12:56:09.564615952 +0300
+--- o/lib/gdi/Makefile.inc	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gdi/Makefile.inc	2026-01-07 15:19:42.000000000 +0300
 @@ -46,8 +46,17 @@
  	gdi/pixmapcache.h \
@@ -4330,7 +4557,7 @@ diff -ruN o/lib/gdi/Makefile.inc pc/lib/gdi/Makefile.inc
  endif
 +endif
 diff -ruN o/lib/gdi/picload.cpp pc/lib/gdi/picload.cpp
---- o/lib/gdi/picload.cpp	2026-01-07 12:56:09.567615747 +0300
+--- o/lib/gdi/picload.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gdi/picload.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -862,8 +862,6 @@
  
@@ -5273,8 +5500,8 @@ diff -ruN o/lib/gdi/post.h pc/lib/gdi/post.h
 +/* end of post.h */
 diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 --- o/lib/gdi/xineLib.cpp	1970-01-01 03:00:00.000000000 +0300
-+++ pc/lib/gdi/xineLib.cpp	2026-07-16 12:06:36.491322730 +0300
-@@ -0,0 +1,964 @@
++++ pc/lib/gdi/xineLib.cpp	2026-10-11 22:30:09.735095087 +0300
+@@ -0,0 +1,994 @@
 +#include <fstream>
 +#include <lib/gdi/xineLib.h>
 +#include <lib/base/eenv.h>
@@ -5621,18 +5848,15 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +}
 +
 +void cXineLib::setVolume(int value) {
-+//	xine_set_param (stream, XINE_PARAM_AUDIO_VOLUME, value);
 +	xine_set_param (stream, XINE_PARAM_AUDIO_AMP_LEVEL, value);
 +}
 +
 +void cXineLib::setVolumeMute(int value) {
-+//	xine_set_param (stream, XINE_PARAM_AUDIO_MUTE, value==0?0:1);
 +	xine_set_param(stream, XINE_PARAM_AUDIO_AMP_MUTE, value==0?0:1);
 +}
 +
 +void cXineLib::showOsd() {
 +	xine_osd_show_scaled(osd, 0);
-+	//stream->osd_renderer->draw_bitmap(osd, (uint8_t*)m_surface.data, 0, 0, 720, 576, temp_bitmap_mapping);
 +}
 +
 +void cXineLib::newOsd(int width, int height, uint32_t *argb_buffer) {
@@ -5802,7 +6026,7 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +		return ;
 +	}
 +
-+/* SET_PVR_MODE, call event set 'demux_ts' to read PAT, PMT files *.ts, *.m2ts */
++	/* SET_PVR_MODE, call event set 'demux_ts' to read PAT, PMT files *.ts, *.m2ts */
 +	int data;
 +	xine_event_t event;
 +	event.type = XINE_EVENT_SET_PVR_MODE;
@@ -5816,27 +6040,31 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +		return ;
 +	}
 +
-+/*	if (event_queue==0)
-+	{
-+		event_queue = xine_event_new_queue (stream);
-+		xine_event_create_listener_thread(event_queue, xine_event_handler, this);
-+	}*/
-+
 +	xine_set_param(this->stream, XINE_PARAM_AUDIO_CHANNEL_LOGICAL, 0);
 +	videoPlayed = true;
 +}
 +
 +int cXineLib::VideoPause() {
-+/*	_x_set_speed (stream, XINE_SPEED_PAUSE);
-+	stream->xine->clock->set_option (stream->xine->clock, CLOCK_SCR_ADJUSTABLE, 0);*/
-+	xine_set_param(stream, XINE_PARAM_SPEED, XINE_SPEED_PAUSE);
++	printf("[cXineLib] ---> VideoPause Forced\n");
++	if (stream) {
++		xine_set_param(stream, XINE_PARAM_SPEED, XINE_SPEED_PAUSE);
++	}
 +	return 1;
 +}
 +
 +int cXineLib::VideoResume() {
++	// 1. Сначала выставляем нормальную скорость
 +	xine_set_param(stream, XINE_PARAM_SPEED, XINE_SPEED_NORMAL);
-+/*	_x_set_speed (stream, XINE_SPEED_NORMAL);
-+	stream->xine->clock->set_option (stream->xine->clock, CLOCK_SCR_ADJUSTABLE, 1);*/
++	// 2. Посылаем сигнал демультиплексору проснуться и проверить,
++	// что файл таймшифта на диске увеличился в размерах.
++	// Если функция xine_stream_flush доступна, используем её:
++	// xine_stream_flush(stream);
++
++	// Альтернативный безопасный вариант без захвата мьютексов:
++	// Посылаем команду триггера через встроенную систему параметров xine,
++	// это заставит движок пересчитать внутренние указатели буфера
++	xine_set_param(stream, XINE_PARAM_VO_ZOOM_X, 100);
++	xine_set_param(stream, XINE_PARAM_VO_ZOOM_Y, 100); // Любой безобидный апдейт параметра видео
 +	return 1;
 +}
 +
@@ -5864,16 +6092,27 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +}
 +
 +int cXineLib::VideoPosition() {
-+	xine_get_pos_length (stream, &VposStream, &Vpos, &Vlength);
++	int tmp_pos_stream = 0;
++	int tmp_pos = 0;
++	int tmp_length = 0;
++
++	// Pass pointers to temporary 32-bit variables as required by xine-lib
++	xine_get_pos_length(stream, &tmp_pos_stream, &tmp_pos, &tmp_length);
++
++	// Safely store values tokens into our new 64-bit class variables
++	VposStream = tmp_pos_stream;
++	Vpos = tmp_pos;
++	Vlength = tmp_length;
++
 +	return 1;
 +}
 +
-+/*XINE_SPEED_SLOW_4
-+XINE_SPEED_SLOW_2
-+XINE_SPEED_NORMAL
-+XINE_SPEED_FAST_2
-+XINE_SPEED_FAST_4
-+XINE_FINE_SPEED_NORMAL*/
++//XINE_SPEED_SLOW_4
++//XINE_SPEED_SLOW_2
++//XINE_SPEED_NORMAL
++//XINE_SPEED_FAST_2
++//XINE_SPEED_FAST_4
++//XINE_FINE_SPEED_NORMAL
 +
 +void cXineLib::SeekTo(long long value) {
 +	xine_play(stream, 0, value);
@@ -6030,11 +6269,26 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +	return m_aspect;
 +}
 +
-+RESULT cXineLib::getPTS(pts_t &pts) {
-+	pts_t* last_pts_l = (pts_t*)(intptr_t)vo_port->get_property(vo_port, VO_PROP_LAST_PTS);
-+	pts = *last_pts_l;
-+	if (pts != 0)
++RESULT cXineLib::getPTS(pts_t &pts)
++{
++	// Забираем значение напрямую (64 бита)
++	pts_t last_pts = (pts_t)(intptr_t)vo_port->get_property(vo_port, VO_PROP_LAST_PTS);
++
++	// Статическая переменная для хранения предыдущего успешного PTS во время паузы
++	static pts_t cache_pts = 0;
++
++	if (last_pts != 0) {
++		cache_pts = last_pts; // Обновляем кэш, пока плеер играет
++		pts = last_pts;
 +		return 0;
++	}
++
++	// Если xine во время паузы вернул 0, подсовываем Enigma2 последнее сохраненное значение
++	if (cache_pts != 0) {
++		pts = cache_pts;
++		return 0;
++	}
++
 +	return -1;
 +}
 +
@@ -6231,11 +6485,14 @@ diff -ruN o/lib/gdi/xineLib.cpp pc/lib/gdi/xineLib.cpp
 +		return -1;
 +
 +	ASSERT(m_state != stIdle);
-+	ASSERT(stream);
-+	if (m_state == stStopped)
-+		return -1;
-+	xine_stop(stream);
-+	// STOP
++	if (stream) {
++		ASSERT(stream);
++		if (m_state == stStopped)
++			return -1;
++		xine_stop(stream);
++	}
++
++	// Меняем статус плеера на "Остановлен"
 +	m_state = stStopped;
 +	return 0;
 +}
@@ -6360,7 +6617,7 @@ diff -ruN o/lib/gdi/xineLib.h pc/lib/gdi/xineLib.h
 +};
 +#endif
 diff -ruN o/lib/gui/evideo.cpp pc/lib/gui/evideo.cpp
---- o/lib/gui/evideo.cpp	2026-01-07 12:56:09.568615679 +0300
+--- o/lib/gui/evideo.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/gui/evideo.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -1,6 +1,7 @@
  #include <lib/base/cfile.h>
@@ -6398,7 +6655,7 @@ diff -ruN o/lib/gui/evideo.cpp pc/lib/gui/evideo.cpp
  		pendingFullsize &= ~(1 << m_decoder);
  		m_state |= 8;
 diff -ruN o/lib/python/Components/About.py pc/lib/python/Components/About.py
---- o/lib/python/Components/About.py	2026-01-07 12:56:09.570615542 +0300
+--- o/lib/python/Components/About.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/About.py	2026-01-07 15:19:42.000000000 +0300
 @@ -13,8 +13,8 @@
  
@@ -6491,7 +6748,7 @@ diff -ruN o/lib/python/Components/About.py pc/lib/python/Components/About.py
  	except:
  		return _("unknown")
 diff -ruN o/lib/python/Components/ActionMap.py pc/lib/python/Components/ActionMap.py
---- o/lib/python/Components/ActionMap.py	2026-01-07 12:56:09.570615542 +0300
+--- o/lib/python/Components/ActionMap.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/ActionMap.py	2026-01-07 15:19:42.000000000 +0300
 @@ -104,7 +104,7 @@
  		adict = {}
@@ -6503,7 +6760,7 @@ diff -ruN o/lib/python/Components/ActionMap.py pc/lib/python/Components/ActionMa
  				if isinstance(funchelp, tuple):
  					if queryKeyBinding(context, action):
 diff -ruN o/lib/python/Components/AVSwitch.py pc/lib/python/Components/AVSwitch.py
---- o/lib/python/Components/AVSwitch.py	2026-01-07 12:56:09.570615542 +0300
+--- o/lib/python/Components/AVSwitch.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/AVSwitch.py	2026-01-07 15:19:42.000000000 +0300
 @@ -101,7 +101,7 @@
  	# TRANSLATORS: (aspect ratio policy: cropped content on left/right) in doubt, keep english term
@@ -6524,7 +6781,7 @@ diff -ruN o/lib/python/Components/AVSwitch.py pc/lib/python/Components/AVSwitch.
  		if "nonlinear" in open("/proc/stb/video/policy_choices").read():
  			# TRANSLATORS: (aspect ratio policy: display as fullscreen, with stretching the left/right)
 diff -ruN o/lib/python/Components/config.py pc/lib/python/Components/config.py
---- o/lib/python/Components/config.py	2026-01-07 12:56:09.582614723 +0300
+--- o/lib/python/Components/config.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/config.py	2026-01-07 15:19:42.000000000 +0300
 @@ -401,7 +401,7 @@
  
@@ -6620,7 +6877,7 @@ diff -ruN o/lib/python/Components/config.py pc/lib/python/Components/config.py
  			if isinstance(val, dict):
  				self.pickle_this(name, val, result)
 diff -ruN o/lib/python/Components/Console.py pc/lib/python/Components/Console.py
---- o/lib/python/Components/Console.py	2026-01-07 12:56:09.571615474 +0300
+--- o/lib/python/Components/Console.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/Console.py	2026-01-07 15:19:42.000000000 +0300
 @@ -86,6 +86,6 @@
  			self.appContainers[name].container.kill()
@@ -6631,7 +6888,7 @@ diff -ruN o/lib/python/Components/Console.py pc/lib/python/Components/Console.py
  			print("[Console] killing: ", name)
  			item.container.kill()
 diff -ruN o/lib/python/Components/Converter/EventName.py pc/lib/python/Components/Converter/EventName.py
---- o/lib/python/Components/Converter/EventName.py	2026-01-07 12:56:09.572615406 +0300
+--- o/lib/python/Components/Converter/EventName.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/Converter/EventName.py	2026-01-07 15:19:42.000000000 +0300
 @@ -279,10 +279,6 @@
  				return ""
@@ -6645,7 +6902,7 @@ diff -ruN o/lib/python/Components/Converter/EventName.py pc/lib/python/Component
  			return dropEPGNewLines(event.getShortDescription())
  		elif self.type == self.EXTENDED_DESCRIPTION:
 diff -ruN o/lib/python/Components/Harddisk.py pc/lib/python/Components/Harddisk.py
---- o/lib/python/Components/Harddisk.py	2026-01-07 15:18:21.373622592 +0300
+--- o/lib/python/Components/Harddisk.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Components/Harddisk.py	2026-01-07 15:19:42.000000000 +0300
 @@ -52,7 +52,7 @@
  	def __init__(self, device, removable=False):
@@ -6668,7 +6925,7 @@ diff -ruN o/lib/python/Components/Harddisk.py pc/lib/python/Components/Harddisk.
  				try:
  					rdev = os.stat(disk_path).st_rdev
 diff -ruN o/lib/python/Components/HdmiCec.py pc/lib/python/Components/HdmiCec.py
---- o/lib/python/Components/HdmiCec.py	2026-01-07 12:56:09.575615201 +0300
+--- o/lib/python/Components/HdmiCec.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/HdmiCec.py	2026-01-07 15:19:42.000000000 +0300
 @@ -10,7 +10,7 @@
  from enigma import eTimer
@@ -6680,7 +6937,7 @@ diff -ruN o/lib/python/Components/HdmiCec.py pc/lib/python/Components/HdmiCec.py
  
  # CEC Version's table
 diff -ruN o/lib/python/Components/InputDevice.py pc/lib/python/Components/InputDevice.py
---- o/lib/python/Components/InputDevice.py	2026-01-07 12:56:09.575615201 +0300
+--- o/lib/python/Components/InputDevice.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/InputDevice.py	2026-01-07 15:19:42.000000000 +0300
 @@ -43,7 +43,6 @@
  				self.name = self.name[:self.name.find("\0")]
@@ -6700,7 +6957,7 @@ diff -ruN o/lib/python/Components/InputDevice.py pc/lib/python/Components/InputD
  		else:
  			return "Unknown device name"
 diff -ruN o/lib/python/Components/Language.py pc/lib/python/Components/Language.py
---- o/lib/python/Components/Language.py	2026-01-07 15:18:21.373622592 +0300
+--- o/lib/python/Components/Language.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Components/Language.py	2026-01-07 15:19:42.000000000 +0300
 @@ -8,7 +8,7 @@
  
@@ -6712,7 +6969,7 @@ diff -ruN o/lib/python/Components/Language.py pc/lib/python/Components/Language.
  		gettext.textdomain("enigma2")
  		self.activeLanguage = 0
 diff -ruN o/lib/python/Components/MovieList.py pc/lib/python/Components/MovieList.py
---- o/lib/python/Components/MovieList.py	2026-01-07 12:56:09.576615133 +0300
+--- o/lib/python/Components/MovieList.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/MovieList.py	2026-01-07 15:19:42.000000000 +0300
 @@ -752,7 +752,7 @@
  
@@ -6733,7 +6990,7 @@ diff -ruN o/lib/python/Components/MovieList.py pc/lib/python/Components/MovieLis
  			# format the tag lists so that they are in 'original' order
  			tags.sort(key=movie.find)
 diff -ruN o/lib/python/Components/Network.py pc/lib/python/Components/Network.py
---- o/lib/python/Components/Network.py	2026-01-07 15:18:21.374622545 +0300
+--- o/lib/python/Components/Network.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Components/Network.py	2026-01-07 15:19:42.000000000 +0300
 @@ -93,7 +93,7 @@
  			fp.write("# automatically generated by enigma2\n# do NOT change manually!\n\n")
@@ -6790,7 +7047,7 @@ diff -ruN o/lib/python/Components/Network.py pc/lib/python/Components/Network.py
  		if cidr not in cidr_range:
  			print("[Network] cidr invalid: %d" % cidr)
 diff -ruN o/lib/python/Components/NimManager.py pc/lib/python/Components/NimManager.py
---- o/lib/python/Components/NimManager.py	2026-01-07 12:56:09.577615064 +0300
+--- o/lib/python/Components/NimManager.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/NimManager.py	2026-01-07 15:19:42.000000000 +0300
 @@ -582,7 +582,7 @@
  	def getTunerTypesEnabled(self):
@@ -6926,7 +7183,7 @@ diff -ruN o/lib/python/Components/ParentalControlList.py pc/lib/python/Component
 +		self.list[self.l.getCurrentSelectionIndex()] = ParentalControlEntryComponent(curSel[0][0], curSel[0][1], parentalControl.getProtectionType(curSel[0][0]))
 +		self.l.setList(self.list)
 diff -ruN o/lib/python/Components/ParentalControl.py pc/lib/python/Components/ParentalControl.py
---- o/lib/python/Components/ParentalControl.py	2026-01-07 12:56:09.577615064 +0300
+--- o/lib/python/Components/ParentalControl.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/ParentalControl.py	2026-01-07 15:19:42.000000000 +0300
 @@ -194,7 +194,7 @@
  
@@ -6938,7 +7195,7 @@ diff -ruN o/lib/python/Components/ParentalControl.py pc/lib/python/Components/Pa
  				file.write(str(sService) + "\n")
  		file.close()
 diff -ruN o/lib/python/Components/PerServiceDisplay.py pc/lib/python/Components/PerServiceDisplay.py
---- o/lib/python/Components/PerServiceDisplay.py	2026-01-07 12:56:09.577615064 +0300
+--- o/lib/python/Components/PerServiceDisplay.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/PerServiceDisplay.py	2026-01-07 15:19:42.000000000 +0300
 @@ -31,7 +31,7 @@
  			self.navcore.event.append(PerServiceBase.event)
@@ -6959,7 +7216,7 @@ diff -ruN o/lib/python/Components/PerServiceDisplay.py pc/lib/python/Components/
  
  	def enablePolling(self, interval=60000):
 diff -ruN o/lib/python/Components/RcModel.py pc/lib/python/Components/RcModel.py
---- o/lib/python/Components/RcModel.py	2026-01-07 12:56:09.578614996 +0300
+--- o/lib/python/Components/RcModel.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/RcModel.py	2026-01-07 15:19:42.000000000 +0300
 @@ -27,9 +27,9 @@
  		else:
@@ -6974,7 +7231,7 @@ diff -ruN o/lib/python/Components/RcModel.py pc/lib/python/Components/RcModel.py
  		else:
  			remote = 'dmm'	# default. Assume files for dmm exists
 diff -ruN o/lib/python/Components/Renderer/NextEpgInfo.py pc/lib/python/Components/Renderer/NextEpgInfo.py
---- o/lib/python/Components/Renderer/NextEpgInfo.py	2026-01-07 12:56:09.578614996 +0300
+--- o/lib/python/Components/Renderer/NextEpgInfo.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/Renderer/NextEpgInfo.py	2026-01-07 15:19:42.000000000 +0300
 @@ -32,15 +32,11 @@
  					if event:
@@ -6993,7 +7250,7 @@ diff -ruN o/lib/python/Components/Renderer/NextEpgInfo.py pc/lib/python/Componen
  	def applySkin(self, desktop, parent):
  		attribs = []
 diff -ruN o/lib/python/Components/Sensors.py pc/lib/python/Components/Sensors.py
---- o/lib/python/Components/Sensors.py	2026-01-07 12:56:09.579614928 +0300
+--- o/lib/python/Components/Sensors.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/Sensors.py	2026-01-07 15:19:42.000000000 +0300
 @@ -24,7 +24,7 @@
  	# returns a list of sensorids of type "type"
@@ -7005,7 +7262,7 @@ diff -ruN o/lib/python/Components/Sensors.py pc/lib/python/Components/Sensors.py
  		for sensorid in range(len(self.sensors_list)):
  			if self.sensors_list[sensorid][0] == type:
 diff -ruN o/lib/python/Components/ServiceEventTracker.py pc/lib/python/Components/ServiceEventTracker.py
---- o/lib/python/Components/ServiceEventTracker.py	2026-01-07 12:56:09.579614928 +0300
+--- o/lib/python/Components/ServiceEventTracker.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/ServiceEventTracker.py	2026-01-07 15:19:42.000000000 +0300
 @@ -114,11 +114,11 @@
  			screen.session.nav.event.append(ServiceEventTracker.event)
@@ -7022,7 +7279,7 @@ diff -ruN o/lib/python/Components/ServiceEventTracker.py pc/lib/python/Component
 +		for x in list(self.__eventmap.items()):
  			EventMap(x[0], []).remove((self.__passall, self.__screen, x[1]))
 diff -ruN o/lib/python/Components/SystemInfo.py pc/lib/python/Components/SystemInfo.py
---- o/lib/python/Components/SystemInfo.py	2026-01-07 15:18:21.375622497 +0300
+--- o/lib/python/Components/SystemInfo.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Components/SystemInfo.py	2026-01-07 15:19:42.000000000 +0300
 @@ -44,22 +44,14 @@
  	def __init__(self, root=""):
@@ -7049,7 +7306,7 @@ diff -ruN o/lib/python/Components/SystemInfo.py pc/lib/python/Components/SystemI
  			print("[SystemInfo] ERROR: %s is not available!  The system is unlikely to boot or operate correctly." % file)
  		self.boxInfo.setImmutable() #make what is derived from enigma.info immutable
 diff -ruN o/lib/python/Components/Task.py pc/lib/python/Components/Task.py
---- o/lib/python/Components/Task.py	2026-01-07 12:56:09.581614792 +0300
+--- o/lib/python/Components/Task.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Components/Task.py	2026-01-07 15:19:42.000000000 +0300
 @@ -5,7 +5,7 @@
  
@@ -7070,7 +7327,7 @@ diff -ruN o/lib/python/Components/Task.py pc/lib/python/Components/Task.py
  				self.realpath = absolutes[0]
  				return True
 diff -ruN o/lib/python/Components/UsageConfig.py pc/lib/python/Components/UsageConfig.py
---- o/lib/python/Components/UsageConfig.py	2026-01-07 15:18:21.375622497 +0300
+--- o/lib/python/Components/UsageConfig.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Components/UsageConfig.py	2026-01-07 15:19:42.000000000 +0300
 @@ -129,8 +129,8 @@
  	config.usage.default_path = ConfigText(default="")
@@ -7098,7 +7355,7 @@ diff -ruN o/lib/python/Components/UsageConfig.py pc/lib/python/Components/UsageC
  	config.streaming.stream_ecm = ConfigYesNo(default=False)
  	config.streaming.descramble = ConfigYesNo(default=True)
 diff -ruN o/lib/python/e2reactor.py pc/lib/python/e2reactor.py
---- o/lib/python/e2reactor.py	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/e2reactor.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/e2reactor.py	2026-01-07 15:19:42.000000000 +0300
 @@ -82,7 +82,7 @@
  		except:
@@ -7121,7 +7378,7 @@ diff -ruN o/lib/python/e2reactor.py pc/lib/python/e2reactor.py
  		writes.clear()
  		selectables.clear()
 diff -ruN o/lib/python/enigma_python.i pc/lib/python/enigma_python.i
---- o/lib/python/enigma_python.i	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/enigma_python.i	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/enigma_python.i	2026-01-07 15:19:42.000000000 +0300
 @@ -43,7 +43,6 @@
  #include <lib/base/message.h>
@@ -7140,7 +7397,7 @@ diff -ruN o/lib/python/enigma_python.i pc/lib/python/enigma_python.i
  %include <lib/gdi/font.h>
  %include <lib/gdi/gpixmap.h>
 diff -ruN o/lib/python/keyids.py pc/lib/python/keyids.py
---- o/lib/python/keyids.py	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/keyids.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/keyids.py	2026-01-07 15:19:42.000000000 +0300
 @@ -344,7 +344,7 @@
  
@@ -7152,7 +7409,7 @@ diff -ruN o/lib/python/keyids.py pc/lib/python/keyids.py
  			invKeyIds[value] = key
  		else:
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml pc/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml
---- o/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml	2026-01-07 12:56:09.584614587 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml	2026-01-07 15:19:42.000000000 +0300
 @@ -7,7 +7,7 @@
  		titlesetmode="multi"
@@ -7164,7 +7421,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DreamboxDVD.ddvdp.xml pc/lib/p
  	/>
  	<titles> </titles>
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py pc/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py
---- o/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py	2026-01-07 12:56:09.584614587 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py	2026-01-07 15:19:42.000000000 +0300
 @@ -20,7 +20,7 @@
  		cut_len = min(len(self.text), 40)
@@ -7200,7 +7457,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DVDProject.py pc/lib/python/Pl
  						audiotracks.append(' />\n')
  					audiotracks.append('\t\t\t</audiotracks>\n')
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py pc/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py
---- o/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py	2026-01-07 12:56:09.584614587 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py	2026-01-07 15:19:42.000000000 +0300
 @@ -181,7 +181,7 @@
  
@@ -7212,7 +7469,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/DVDToolbox.py pc/lib/python/Pl
  	def __init__(self, job, extra_args=[]):
  		Task.__init__(self, job, ("RW medium format"))
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/Process.py pc/lib/python/Plugins/Extensions/DVDBurn/Process.py
---- o/lib/python/Plugins/Extensions/DVDBurn/Process.py	2026-01-07 12:56:09.584614587 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/Process.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/Process.py	2026-01-07 15:19:42.000000000 +0300
 @@ -209,7 +209,7 @@
  
@@ -7233,7 +7490,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/Process.py pc/lib/python/Plugi
  	def __init__(self, job, extra_args=[], tool="growisofs"):
  		Task.__init__(self, job, job.name)
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py pc/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py
---- o/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py	2026-01-07 12:56:09.584614587 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py	2026-01-07 15:19:42.000000000 +0300
 @@ -169,9 +169,9 @@
  
@@ -7248,7 +7505,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/ProjectSettings.py pc/lib/pyth
  
  	def keyLeft(self):
 diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py pc/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py
---- o/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py	2026-01-07 12:56:09.585614518 +0300
+--- o/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py	2026-01-07 15:19:42.000000000 +0300
 @@ -151,10 +151,10 @@
  		syslang = syslanguage.getLanguage()[:2]
@@ -7282,7 +7539,7 @@ diff -ruN o/lib/python/Plugins/Extensions/DVDBurn/TitleProperties.py pc/lib/pyth
  				return key
  		return "nolang"
 diff -ruN o/lib/python/Plugins/Extensions/MediaPlayer/plugin.py pc/lib/python/Plugins/Extensions/MediaPlayer/plugin.py
---- o/lib/python/Plugins/Extensions/MediaPlayer/plugin.py	2026-01-07 12:56:09.596613767 +0300
+--- o/lib/python/Plugins/Extensions/MediaPlayer/plugin.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/MediaPlayer/plugin.py	2026-01-07 15:19:42.000000000 +0300
 @@ -352,13 +352,11 @@
  		currPlay = self.session.nav.getCurrentService()
@@ -7299,7 +7556,7 @@ diff -ruN o/lib/python/Plugins/Extensions/MediaPlayer/plugin.py pc/lib/python/Pl
  	def __evPluginError(self):
  		currPlay = self.session.nav.getCurrentService()
 diff -ruN o/lib/python/Plugins/Extensions/PicturePlayer/ui.py pc/lib/python/Plugins/Extensions/PicturePlayer/ui.py
---- o/lib/python/Plugins/Extensions/PicturePlayer/ui.py	2026-01-07 12:56:09.599613563 +0300
+--- o/lib/python/Plugins/Extensions/PicturePlayer/ui.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/Extensions/PicturePlayer/ui.py	2026-01-07 15:19:42.000000000 +0300
 @@ -20,7 +20,7 @@
  
@@ -7329,7 +7586,7 @@ diff -ruN o/lib/python/Plugins/Extensions/PicturePlayer/ui.py pc/lib/python/Plug
  		if self.index > self.maxentry:
  			self.index = 0
 diff -ruN o/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py pc/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py
---- o/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py	2026-01-07 12:56:09.603613290 +0300
+--- o/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py	2026-01-07 15:19:42.000000000 +0300
 @@ -53,9 +53,9 @@
  				if transponder[2] == "pids_failed":
@@ -7396,7 +7653,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/DiseqcTester/plugin.py pc/lib/pytho
  			return (self.myindex < len(self.keylist))
  
 diff -ruN o/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py pc/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py
---- o/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py	2026-01-07 12:56:09.603613290 +0300
+--- o/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py	2026-01-07 15:19:42.000000000 +0300
 @@ -1,6 +1,6 @@
  #!/usr/bin/python
@@ -7434,7 +7691,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/FastChannelChange/plugin.py pc/lib/
  			locked = value[1]
  			if state != 1 and locked == 0: # no fcc decoding and no locked
 diff -ruN o/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py pc/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py
---- o/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py	2026-01-07 12:56:09.605613153 +0300
+--- o/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py	2026-01-07 15:19:42.000000000 +0300
 @@ -126,7 +126,7 @@
  	def checkOldInterfaceState(self):
@@ -7446,7 +7703,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/NetworkWizard/NetworkWizard.py pc/l
  					if not self.originalInterfaceState[interface]["up"]:
  						if iNetwork.checkforInterface(interface):
 diff -ruN o/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py pc/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py
---- o/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py	2026-01-07 12:56:09.608612949 +0300
+--- o/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py	2026-01-07 15:19:42.000000000 +0300
 @@ -6,8 +6,8 @@
  # because the log unit looks enough like a file!
@@ -7459,7 +7716,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/PositionerSetup/log.py pc/lib/pytho
  logfile = None
  # Need to make our operations thread-safe.
 diff -ruN o/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py pc/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py
---- o/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py	2026-01-07 12:56:09.612612675 +0300
+--- o/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py	2026-01-07 15:19:42.000000000 +0300
 @@ -112,7 +112,7 @@
  
@@ -7471,8 +7728,8 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/SoftwareManager/BackupRestore.py pc
  		self["checkList"] = self.filelist
  
 diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py pc/lib/python/Plugins/SystemPlugins/Videomode/plugin.py
---- o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py	2026-01-07 12:56:09.623611924 +0300
-+++ pc/lib/python/Plugins/SystemPlugins/Videomode/plugin.py	2026-07-27 13:32:30.093784561 +0300
+--- o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/python/Plugins/SystemPlugins/Videomode/plugin.py	2026-10-11 22:36:21.628717488 +0300
 @@ -1,6 +1,6 @@
  from Screens.Screen import Screen
  from Plugins.Plugin import PluginDescriptor
@@ -7486,7 +7743,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py pc/lib/python/P
  		# for the skin: first try VideoSetup, then Setup, this allows individual skinning
  		self.skinName = ["VideoSetup", "Setup"]
 -		self.setTitle(_("A/V settings"))
-+		self.setTitle(_("Xine A/V settings"))
++		self.setup_title = _("Xine A/V settings")
  		self.hw = hw
  		self.onChangedEntry = []
 +		self.port = "DVI-PC"
@@ -7662,15 +7919,15 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py pc/lib/python/P
  
  		self["config"].list = self.list
  
-@@ -168,7 +144,6 @@
+@@ -168,35 +144,27 @@
  
  	def confirm(self, confirmed):
  		if not confirmed:
 -			config.av.videoport.value = self.last_good[0]
- 			config.av.videomode[self.last_good[0]].value = self.last_good[1]
+-			config.av.videomode[self.last_good[0]].value = self.last_good[1]
  			config.av.videorate[self.last_good[1]].value = self.last_good[2]
  			self.hw.setMode(*self.last_good)
-@@ -176,27 +151,21 @@
+ 		else:
  			self.keySave()
  
  	def grabLastGoodMode(self):
@@ -7705,18 +7962,36 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py pc/lib/python/P
  		ConfigListScreen.keySave(self)
  
  class VideomodeHotplug:
-@@ -211,9 +180,7 @@
+@@ -211,21 +179,17 @@
  
  	def hotplug(self, what):
  		print("hotplug detected on port '%s'" % (what))
 -		port = config.av.videoport.value
 -		mode = config.av.videomode[port].value
 -		rate = config.av.videorate[mode].value
+-
+-		if not self.hw.isModeAvailable(port, mode, rate):
+-			print("mode %s/%s/%s went away!" % (port, mode, rate))
+-			modelist = self.hw.getModeList(port)
 +		rate = config.av.videorate.value
++
++		if not self.hw.isModeAvailable(self.port, rate):
++			print("mode %s/%s/%s went away!" % (self.port, rate))
++			modelist = self.hw.getModeList(self.port)
+ 			if not len(modelist):
+ 				print("sorry, no other mode is available (unplug?). Doing nothing.")
+ 				return
+-			mode = modelist[0][0]
+ 			rate = modelist[0][1]
+-			print("setting %s/%s/%s" % (port, mode, rate))
+-			self.hw.setMode(port, mode, rate)
+-
++			print("setting %s/%s/%s" % (self.port, rate))
++			self.hw.setMode(self.port, rate)
  
- 		if not self.hw.isModeAvailable(port, mode, rate):
- 			print("mode %s/%s/%s went away!" % (port, mode, rate))
-@@ -258,11 +225,10 @@
+ hotplug = None
+ 
+@@ -258,11 +222,10 @@
  
  
  def startSetup(menuid):
@@ -7731,7 +8006,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/plugin.py pc/lib/python/P
  def VideoWizard(*args, **kwargs):
  	from Plugins.SystemPlugins.Videomode.VideoWizard import VideoWizard
 diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py pc/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py
---- o/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py	2026-01-07 12:56:09.620612129 +0300
+--- o/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py	2026-01-07 15:19:42.000000000 +0300
 @@ -1,7 +1,9 @@
 +from enigma import eTimer, eAVSwitch
@@ -8239,7 +8514,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/VideoHardware.py pc/lib/p
  video_hw = VideoHardware()
  video_hw.setConfiguredMode()
 diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py pc/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py
---- o/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py	2026-01-07 12:56:09.620612129 +0300
+--- o/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py	2026-01-07 15:19:42.000000000 +0300
 @@ -3,9 +3,9 @@
  from Screens.Rc import Rc
@@ -8344,7 +8619,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/Videomode/VideoWizard.py pc/lib/pyt
  				self.hw.setMode(port=self.port, mode=mode, rate="auto")
  			else:
 diff -ruN o/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am pc/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am
---- o/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am	2026-01-07 12:56:09.617612334 +0300
+--- o/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am	2026-01-07 15:19:42.000000000 +0300
 @@ -4,4 +4,4 @@
  
@@ -8353,7 +8628,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/VideoTune/Makefile.am pc/lib/python
 -	plugin.py VideoFinetune.py testbeeld-4k.mvi
 +	plugin.py VideoFinetune.py
 diff -ruN o/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py pc/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py
---- o/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py	2026-01-07 12:56:09.618612266 +0300
+--- o/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py	2026-01-07 15:19:42.000000000 +0300
 @@ -3,7 +3,7 @@
  from Components.Sources.CanvasSource import CanvasSource
@@ -8537,7 +8812,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/VideoTune/VideoFinetune.py pc/lib/p
 -	def keyNumber(self, key):
 -		self.close(key)
 diff -ruN o/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py pc/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py
---- o/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py	2026-01-07 12:56:09.625611788 +0300
+--- o/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py	2026-01-07 15:19:42.000000000 +0300
 @@ -279,7 +279,7 @@
  		currentListEntry = None
@@ -8549,7 +8824,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py pc/lib/python
  			if data is not None:
  				tmpList.append(data)
 diff -ruN o/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py pc/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py
---- o/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py	2026-01-07 12:56:09.624611856 +0300
+--- o/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py	2026-01-07 15:19:42.000000000 +0300
 @@ -206,7 +206,7 @@
  					'key': "",
@@ -8570,7 +8845,7 @@ diff -ruN o/lib/python/Plugins/SystemPlugins/WirelessLan/Wlan.py pc/lib/python/P
  					if key == 'hiddenessid':
  						wsconfig['hiddenessid'] = False
 diff -ruN o/lib/python/Screens/About.py pc/lib/python/Screens/About.py
---- o/lib/python/Screens/About.py	2026-01-07 15:18:21.376622450 +0300
+--- o/lib/python/Screens/About.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Screens/About.py	2026-01-07 15:19:42.000000000 +0300
 @@ -37,8 +37,6 @@
  		AboutText += _("CPU: ") + cpu + "\n"
@@ -8651,7 +8926,7 @@ diff -ruN o/lib/python/Screens/About.py pc/lib/python/Screens/About.py
  				self.titles.append("%s" % install_log)
  				self.commands.append("cat %s" % install_log)
 diff -ruN o/lib/python/Screens/AudioSelection.py pc/lib/python/Screens/AudioSelection.py
---- o/lib/python/Screens/AudioSelection.py	2026-01-07 12:56:09.626611720 +0300
+--- o/lib/python/Screens/AudioSelection.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/AudioSelection.py	2026-01-07 15:19:42.000000000 +0300
 @@ -21,7 +21,7 @@
  
@@ -8684,7 +8959,7 @@ diff -ruN o/lib/python/Screens/AudioSelection.py pc/lib/python/Screens/AudioSele
  	skin = """
  	<screen position="50,50" size="480,305" title="Subtitle settings" backgroundColor="#7f000000" flags="wfNoBorder">
 diff -ruN o/lib/python/Screens/Dish.py pc/lib/python/Screens/Dish.py
---- o/lib/python/Screens/Dish.py	2026-01-07 12:56:09.628611583 +0300
+--- o/lib/python/Screens/Dish.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/Dish.py	2026-01-07 15:19:42.000000000 +0300
 @@ -211,7 +211,7 @@
  					return nim.turningspeedH.float
@@ -8696,7 +8971,7 @@ diff -ruN o/lib/python/Screens/Dish.py pc/lib/python/Screens/Dish.py
  						lnbnum = int(currSat.lnb.value)
  						currLnb = lnbnum and nimConfig.advanced.lnb[lnbnum]
 diff -ruN o/lib/python/Screens/EpgSelection.py pc/lib/python/Screens/EpgSelection.py
---- o/lib/python/Screens/EpgSelection.py	2026-01-07 12:56:09.628611583 +0300
+--- o/lib/python/Screens/EpgSelection.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/EpgSelection.py	2026-01-07 15:19:42.000000000 +0300
 @@ -81,8 +81,8 @@
  			self.setTitle(_("Multi EPG"))
@@ -8710,7 +8985,7 @@ diff -ruN o/lib/python/Screens/EpgSelection.py pc/lib/python/Screens/EpgSelectio
  			self["next_button"] = Pixmap()
  			self["more_button"] = Pixmap()
 diff -ruN o/lib/python/Screens/FlashImage.py pc/lib/python/Screens/FlashImage.py
---- o/lib/python/Screens/FlashImage.py	2026-01-07 12:56:09.629611515 +0300
+--- o/lib/python/Screens/FlashImage.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/FlashImage.py	2026-01-07 15:19:42.000000000 +0300
 @@ -107,7 +107,7 @@
  					print("[FlashImage] getImageBrandList Error: Unable to load json data from URL '%s'!" % url)
@@ -8756,7 +9031,7 @@ diff -ruN o/lib/python/Screens/FlashImage.py pc/lib/python/Screens/FlashImage.py
  				choices.append(((_("slot%s - %s (current image) with, backup") if x == currentimageslot else _("slot%s - %s, with backup")) % (x, imagesList[x]['imagename']), (x, "with backup")))
  			for x in range(1, len(slotdict) + 1):
 diff -ruN o/lib/python/Screens/Hotkey.py pc/lib/python/Screens/Hotkey.py
---- o/lib/python/Screens/Hotkey.py	2026-01-07 15:18:21.377622403 +0300
+--- o/lib/python/Screens/Hotkey.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Screens/Hotkey.py	2026-01-07 15:19:42.000000000 +0300
 @@ -236,8 +236,8 @@
  	hotkey.functions.append((_("PowerMenu"), "Menu/shutdown", "Power"))
@@ -8770,7 +9045,7 @@ diff -ruN o/lib/python/Screens/Hotkey.py pc/lib/python/Screens/Hotkey.py
  	hotkey.functions.append((_("User interface"), "Setup/userinterface", "Setup"))
  	hotkey.functions.append((_("Recording Setup"), "Setup/recording", "Setup"))
 diff -ruN o/lib/python/Screens/InfoBarGenerics.py pc/lib/python/Screens/InfoBarGenerics.py
---- o/lib/python/Screens/InfoBarGenerics.py	2026-01-07 12:56:09.630611447 +0300
+--- o/lib/python/Screens/InfoBarGenerics.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/InfoBarGenerics.py	2026-01-07 15:19:42.000000000 +0300
 @@ -633,8 +633,7 @@
  	def mayShowEndTimer(self):
@@ -8793,7 +9068,7 @@ diff -ruN o/lib/python/Screens/InfoBarGenerics.py pc/lib/python/Screens/InfoBarG
  class InfoBarHDMI:
  	def HDMIIn(self):
 diff -ruN o/lib/python/Screens/PluginBrowser.py pc/lib/python/Screens/PluginBrowser.py
---- o/lib/python/Screens/PluginBrowser.py	2026-01-07 12:56:09.632611310 +0300
+--- o/lib/python/Screens/PluginBrowser.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/PluginBrowser.py	2026-01-07 15:19:42.000000000 +0300
 @@ -58,7 +58,6 @@
  		self.firsttime = True
@@ -8821,7 +9096,7 @@ diff -ruN o/lib/python/Screens/PluginBrowser.py pc/lib/python/Screens/PluginBrow
  				list.append(PluginCategoryComponent(x, expandedIcon, self.listWidth))
  				list.extend([PluginDownloadComponent(plugin[0], plugin[1], plugin[2], self.listWidth) for plugin in self.plugins[x]])
 diff -ruN o/lib/python/Screens/Satconfig.py pc/lib/python/Screens/Satconfig.py
---- o/lib/python/Screens/Satconfig.py	2026-01-07 12:56:09.633611242 +0300
+--- o/lib/python/Screens/Satconfig.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/Satconfig.py	2026-01-07 15:19:42.000000000 +0300
 @@ -149,7 +149,7 @@
  				self.list.append(self.configMode)
@@ -8851,7 +9126,7 @@ diff -ruN o/lib/python/Screens/Satconfig.py pc/lib/python/Screens/Satconfig.py
  			self.fillListWithAdvancedSatEntrys(Sat)
  		self["config"].list = self.list
 diff -ruN o/lib/python/Screens/Screen.py pc/lib/python/Screens/Screen.py
---- o/lib/python/Screens/Screen.py	2026-01-07 15:18:21.379622308 +0300
+--- o/lib/python/Screens/Screen.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Screens/Screen.py	2026-01-07 15:19:42.000000000 +0300
 @@ -17,7 +17,7 @@
  
@@ -8872,7 +9147,7 @@ diff -ruN o/lib/python/Screens/Screen.py pc/lib/python/Screens/Screen.py
  				val.GUIdelete()
  
 diff -ruN o/lib/python/Screens/StartWizard.py pc/lib/python/Screens/StartWizard.py
---- o/lib/python/Screens/StartWizard.py	2026-01-07 12:56:09.634611174 +0300
+--- o/lib/python/Screens/StartWizard.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/StartWizard.py	2026-01-07 15:19:42.000000000 +0300
 @@ -108,7 +108,7 @@
  		self["AboutScrollLabel"] = ScrollLabel("", showscrollbar=False)
@@ -8893,7 +9168,7 @@ diff -ruN o/lib/python/Screens/StartWizard.py pc/lib/python/Screens/StartWizard.
  		if self.packages:
  			self.run_console()
 diff -ruN o/lib/python/Screens/VirtualKeyBoard.py pc/lib/python/Screens/VirtualKeyBoard.py
---- o/lib/python/Screens/VirtualKeyBoard.py	2026-01-07 12:56:09.635611106 +0300
+--- o/lib/python/Screens/VirtualKeyBoard.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Screens/VirtualKeyBoard.py	2026-01-07 15:19:42.000000000 +0300
 @@ -1048,7 +1048,7 @@
  
@@ -8905,7 +9180,7 @@ diff -ruN o/lib/python/Screens/VirtualKeyBoard.py pc/lib/python/Screens/VirtualK
  		languages = sorted(languages)
  		index = 0
 diff -ruN o/lib/python/Screens/Wizard.py pc/lib/python/Screens/Wizard.py
---- o/lib/python/Screens/Wizard.py	2026-01-07 15:18:21.379622308 +0300
+--- o/lib/python/Screens/Wizard.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/Screens/Wizard.py	2026-01-07 15:19:42.000000000 +0300
 @@ -309,7 +309,7 @@
  	def getStepWithID(self, id):
@@ -8926,7 +9201,7 @@ diff -ruN o/lib/python/Screens/Wizard.py pc/lib/python/Screens/Wizard.py
  				self.markDone()
  				self.exit()
 diff -ruN o/lib/python/skin.py pc/lib/python/skin.py
---- o/lib/python/skin.py	2026-01-07 15:18:21.381622213 +0300
+--- o/lib/python/skin.py	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/python/skin.py	2026-01-07 15:19:42.000000000 +0300
 @@ -440,7 +440,7 @@
  	size = None
@@ -8951,7 +9226,7 @@ diff -ruN o/lib/python/skin.py pc/lib/python/skin.py
  			p = processors.get(w.tag, processNone)
  			try:
 diff -ruN o/lib/python/StartEnigma.py pc/lib/python/StartEnigma.py
---- o/lib/python/StartEnigma.py	2026-01-07 12:56:09.635611106 +0300
+--- o/lib/python/StartEnigma.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/StartEnigma.py	2026-01-07 15:19:42.000000000 +0300
 @@ -123,10 +123,10 @@
  
@@ -8967,7 +9242,7 @@ diff -ruN o/lib/python/StartEnigma.py pc/lib/python/StartEnigma.py
  				had[str(value)] = 1
  				dump(value, p + "/" + str(name))
 diff -ruN o/lib/python/Tools/KeyBindings.py pc/lib/python/Tools/KeyBindings.py
---- o/lib/python/Tools/KeyBindings.py	2026-01-07 12:56:09.636611037 +0300
+--- o/lib/python/Tools/KeyBindings.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Tools/KeyBindings.py	2026-01-07 15:19:42.000000000 +0300
 @@ -428,7 +428,7 @@
  
@@ -8979,7 +9254,7 @@ diff -ruN o/lib/python/Tools/KeyBindings.py pc/lib/python/Tools/KeyBindings.py
  				removeKeyBinding(key, context, action, False)
  		return
 diff -ruN o/lib/python/Tools/Multiboot.py pc/lib/python/Tools/Multiboot.py
---- o/lib/python/Tools/Multiboot.py	2026-01-07 12:56:09.636611037 +0300
+--- o/lib/python/Tools/Multiboot.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Tools/Multiboot.py	2026-01-07 15:19:42.000000000 +0300
 @@ -118,7 +118,7 @@
  				return int(slot[0])
@@ -9018,7 +9293,7 @@ diff -ruN o/lib/python/Tools/Multiboot.py pc/lib/python/Tools/Multiboot.py
  				imagelist[slot] = {'imagename': getSlotImageInfo(slot, imagedir=imagedir)}
  			elif os.path.isfile(os.path.join(imagedir, 'usr/bin/enigma2.bak')):
 diff -ruN o/lib/python/Tools/NumericalTextInput.py pc/lib/python/Tools/NumericalTextInput.py
---- o/lib/python/Tools/NumericalTextInput.py	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/Tools/NumericalTextInput.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Tools/NumericalTextInput.py	2026-01-07 15:19:42.000000000 +0300
 @@ -44,93 +44,93 @@
  	"cs_CZ": (
@@ -9267,7 +9542,7 @@ diff -ruN o/lib/python/Tools/NumericalTextInput.py pc/lib/python/Tools/Numerical
  }
  
 diff -ruN o/lib/python/Tools/Transponder.py pc/lib/python/Tools/Transponder.py
---- o/lib/python/Tools/Transponder.py	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/Tools/Transponder.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Tools/Transponder.py	2026-01-07 15:19:42.000000000 +0300
 @@ -257,7 +257,7 @@
  			eDVBFrontendParametersATSC.System_DVB_C_ANNEX_B: "DVB-C ANNEX B"}.get(tp.get("system"))
@@ -9279,7 +9554,7 @@ diff -ruN o/lib/python/Tools/Transponder.py pc/lib/python/Tools/Transponder.py
  			ret[k] = v
  	return ret
 diff -ruN o/lib/python/Tools/XMLTools.py pc/lib/python/Tools/XMLTools.py
---- o/lib/python/Tools/XMLTools.py	2026-01-07 12:56:09.637610969 +0300
+--- o/lib/python/Tools/XMLTools.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/python/Tools/XMLTools.py	2026-01-07 15:19:42.000000000 +0300
 @@ -27,7 +27,7 @@
  
@@ -9291,8 +9566,8 @@ diff -ruN o/lib/python/Tools/XMLTools.py pc/lib/python/Tools/XMLTools.py
  		text = illegal_xml_chars_RE.sub('', text.decode('utf-8'))
  	else:
 diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
---- o/lib/service/servicedvb.cpp	2026-01-07 12:56:09.640610764 +0300
-+++ pc/lib/service/servicedvb.cpp	2026-01-07 15:19:42.000000000 +0300
+--- o/lib/service/servicedvb.cpp	2026-01-07 12:56:09.000000000 +0300
++++ pc/lib/service/servicedvb.cpp	2026-10-11 22:30:45.499808298 +0300
 @@ -191,7 +191,6 @@
  	eBouquet *bouquet = NULL;
  	if ((err = db->getBouquet(ref, bouquet)) != 0)
@@ -9300,6 +9575,17 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
 -		eDebug("[eStaticServiceDVBBouquetInformation] getName failed.. getBouquet failed!");
  		return -1;
  	}
+ 
+@@ -575,8 +574,8 @@
+ 
+ static int reindex_work(const std::string& filename)
+ {
+-	/* This does not work, need to call parser.setPid(pid, type) otherwise
+-	 * the parser will not actually output any data! */
++	// This does not work, need to call parser.setPid(pid, type) otherwise
++	// the parser will not actually output any data!
+ 
+ 	eRawFile f;
  
 @@ -1059,6 +1058,8 @@
  		CONNECT(m_service_handler.serviceEvent, eDVBServicePlay::serviceEvent);
@@ -9348,7 +9634,31 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		break;
  	}
  	case eDVBServicePMTHandler::eventPreStart:
-@@ -1378,6 +1403,9 @@
+@@ -1334,7 +1359,7 @@
+ 				resetTimeshift(1);
+ 
+ 				ePtr<iTsSource> source = createTsSource(r);
+-				m_service_handler_timeshift.tuneExt(r, source, m_timeshift_file_next.c_str(), m_cue, 0, m_dvb_service, eDVBServicePMTHandler::timeshift_playback, false); /* use the decoder demux for everything */
++				m_service_handler_timeshift.tuneExt(r, source, m_timeshift_file_next.c_str(), m_cue, 0, m_dvb_service, eDVBServicePMTHandler::timeshift_playback, false); // use the decoder demux for everything
+ 
+ 				m_event((iPlayableService*)this, evUser+1);
+ 			}
+@@ -1354,9 +1379,11 @@
+ 	if(tryFallbackTuner(/*REF*/service, /*REF*/m_is_stream, m_is_pvr, /*simulate*/false))
+ 		eDebug("ServicePlay: fallback tuner selected");
+ 
+-		/* in pvr mode, we only want to use one demux. in tv mode, we're using
+-		   two (one for decoding, one for data source), as we must be prepared
+-		   to start recording from the data demux. */
++		/*
++		 in pvr mode, we only want to use one demux. in tv mode, we're using
++		 two (one for decoding, one for data source), as we must be prepared
++		 to start recording from the data demux.
++		*/
+ 	if (m_is_pvr)
+ 	{
+ 		eDVBMetaParser meta;
+@@ -1378,12 +1405,15 @@
  	else
  		m_event(this, evStart);
  
@@ -9358,21 +9668,26 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	if (m_is_stream)
  	{
  		/*
-@@ -1393,11 +1421,11 @@
+ 		 * streams are considered to be descrambled by default;
+ 		 * user can indicate a stream is scrambled, by using servicetype id + 0x100
+-		 */
++		*/
+ 		bool config_descramble_client = eConfigManager::getConfigBoolValue("config.streaming.descramble_client", false);
+ 
+ 		scrambled = (m_reference.type == eServiceFactoryDVB::id + 0x100);
+@@ -1393,11 +1423,6 @@
  
  		type = eDVBServicePMTHandler::streamclient;
  	}
 -
-+/*
- 	m_first_program_info = 1;
- 	ePtr<iTsSource> source = createTsSource(service, packetsize);
- 	ret = m_service_handler.tuneExt(service, source, service.path.c_str(), m_cue, false, m_dvb_service, type, scrambled);
+-	m_first_program_info = 1;
+-	ePtr<iTsSource> source = createTsSource(service, packetsize);
+-	ret = m_service_handler.tuneExt(service, source, service.path.c_str(), m_cue, false, m_dvb_service, type, scrambled);
 -
-+*/
  	if (m_is_pvr)
  	{
  		/* inject EIT if there is a stored one */
-@@ -1413,6 +1441,18 @@
+@@ -1413,6 +1438,17 @@
  		}
  		m_event(this, evStart);
  	}
@@ -9387,11 +9702,10 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
 +	ePtr<iTsSource> source = createTsSource(service, packetsize);
 +	ret = m_service_handler.tuneExt(service, source, service.path.c_str(), m_cue, false, m_dvb_service, type, scrambled);
 +
-+//	return 0;
  	return ret;
  }
  
-@@ -1455,6 +1495,18 @@
+@@ -1455,6 +1491,18 @@
  
  	stopTimeshift(); /* in case timeshift was enabled, remove buffer etc. */
  
@@ -9410,16 +9724,30 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	m_service_handler_timeshift.free();
  	m_service_handler.free();
  
-@@ -1628,7 +1680,7 @@
+@@ -1479,9 +1527,11 @@
+ 
+ RESULT eDVBServicePlay::pause(ePtr<iPauseableService> &ptr)
  {
- 	eDebug("[eDVBServicePlay] seekTo %lld", to);
+-		/* note: we check for timeshift to be enabled,
++		/*
++		 note: we check for timeshift to be enabled,
+ 			not neccessary active. if you pause when timeshift
+-			is not active, you should activate it when unpausing */
++			is not active, you should activate it when unpausing
++		*/
+ 	if ((!m_is_pvr) && (!m_timeshift_enabled) && (m_reference.path.empty() || m_reference.isStreamRelay))
+ 	{
+ 		ptr = nullptr;
+@@ -1587,7 +1637,7 @@
+ 	return -1;
+ }
  
--	if (!m_decode_demux)
-+	if (!m_decode_demux) /*??????????????????*/
- 		return -1;
- 
+-	/* TODO: when timeshift is enabled but not active, this doesn't work. */
++/* TODO: when timeshift is enabled but not active, this doesn't work. */
+ RESULT eDVBServicePlay::getLength(pts_t &len)
+ {
  	ePtr<iDVBPVRChannel> pvr_channel;
-@@ -1643,6 +1695,9 @@
+@@ -1643,6 +1693,9 @@
  	m_dvb_subtitle_pages.clear();
  	m_subtitle_pages.clear();
  
@@ -9429,7 +9757,16 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	return 0;
  }
  
-@@ -1672,6 +1727,10 @@
+@@ -1660,7 +1713,7 @@
+ 
+ 	int mode = 1;
+ 
+-			/* HACK until we have skip-AP api */
++	/* HACK until we have skip-AP api */
+ 	if ((to > 0) && (to < 100))
+ 		mode = 2;
+ 
+@@ -1672,6 +1725,10 @@
  	m_cue->seekTo(mode, to);
  	m_dvb_subtitle_pages.clear();
  	m_subtitle_pages.clear();
@@ -9440,23 +9777,34 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	return 0;
  }
  
-@@ -1688,12 +1747,9 @@
+@@ -1687,13 +1744,10 @@
+ 
  	int r = 0;
  
- 		/* if there is a decoder, use audio or video PTS */
+-		/* if there is a decoder, use audio or video PTS */
 -	if (m_decoder)
 -	{
 -		r = m_decoder->getPTS(0, pos);
 -		if (r)
 -			return r;
 -	}
++	/* if there is a decoder, use audio or video PTS */
 +	r = xineLib->getPTS(pos);
 +	if (r)
 +		return r;
  
  		/* fixup */
  	return pvr_channel->getCurrentPosition(m_decode_demux, pos, m_decoder);
-@@ -1893,22 +1949,21 @@
+@@ -1701,7 +1755,7 @@
+ 
+ RESULT eDVBServicePlay::setTrickmode(int trick)
+ {
+-		/* currently unimplemented */
++	/* currently unimplemented */
+ 	return -1;
+ }
+ 
+@@ -1893,22 +1947,21 @@
  	switch (w)
  	{
  	case sVideoHeight:
@@ -9484,7 +9832,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		if (aspect == -1 && no_program_info)
  			break;
  		else if (aspect == -1 && !program.videoStreams.empty() && program.videoStreams[0].component_tag != -1)
-@@ -2146,6 +2201,9 @@
+@@ -2146,6 +2199,9 @@
  	if (m_decoder->set())
  		return -5;
  
@@ -9494,7 +9842,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	return ret;
  }
  
-@@ -2238,7 +2296,12 @@
+@@ -2238,7 +2294,12 @@
  
  	m_current_audio_pid = apid;
  
@@ -9508,7 +9856,119 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	{
  		eDebug("[eDVBServicePlay] set audio pid %04x failed", apid);
  		return -4;
-@@ -2799,7 +2862,7 @@
+@@ -2272,7 +2333,8 @@
+ 		}
+ 	}
+ 
+-			/* store new pid as default only when:
++			/*
++			 store new pid as default only when:
+ 				a.) we have an entry in the service db for the current service,
+ 				b.) we are not playing back something,
+ 				c.) we are not selecting the default entry. (we wouldn't change
+@@ -2414,10 +2476,10 @@
+ 
+ 	if (eDVBResourceManager::getInstance(res_mgr))
+ 		return false;
+-	service.getChannelID(chid); 						// this sets chid
+-	eServiceReferenceDVB().getChannelID(chid_ignore);	// this sets chid_ignore
++	service.getChannelID(chid); // this sets chid
++	eServiceReferenceDVB().getChannelID(chid_ignore); // this sets chid_ignore
+ 
+-	if(res_mgr->canAllocateChannel(chid, chid_ignore, eDVBChannelID(), system))	// this sets system
++	if(res_mgr->canAllocateChannel(chid, chid_ignore, eDVBChannelID(), system)) // this sets system
+ 		return false;
+ 
+ 	if (eConfigManager::getConfigBoolValue("config.usage.remote_fallback_alternative", false) && !(system == iDVBFrontend::feSatellite))
+@@ -2564,55 +2626,51 @@
+ 
+ RESULT eDVBServicePlay::startTimeshift()
+ {
+-	ePtr<iDVBDemux> demux;
+-
+-	eDebug("[eDVBServicePlay] Start timeshift!");
++	eDebug("[eDVBServicePlay] Start PC-timeshift!");
+ 
+ 	if (m_timeshift_enabled)
+ 		return -1;
+ 
+-		/* start recording with the data demux. */
+-	if (m_service_handler.getDataDemux(demux))
+-		return -2;
+-
+-	demux->createTSRecorder(m_record);
+-	if (!m_record)
++	// Нам обязательно нужен работающий ПК-рекордер живого эфира
++	if (!m_openpliPC_record)
++	{
++		eDebug("[eDVBServicePlay] PC recorder not found, cannot start timeshift!");
+ 		return -3;
++	}
+ 
+ 	std::string tspath = eConfigManager::getConfigValue("config.usage.timeshift_path");
+-	if (tspath == "")
++	if (tspath == "" || tspath.empty())
+ 	{
+ 		eDebug("[eDVBServicePlay] could not query timeshift path");
+ 		return -5;
+ 	}
+-	if (tspath.empty())
+-	{
+-		eDebug("[eDVBServicePlay] timeshift path is empty");
+-		return -5;
+-	}
+ 	if (tspath[tspath.length()-1] != '/')
+ 		tspath.append("/");
+ 	tspath.append("timeshift.XXXXXX");
++
+ 	char* templ = new char[tspath.length() + 1];
+ 	strcpy(templ, tspath.c_str());
+ 	m_timeshift_fd = mkstemp(templ);
+ 	m_timeshift_file = std::string(templ);
+-	eDebug("[eDVBServicePlay] timeshift recording to %s", templ);
++	eDebug("[eDVBServicePlay] PC timeshift recording to %s", templ);
+ 	delete [] templ;
+ 
+ 	if (m_timeshift_fd < 0)
+ 	{
+-		m_record = 0;
+ 		return -4;
+ 	}
+ 
+-	m_record->setTargetFD(m_timeshift_fd);
+-	m_record->setTargetFilename(m_timeshift_file);
+-	m_record->enableAccessPoints(false); // no need for AP information during shift
++	// Вместо стандартного m_record перенаправляем ПК-рекордер в файл таймшифта!
++	m_openpliPC_record->stop();
++	m_openpliPC_record->setTargetFD(m_timeshift_fd);
++	m_openpliPC_record->setTargetFilename(m_timeshift_file);
++	m_openpliPC_record->enableAccessPoints(false); 
++
+ 	m_timeshift_enabled = 1;
+ 
++	// Обновляем PID'ы именно для ПК-рекордера
+ 	updateTimeshiftPids();
+-	m_record->start();
++	m_openpliPC_record->start();
+ 
+ 	return 0;
+ }
+@@ -2627,8 +2685,12 @@
+ 
+ 	m_timeshift_enabled = 0;
+ 
+-	m_record->stop();
+-	m_record = 0;
++	// ЗАЩИТА OpenPLi-PC ОТ КРЭША: если указатель пустой, не пытаемся его останавливать
++	if (m_record)
++	{
++		m_record->stop();
++		m_record = 0;
++	}
+ 
+ 	if (m_timeshift_fd >= 0)
+ 	{
+@@ -2799,7 +2861,7 @@
  
  void eDVBServicePlay::updateTimeshiftPids()
  {
@@ -9517,27 +9977,58 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		return;
  
  	eDVBServicePMTHandler::program program;
-@@ -2864,13 +2927,16 @@
- 				);
+@@ -2851,26 +2913,36 @@
+ 			i != program.subtitleStreams.end(); ++i)
+ 				pids_to_record.insert(i->pid);
  
+-		std::set<int> new_pids, obsolete_pids;
++	std::set<int> new_pids, obsolete_pids;
+ 
+-		std::set_difference(pids_to_record.begin(), pids_to_record.end(),
+-				m_pids_active.begin(), m_pids_active.end(),
+-				std::inserter(new_pids, new_pids.begin()));
+-
+-		std::set_difference(
+-				m_pids_active.begin(), m_pids_active.end(),
+-				pids_to_record.begin(), pids_to_record.end(),
+-				std::inserter(new_pids, new_pids.begin())
+-				);
++	std::set_difference(pids_to_record.begin(), pids_to_record.end(),
++		m_pids_active.begin(), m_pids_active.end(),
++		std::inserter(new_pids, new_pids.begin()));
+ 
++	// ИСПРАВЛЕНО: Теперь пишем строго в obsolete_pids, как и должно быть по математике множеств
++	std::set_difference(m_pids_active.begin(), m_pids_active.end(),
++		pids_to_record.begin(), pids_to_record.end(),
++		std::inserter(obsolete_pids, obsolete_pids.begin()));
++
++	// ПК-ВСТАВКА: Если включен таймшифт, но он еще не активирован кнопкой Play (режим паузы),
++	// мы принудительно заставляем рекордер писать ВСЕ PIDы в файл, игнорируя оптимизацию разницы.
++	if (m_timeshift_enabled && !m_timeshift_active)
++	{
++		for (std::set<int>::iterator i(pids_to_record.begin()); i != pids_to_record.end(); ++i)
++			m_openpliPC_record->addPID(*i);
++	}
++	else
++	{
++		// Обычный рабочий режим живого эфира (синхронизация при смене аудиодорожек)
  		for (std::set<int>::iterator i(new_pids.begin()); i != new_pids.end(); ++i)
 -			m_record->addPID(*i);
-+	//		if (m_openpliPC_record)
 +			m_openpliPC_record->addPID(*i);
  
  		for (std::set<int>::iterator i(obsolete_pids.begin()); i != obsolete_pids.end(); ++i)
 -			m_record->removePID(*i);
-+	//		if (m_openpliPC_record)
 +			m_openpliPC_record->removePID(*i);
++	}
  
- 		if (timing_pid != -1)
+-		if (timing_pid != -1)
 -			m_record->setTimingPID(timing_pid, timing_pid_type, timing_stream_type);
-+	//		if (m_openpliPC_record)
-+			m_openpliPC_record->setTimingPID(timing_pid, timing_pid_type, timing_stream_type);
++	if (timing_pid != -1)
++		m_openpliPC_record->setTimingPID(timing_pid, timing_pid_type, timing_stream_type);
  	}
  }
  
-@@ -2894,6 +2960,32 @@
+@@ -2894,6 +2966,32 @@
  	/* free the timeshift service handler, we need the resources */
  	m_service_handler_timeshift.free();
  
@@ -9570,12 +10061,12 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	updateDecoder(true);
  }
  
-@@ -2969,11 +3061,24 @@
+@@ -2969,11 +3067,24 @@
  	eDebug("[eDVBServicePlay] switchToTimeshift, in pause mode now.");
  	pause();
  	updateDecoder(true); /* mainly to switch off PCR, and to set pause */
 +
-+// stop openpliPC
++	// stop openpliPC
 +	if (m_openpliPC_record)
 +	{
 +		m_openpliPC_record->stop();
@@ -9596,7 +10087,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  	bool mustPlay = false;
  
  	eDVBServicePMTHandler &h = m_timeshift_active ? m_service_handler_timeshift : m_service_handler;
-@@ -2995,6 +3100,7 @@
+@@ -2995,6 +3106,7 @@
  				{
  					vpid = i->pid;
  					vpidtype = i->type;
@@ -9604,7 +10095,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  				}
  				if (i != program.videoStreams.begin())
  					eDebugNoNewLine(", ");
-@@ -3073,7 +3179,11 @@
+@@ -3073,7 +3185,11 @@
  			setPCMDelay(pcm_delay == -1 ? 0 : pcm_delay);
  		}
  
@@ -9617,7 +10108,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		m_have_video_pid = (vpid > 0 && vpid < 0x2000);
  
  		if (!m_noaudio)
-@@ -3152,6 +3262,12 @@
+@@ -3152,6 +3268,12 @@
  
  	if (sendSeekableStateChanged)
  		m_event((iPlayableService*)this, evSeekableStatusChanged);
@@ -9630,19 +10121,34 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  }
  
  void eDVBServicePlay::loadCuesheet()
-@@ -3520,7 +3636,10 @@
+@@ -3196,7 +3318,7 @@
+ {
+ 	std::string filename = m_timeshift_enabled ? m_timeshift_file : m_reference.path;
+ 
+-		/* save cuesheet only when main file is accessible. */
++	/* save cuesheet only when main file is accessible. */
+ 	if (::access(filename.c_str(), R_OK) < 0)
+ 		return;
+ 
+@@ -3520,7 +3642,8 @@
  	{
  		int subtitledelay = 0;
  		pts_t pts;
 -		m_decoder->getPTS(0, pts);
-+		pts_t pos = 0;
-+//		xineLib->getPTS(pos);
 +		xineLib->getPTS(pts);
 +
  		if (m_is_pvr || m_timeshift_enabled)
  		{
  			eDebug("[eDVBServicePlay] Subtitle in recording/timeshift");
-@@ -3556,10 +3675,6 @@
+@@ -3549,17 +3672,13 @@
+ void eDVBServicePlay::checkSubtitleTiming()
+ {
+ 	pts_t pos = 0;
+-//	eDebug("[eDVBServicePlay] checkSubtitleTiming");
++	//eDebug("[eDVBServicePlay] checkSubtitleTiming");
+ 	if (!m_subtitle_widget)
+ 		return;
+ 	if (m_subtitle_pages.empty() && m_dvb_subtitle_pages.empty())
  	{
  		return;
  	}
@@ -9653,7 +10159,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  
  	while (1)
  	{
-@@ -3582,6 +3697,8 @@
+@@ -3582,6 +3701,8 @@
  		else
  			return;
  
@@ -9662,7 +10168,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		// If subtitle is overdue or within 20ms the video timing then display it.
  		// If not, pause subtitle processing until the subtitle should be shown
  		int diff = show_time - pos;
-@@ -3613,8 +3730,7 @@
+@@ -3613,12 +3734,11 @@
  	if (m_subtitle_widget)
  	{
  		pts_t pos = 0;
@@ -9672,7 +10178,12 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  
  		// Where subtitles are delivered out of sync with video, only treat subtitles in the past as having bad timing.
  		// Those that are delivered too early are cached for displaying at the appropriate later time
-@@ -3734,7 +3850,7 @@
+-		// Note that this can be due to buggy drivers, as well as problems with the broadcast 
++		// Note that this can be due to buggy drivers, as well as problems with the broadcast
+ 		if (pos-p.m_show_time > 1800000 && (m_is_pvr || m_timeshift_enabled))
+ 		{
+ 			// Subtitles delivered over 20 seconds too late
+@@ -3734,7 +3854,7 @@
  		if (!m_noaudio)
  			selectAudioStream();
  		else
@@ -9682,7 +10193,7 @@ diff -ruN o/lib/service/servicedvb.cpp pc/lib/service/servicedvb.cpp
  		m_decoder->set();
  	}
 diff -ruN o/lib/service/servicedvbfcc.cpp pc/lib/service/servicedvbfcc.cpp
---- o/lib/service/servicedvbfcc.cpp	2026-01-07 12:56:09.640610764 +0300
+--- o/lib/service/servicedvbfcc.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/service/servicedvbfcc.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -371,7 +371,6 @@
  		setAC3Delay(ac3_delay == -1 ? 0 : ac3_delay);
@@ -9693,7 +10204,7 @@ diff -ruN o/lib/service/servicedvbfcc.cpp pc/lib/service/servicedvbfcc.cpp
  
  		if (!(m_is_pvr || m_is_stream || m_timeshift_active))
 diff -ruN o/lib/service/servicedvb.h pc/lib/service/servicedvb.h
---- o/lib/service/servicedvb.h	2026-01-07 12:56:09.640610764 +0300
+--- o/lib/service/servicedvb.h	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/service/servicedvb.h	2026-01-07 15:19:42.000000000 +0300
 @@ -9,6 +9,8 @@
  #include <lib/dvb/subtitle.h>
@@ -9727,7 +10238,7 @@ diff -ruN o/lib/service/servicedvb.h pc/lib/service/servicedvb.h
  
  class eStaticServiceDVBBouquetInformation: public iStaticServiceInformation
 diff -ruN o/lib/service/servicedvd.cpp pc/lib/service/servicedvd.cpp
---- o/lib/service/servicedvd.cpp	2026-01-07 15:18:21.382622165 +0300
+--- o/lib/service/servicedvd.cpp	2026-01-07 15:18:21.000000000 +0300
 +++ pc/lib/service/servicedvd.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -1030,7 +1030,7 @@
  	if (f == NULL)
@@ -9750,7 +10261,7 @@ diff -ruN o/lib/service/servicedvd.cpp pc/lib/service/servicedvd.cpp
  				return; // cannot create directory so no point in trying to save cue data
  			
 diff -ruN o/lib/service/servicehdmi.cpp pc/lib/service/servicehdmi.cpp
---- o/lib/service/servicehdmi.cpp	2026-01-07 12:56:09.640610764 +0300
+--- o/lib/service/servicehdmi.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/service/servicehdmi.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -123,9 +123,9 @@
  RESULT eServiceHDMI::start()
@@ -9765,7 +10276,7 @@ diff -ruN o/lib/service/servicehdmi.cpp pc/lib/service/servicehdmi.cpp
  	m_event(this, evStart);
  	return 0;
 diff -ruN o/lib/service/servicets.cpp pc/lib/service/servicets.cpp
---- o/lib/service/servicets.cpp	2026-01-07 12:56:09.641610696 +0300
+--- o/lib/service/servicets.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/service/servicets.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -251,8 +251,8 @@
  			return -1;
@@ -9788,7 +10299,7 @@ diff -ruN o/lib/service/servicets.cpp pc/lib/service/servicets.cpp
  		return 0;
  	} else {
 diff -ruN o/lib/service/servicewebts.cpp pc/lib/service/servicewebts.cpp
---- o/lib/service/servicewebts.cpp	2026-01-07 12:56:09.641610696 +0300
+--- o/lib/service/servicewebts.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/lib/service/servicewebts.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -376,10 +376,10 @@
  			PID_SET = 1;
@@ -9814,7 +10325,7 @@ diff -ruN o/lib/service/servicewebts.cpp pc/lib/service/servicewebts.cpp
  		return 0;
  	} else {
 diff -ruN o/main/bsod.cpp pc/main/bsod.cpp
---- o/main/bsod.cpp	2026-01-07 12:56:09.642610628 +0300
+--- o/main/bsod.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/main/bsod.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -128,7 +128,7 @@
  		 * alone because we may be in a crash loop and writing this file
@@ -9826,7 +10337,7 @@ diff -ruN o/main/bsod.cpp pc/main/bsod.cpp
  		    ((f = fopen(crashlog_name.c_str(), "wb")) == NULL))
  		{
 diff -ruN o/main/enigma.cpp pc/main/enigma.cpp
---- o/main/enigma.cpp	2026-01-07 12:56:09.642610628 +0300
+--- o/main/enigma.cpp	2026-01-07 12:56:09.000000000 +0300
 +++ pc/main/enigma.cpp	2026-01-07 15:19:42.000000000 +0300
 @@ -156,8 +156,6 @@
  				eDebug("[quitMainloop] FP_CLEAR_WAKEUP_TIMER failed: %m");
@@ -9838,7 +10349,7 @@ diff -ruN o/main/enigma.cpp pc/main/enigma.cpp
  	exit_code = exitCode;
  	eApp->quit(0);
 diff -ruN o/main/Makefile.am pc/main/Makefile.am
---- o/main/Makefile.am	2026-01-07 12:56:09.642610628 +0300
+--- o/main/Makefile.am	2026-01-07 12:56:09.000000000 +0300
 +++ pc/main/Makefile.am	2026-01-07 15:19:42.000000000 +0300
 @@ -45,7 +45,8 @@
  	@ALSA_LIBS@ \
@@ -9851,7 +10362,7 @@ diff -ruN o/main/Makefile.am pc/main/Makefile.am
  enigma2_LDFLAGS = -Wl,--export-dynamic
  
 diff -ruN o/po/ru.po pc/po/ru.po
---- o/po/ru.po	2026-01-07 15:18:21.435619649 +0300
+--- o/po/ru.po	2026-01-07 15:18:21.000000000 +0300
 +++ pc/po/ru.po	2026-01-07 15:19:42.000000000 +0300
 @@ -4,14 +4,14 @@
  "Report-Msgid-Bugs-To: \n"
@@ -20663,7 +21174,7 @@ diff -ruN o/po/ru.po pc/po/ru.po
 +msgid "Bouquet Hotkeys Setup"
 +msgstr "Горячие клавиши буклета"
 diff -ruN o/po/xml2po.py pc/po/xml2po.py
---- o/po/xml2po.py	2026-01-07 12:56:09.698606805 +0300
+--- o/po/xml2po.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/po/xml2po.py	2026-01-07 15:19:42.000000000 +0300
 @@ -1,6 +1,6 @@
  #!/usr/bin/python
@@ -20674,7 +21185,7 @@ diff -ruN o/po/xml2po.py pc/po/xml2po.py
  import sys
  import os
 diff -ruN o/po/xml2po-python3.py pc/po/xml2po-python3.py
---- o/po/xml2po-python3.py	2026-01-07 12:56:09.698606805 +0300
+--- o/po/xml2po-python3.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/po/xml2po-python3.py	2026-01-07 15:19:42.000000000 +0300
 @@ -69,7 +69,7 @@
  		k.replace("\\n", "\"\n\"")
@@ -20686,7 +21197,7 @@ diff -ruN o/po/xml2po-python3.py pc/po/xml2po-python3.py
  		print('msgstr ""')
  
 diff -ruN o/tests/enigma.py pc/tests/enigma.py
---- o/tests/enigma.py	2026-01-07 12:56:09.699606737 +0300
+--- o/tests/enigma.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/tests/enigma.py	2026-01-07 15:19:42.000000000 +0300
 @@ -309,7 +309,7 @@
  
@@ -20698,7 +21209,7 @@ diff -ruN o/tests/enigma.py pc/tests/enigma.py
  
  Tools.Directories.defaultPaths[Tools.Directories.SCOPE_SKIN] = ("../data/", Tools.Directories.PATH_DONTCREATE)
 diff -ruN o/tools/enigma2.sh.in pc/tools/enigma2.sh.in
---- o/tools/enigma2.sh.in	2026-01-07 12:56:09.700606669 +0300
+--- o/tools/enigma2.sh.in	2026-01-07 12:56:09.000000000 +0300
 +++ pc/tools/enigma2.sh.in	2026-01-07 15:19:42.000000000 +0300
 @@ -1,150 +1,43 @@
  #!/bin/sh
@@ -20871,7 +21382,7 @@ diff -ruN o/tools/enigma2.sh.in pc/tools/enigma2.sh.in
 +	$PREFIX/enigma2 # Loopback.
 +fi
 diff -ruN o/tools/host_tools/FormatConverter/datasource.py pc/tools/host_tools/FormatConverter/datasource.py
---- o/tools/host_tools/FormatConverter/datasource.py	2026-01-07 12:56:09.700606669 +0300
+--- o/tools/host_tools/FormatConverter/datasource.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/tools/host_tools/FormatConverter/datasource.py	2026-01-07 15:19:42.000000000 +0300
 @@ -15,11 +15,11 @@
  		return "N/A"
@@ -20915,7 +21426,7 @@ diff -ruN o/tools/host_tools/FormatConverter/datasource.py pc/tools/host_tools/F
  		choice = inputChoices(list)
  		if choice is None:
 diff -ruN o/tools/host_tools/FormatConverter/main.py pc/tools/host_tools/FormatConverter/main.py
---- o/tools/host_tools/FormatConverter/main.py	2026-01-07 12:56:09.700606669 +0300
+--- o/tools/host_tools/FormatConverter/main.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/tools/host_tools/FormatConverter/main.py	2026-01-07 15:19:42.000000000 +0300
 @@ -21,7 +21,7 @@
  	os.system("/usr/bin/clear")
@@ -20927,7 +21438,7 @@ diff -ruN o/tools/host_tools/FormatConverter/main.py pc/tools/host_tools/FormatC
  	if index is None:
  		break
 diff -ruN o/tools/host_tools/FormatConverter/satxml.py pc/tools/host_tools/FormatConverter/satxml.py
---- o/tools/host_tools/FormatConverter/satxml.py	2026-01-07 12:56:09.700606669 +0300
+--- o/tools/host_tools/FormatConverter/satxml.py	2026-01-07 12:56:09.000000000 +0300
 +++ pc/tools/host_tools/FormatConverter/satxml.py	2026-01-07 15:19:42.000000000 +0300
 @@ -49,7 +49,7 @@
  							entry = str(transponder.getAttribute(param))

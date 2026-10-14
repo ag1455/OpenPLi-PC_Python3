@@ -1,0 +1,1231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Calendar\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: giorbak\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "(Search: '{0}')"
+msgstr "(Αναζήτηση: '{0}')"
+
+msgid "(truncated)"
+msgstr "(περικομμένο)"
+
+msgid "--- CONTACTS ---"
+msgstr "--- ΕΠΑΦΕΣ ---"
+
+msgid "--- DATABASE ---"
+msgstr "--- ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ ---"
+
+msgid "--- EVENTS ---"
+msgstr "--- ΣΥΜΒΑΝΤΑ ---"
+
+msgid "--- HOLIDAYS ---"
+msgstr "--- ΑΡΓΙΕΣ ---"
+
+msgid "--- PERSONAL DATA ---"
+msgstr "--- ΠΡΟΣΩΠΙΚΑ ΔΕΔΟΜΕΝΑ ---"
+
+msgid "--- SYSTEM ---"
+msgstr "--- ΣΥΣΤΗΜΑ ---"
+
+msgid "..."
+msgstr "..."
+
+msgid ".............."
+msgstr ".............."
+
+msgid "Active"
+msgstr "Ενεργό"
+
+msgid "Active:"
+msgstr "Ενεργό:"
+
+msgid "Add"
+msgstr "Προσθήκη"
+
+msgid "Add Contact"
+msgstr "Προσθήκη επαφής"
+
+msgid "Add Event"
+msgstr "Προσθήκη συμβάντος"
+
+msgid "Add date and time to exported filenames"
+msgstr "Προσθήκη ημερομηνίας και ώρας στα ονόματα των εξαγόμενων αρχείων"
+
+msgid "Add timestamp to filename"
+msgstr "Προσθήκη χρονικής σήμανσης στο όνομα αρχείου"
+
+msgid "Alert sound"
+msgstr "Ήχος συναγερμού"
+
+msgid "Already on today's event"
+msgstr "Ήδη στο σημερινό συμβάν"
+
+msgid "April"
+msgstr "Απρίλιος"
+
+msgid "August"
+msgstr "Αύγουστος"
+
+msgid "Automatically clean old notified events"
+msgstr "Αυτόματος καθαρισμός παλιών ειδοποιημένων συμβάντων"
+
+msgid "Autostart delay"
+msgstr "Καθυστέρηση αυτόματης εκκίνησης"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "Birthday (YYYY-MM-DD)"
+msgstr "Ημερομηνία γέννησης (ΕΕΕΕ-ΜΜ-ΗΗ)"
+
+msgid "Birthdays: {0}"
+msgstr "Γενέθλια: {0}"
+
+msgid "Blue"
+msgstr "Μπλε"
+
+msgid "Browse ICS Files"
+msgstr "Περιήγηση σε αρχεία ICS"
+
+msgid "CONTACTS WITH BIRTHDAYS TODAY:"
+msgstr "ΕΠΑΦΕΣ ΜΕ ΓΕΝΕΘΛΙΑ ΣΗΜΕΡΑ:"
+
+msgid "CSV format"
+msgstr "Μορφή CSV"
+
+msgid "Calendar"
+msgstr "Calendar"
+
+msgid "Calendar Planner"
+msgstr "Calendar Planner"
+
+msgid "Calendar Planner | Ready"
+msgstr "Calendar Planner | Έτοιμο"
+
+msgid "Calendar Settings"
+msgstr "Ρυθμίσεις ημερολογίου"
+
+msgid "Calendar with events and notifications"
+msgstr "Ημερολόγιο με συμβάντα και ειδοποιήσεις"
+
+msgid "Cancel"
+msgstr "Άκυρο"
+
+msgid "Cancelling..."
+msgstr "Άκυρο..."
+
+msgid "Cannot delete: Contact has no ID"
+msgstr "Δεν είναι δυνατή η διαγραφή: Η επαφή δεν έχει αναγνωριστικό"
+
+msgid "Cannot initialize event system: {0}"
+msgstr "Αδυναμία αρχικοποίησης των συμβάντων συστήματος: {0}"
+
+msgid "Categories (comma separated)"
+msgstr "Κατηγορίες (διαχωρισμένες με κόμμα)"
+
+msgid "Check for Updates"
+msgstr "Έλεγχος για ενημερώσεις"
+
+msgid "Checking for updates..."
+msgstr "Έλεγχος για ενημερώσεις..."
+
+msgid "Choose between legacy text files or standard vCard format"
+msgstr "Επιλογή μεταξύ παλαιών αρχείων κειμένου ή τυπικής μορφής vCard"
+
+msgid "Choose where to save exported files"
+msgstr "Επιλέξτε πού θα αποθηκεύονται τα εξαγόμενα αρχεία"
+
+msgid "Clean after days"
+msgstr "Καθαρισμός μετά από ημέρες"
+
+msgid "Clean old notifications"
+msgstr "Καθαρισμός παλαιών ειδοποιήσεων"
+
+msgid "Cleaned {0} duplicate events"
+msgstr "Καθαρίστηκαν {0} διπλότυπα συμβάντα"
+
+msgid "Cleaned {0} old ICS files"
+msgstr "Καθαρίστηκαν {0} παλαιά αρχεία ICS"
+
+msgid "Cleanup Old Files"
+msgstr "Εκκαθάριση παλαιών αρχείων"
+
+msgid "Cleanup duplicate events"
+msgstr "Εκκαθάριση διπλότυπων συμβάντων"
+
+msgid "Cleanup past events"
+msgstr "Εκκαθάριση παλαιών συμβάντων"
+
+msgid "Clear ALL holiday entries from all date files?"
+msgstr "Εκκαθάριση ΟΛΩΝ των καταχωρήσεων αργιών από όλα τα αρχεία ημερομηνιών;"
+
+msgid "Clear All"
+msgstr "Εκκαθάριση όλων"
+
+msgid "Clear Holiday Database"
+msgstr "Εκκαθάριση βάσης δεδομένων αργιών"
+
+msgid "Close"
+msgstr "Κλείσιμο"
+
+msgid "Color days with holidays"
+msgstr "Χρωματισμός των ημερών με αργίες"
+
+msgid "Color for days with events"
+msgstr "Χρώμα για τις ημέρες με συμβάντα"
+
+msgid "Color for holiday days"
+msgstr "Χρώμα για τις ημέρες αργιών"
+
+msgid "Completed"
+msgstr "Ολοκληρώθηκε"
+
+#, fuzzy
+msgid "Contact"
+msgstr "Προσθήκη επαφής"
+
+msgid "Contact '{0}' deleted successfully"
+msgstr "Η επαφή '{0}' διαγράφηκε με επιτυχία"
+
+#, fuzzy
+msgid "Contact:"
+msgstr "Επαφές: 0"
+
+msgid "Contacts directory not found"
+msgstr "Δεν βρέθηκε ο κατάλογος επαφών"
+
+msgid "Contacts imported from ICS file!"
+msgstr "Οι επαφές εισήχθησαν από αρχείο ICS!"
+
+msgid "Contacts: 0"
+msgstr "Επαφές: 0"
+
+msgid "Contacts: {0}/{1}"
+msgstr "Επαφές: {0}/{1}"
+
+msgid "Conversion error: {0}"
+msgstr "Σφάλμα μετατροπής: {0}"
+
+msgid "Convert all existing data to vCard format?"
+msgstr "Να γίνει μετατροπή όλων των υπαρχόντων δεδομένων σε μορφή vCard;"
+
+msgid "Convert to ICS format"
+msgstr "Μετατροπή σε μορφή ICS"
+
+msgid "Convert to legacy format"
+msgstr "Μετατροπή σε παλαιά μορφή"
+
+msgid "Convert to vCard format"
+msgstr "Μετατροπή σε μορφή vCard"
+
+msgid "Converted {0} events to {1}"
+msgstr "Μετατράπηκαν {0} συμβάντα σε {1}"
+
+msgid "Could not check for updates. Check internet connection."
+msgstr "Δεν ήταν δυνατός ο έλεγχος για ενημερώσεις. Ελέγξτε τη σύνδεση στο διαδίκτυο."
+
+msgid "Could not check for updates: %s"
+msgstr "Δεν ήταν δυνατός ο έλεγχος για ενημερώσεις: %s"
+
+msgid "Could not read file"
+msgstr "Δεν ήταν δυνατή η ανάγνωση του αρχείου"
+
+msgid "Cyan"
+msgstr "Κυανό"
+
+msgid "Database converted to vCard format"
+msgstr "Η βάση δεδομένων μετατράπηκε σε μορφή vCard"
+
+msgid "Database format"
+msgstr "Μορφή βάσης δεδομένων"
+
+msgid "Date"
+msgstr "Ημερομηνία"
+
+msgid "Date (YYYY-MM-DD)"
+msgstr "Ημερομηνία (ΕΕΕΕ-ΜΜ-ΗΗ)"
+
+msgid "Date range: {0} to {1}"
+msgstr "Εύρος ημερομηνιών: {0} έως {1}"
+
+msgid "Date:"
+msgstr "Ημερομηνία:"
+
+msgid "Day +"
+msgstr "Ημέρα +"
+
+msgid "Day -"
+msgstr "Ημέρα -"
+
+msgid "Days to keep notifications in cache"
+msgstr "Ημέρες διατήρησης ειδοποιήσεων στην προσωρινή μνήμη"
+
+msgid "December"
+msgstr "Δεκέμβριος"
+
+msgid "Default event time"
+msgstr "Προεπιλεγμένη ώρα συμβάντος"
+
+msgid "Default format for exported files"
+msgstr "Προεπιλεγμένη μορφή για τα εξαγόμενα αρχεία"
+
+msgid "Default minutes before event to show notification"
+msgstr "Προεπιλεγμένα λεπτά πριν από το συμβάν για εμφάνιση ειδοποίησης"
+
+msgid "Default notification minutes"
+msgstr "Προεπιλεγμένα λεπτά ειδοποίησης"
+
+msgid "Default time for new events (HH:MM format)"
+msgstr "Προεπιλεγμένη ώρα για νέα συμβάντα (μορφή ΩΩ:ΛΛ)"
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Delete ALL ICS events"
+msgstr "Διαγραφή ΟΛΩΝ των συμβάντων ICS"
+
+msgid "Delete ALL contacts"
+msgstr "Διαγραφή ΟΛΩΝ των επαφών"
+
+msgid "Delete ALL events"
+msgstr "Διαγραφή ΟΛΩΝ των συμβάντων"
+
+msgid "Delete File"
+msgstr "Διαγραφή αρχείου"
+
+msgid "Delete ICS files older than 30 days?"
+msgstr "Να γίνει διαγραφή των αρχείων ICS παλαιότερων των 30 ημερών;"
+
+msgid "Delete file"
+msgstr "Διαγραφή αρχείου"
+
+msgid "Delete {0}?"
+msgstr "Να γίνει διαγραφή του {0};"
+
+msgid "Delete: {0}"
+msgstr "Διαγραφή: {0}"
+
+msgid "Deleted {0} ICS events"
+msgstr "Διαγράφηκαν {0} συμβάντα ICS"
+
+msgid "Deleted {0} contacts from database"
+msgstr "Διαγράφηκαν {0} επαφές από τη βάση δεδομένων"
+
+msgid "Description"
+msgstr "Περιγραφή"
+
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+msgid "Directory: {0}"
+msgstr "Κατάλογος: {0}"
+
+msgid "Disk"
+msgstr "Δίσκος"
+
+msgid "Duplicates cleaned: %d"
+msgstr "Διπλότυπα που καθαρίστηκαν: %d"
+
+msgid "E:{0}"
+msgstr "E:{0}"
+
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+msgid "Edit Contact"
+msgstr "Επεξεργασία επαφής"
+
+msgid "Edit Contact ({0}/{1})"
+msgstr "Επεξεργασία επαφής ({0}/{1})"
+
+msgid "Edit Date"
+msgstr "Επεξεργασία ημερομηνίας"
+
+msgid "Edit Description"
+msgstr "Επεξεργασία περιγραφής"
+
+msgid "Edit Event"
+msgstr "Επεξεργασία συμβάντος"
+
+msgid "Edit Event ({0}/{1})"
+msgstr "Επεξεργασία συμβάντος ({0}/{1})"
+
+msgid "Edit Event ({0}/{1}) - Today"
+msgstr "Επεξεργασία συμβάντος ({0}/{1}) - Σήμερα"
+
+msgid "Edit Holiday"
+msgstr "Επεξεργασία αργίας"
+
+msgid "Edit ICS Event"
+msgstr "Επεξεργασία συμβάντος ICS"
+
+#, fuzzy
+msgid "Edit Note"
+msgstr "Επεξεργασία ημερομηνίας"
+
+msgid "Edit Sign"
+msgstr "Επεξεργασία ζωδίου"
+
+msgid "Edit: {0}"
+msgstr "Επεξεργασία: {0}"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Enable autostart"
+msgstr "Ενεργοποίηση αυτόματης εκκίνησης"
+
+msgid "Enable debug mode"
+msgstr "Ενεργοποίηση λειτουργίας εντοπισμού σφαλμάτων"
+
+msgid "Enable event management with date/time"
+msgstr "Ενεργοποίηση της διαχείρισης συμβάντων με ημερομηνία/ώρα"
+
+msgid "Enable event system"
+msgstr "Ενεργοποίηση συμβάντων συστήματος"
+
+msgid "Enable holiday coloring"
+msgstr "Ενεργοποίηση χρωματισμού αργιών"
+
+msgid "Enable notifications"
+msgstr "Ενεργοποίηση ειδοποιήσεων"
+
+msgid "Enter"
+msgstr "Εισαγωγή"
+
+msgid "Error deleting contact"
+msgstr "Σφάλμα διαγραφής επαφής"
+
+msgid "Error deleting contact '{0}'"
+msgstr "Σφάλμα διαγραφής επαφής '{0}'"
+
+msgid "Error deleting database: {0}"
+msgstr "Σφάλμα διαγραφής βάσης δεδομένων: {0}"
+
+msgid "Error getting ICS statistics"
+msgstr "Σφάλμα λήψης στατιστικών ICS"
+
+msgid "Error opening ICS browser: %s"
+msgstr "Σφάλμα ανοίγματος περιηγητή ICS: %s"
+
+msgid "Error opening ICS importer: {0}"
+msgstr "Σφάλμα ανοίγματος εισαγωγέα ICS: {0}"
+
+msgid "Error opening event dialog"
+msgstr "Σφάλμα κατά το άνοιγμα του παραθύρου συμβάντος"
+
+msgid "Error saving ICS data"
+msgstr "Σφάλμα αποθήκευσης δεδομένων ICS"
+
+msgid "Error saving contact"
+msgstr "Σφάλμα αποθήκευσης επαφής"
+
+msgid "Error saving data"
+msgstr "Σφάλμα κατά την αποθήκευση δεδομένων"
+
+msgid "Error saving event"
+msgstr "Σφάλμα αποθήκευσης συμβάντος"
+
+msgid "Error: {0}"
+msgstr "Σφάλμα: {0}"
+
+msgid "Errors: %d"
+msgstr "Σφάλματα: %d"
+
+msgid "Errors: {0}"
+msgstr "Σφάλματα: {0}"
+
+msgid "Event"
+msgstr "Συμβάν"
+
+msgid "Event '{0}' deleted successfully"
+msgstr "Το συμβάν '{0}' διαγράφηκε με επιτυχία"
+
+msgid "Event '{0}' saved successfully"
+msgstr "Το συμβάν '{0}' αποθηκεύτηκε με επιτυχία"
+
+msgid "Event check interval"
+msgstr "Διάστημα ελέγχου συμβάντων"
+
+msgid "Event color"
+msgstr "Χρώμα συμβάντων"
+
+msgid "Event manager not available"
+msgstr "Ο υπεύθυνος εκδηλώσεων δεν είναι διαθέσιμος"
+
+msgid "Event manager not initialized"
+msgstr "Ο διαχειριστής συμβάντων δεν έχει αρχικοποιηθεί"
+
+msgid "Event system is disabled. Enable it in settings first."
+msgstr "Το σύστημα συμβάντων είναι απενεργοποιημένο. Ενεργοποιήστε το πρώτα από τις ρυθμίσεις."
+
+msgid "Event system is disabled. Enable it in settings."
+msgstr "Το σύστημα συμβάντων είναι απενεργοποιημένο. Ενεργοποιήστε το στις ρυθμίσεις."
+
+msgid "Event system is not enabled"
+msgstr "Το σύστημα συμβάντων δεν είναι ενεργοποιημένο"
+
+msgid "Events found: {0}"
+msgstr "Βρέθηκαν συμβάντα: {0}"
+
+msgid "Events imported successfully"
+msgstr "Τα συμβάντα εισήχθησαν με επιτυχία"
+
+msgid "Export All to ICS File"
+msgstr "Εξαγωγή όλων σε αρχείο ICS"
+
+msgid "Export error: {0}"
+msgstr "Σφάλμα εξαγωγής: {0}"
+
+msgid "Export failed or no contacts to export"
+msgstr "Η εξαγωγή απέτυχε ή δεν υπάρχουν επαφές προς εξαγωγή"
+
+msgid "Export format"
+msgstr "Μορφή εξαγωγής"
+
+msgid "Export location"
+msgstr "Τοποθεσία εξαγωγής"
+
+msgid "Export subdirectory"
+msgstr "Υποκατάλογος εξαγωγής"
+
+msgid "Export vCard File"
+msgstr "Εξαγωγή αρχείου vCard"
+
+msgid "Exporting contacts..."
+msgstr "Εξαγωγή επαφών..."
+
+msgid "Failed to create backup. Update cancelled."
+msgstr "Αποτυχία δημιουργίας αντιγράφου ασφαλείας. Η ενημέρωση ακυρώθηκε."
+
+msgid "Failed to start import"
+msgstr "Αποτυχία εκκίνησης εισαγωγής"
+
+msgid "February"
+msgstr "Φεβρουάριος"
+
+msgid "Field {0}/{1}: {2}"
+msgstr "Πεδίο {0}/{1}: {2}"
+
+msgid "File deleted"
+msgstr "Το αρχείο διαγράφηκε"
+
+msgid "File not found!"
+msgstr "Το αρχείο δεν βρέθηκε!"
+
+msgid "File re-imported successfully"
+msgstr "Το αρχείο επανεισήχθη με επιτυχία"
+
+msgid "File re-imported. Found {0} potential duplicates."
+msgstr "Το αρχείο επανεισήχθη. Βρέθηκαν {0} πιθανά διπλότυπα."
+
+msgid "File: {0}"
+msgstr "Αρχείο: {0}"
+
+msgid "Files is Empty..."
+msgstr "Τα αρχεία είναι κενά..."
+
+msgid "Found {0} ICS files"
+msgstr "Βρέθηκαν {0} αρχεία ICS"
+
+msgid "Fri"
+msgstr "Παρ"
+
+msgid "Green"
+msgstr "Πράσινο"
+
+msgid "Hard Disk"
+msgstr "Σκληρός δίσκος"
+
+msgid "Hard Disk (/media/hdd)"
+msgstr "Σκληρός δίσκος (/media/hdd)"
+
+msgid "Holiday"
+msgstr "Αργία"
+
+msgid "Holiday color"
+msgstr "Χρώμα αργιών"
+
+msgid "Holiday:"
+msgstr "Αργία:"
+
+msgid "Holidays imported"
+msgstr "Οι αργίες εισήχθησαν"
+
+msgid "I:{0}"
+msgstr "I:{0}"
+
+msgid "ICS Events: 0"
+msgstr "Συμβάντα ICS: 0"
+
+msgid "ICS Events: {0}/{1}"
+msgstr "Συμβάντα ICS: {0}/{1}"
+
+msgid "ICS format"
+msgstr "Μορφή ICS"
+
+msgid "ICS format (google calendar)"
+msgstr "Μορφή ICS (Google Calendar)"
+
+msgid "ICS import feature not yet available: {0}"
+msgstr "Η δυνατότητα εισαγωγής ICS δεν είναι ακόμη διαθέσιμη: {0}"
+
+msgid "Import"
+msgstr "Εισαγωγή"
+
+msgid "Import All"
+msgstr "Εισαγωγή όλων"
+
+msgid "Import Google Calendar (.ics)"
+msgstr "Εισαγωγή Google Calendar (.ics)"
+
+msgid "Import Holidays"
+msgstr "Εισαγωγή αργιών"
+
+msgid "Import ICS Contacts Google Calendar (.ics)"
+msgstr "Εισαγωγή επαφών ICS από Google Calendar (.ics)"
+
+msgid "Import completed"
+msgstr "Η εισαγωγή ολοκληρώθηκε"
+
+msgid "Import completed - Sorting contacts..."
+msgstr "Η εισαγωγή ολοκληρώθηκε – Ταξινόμηση επαφών..."
+
+msgid "Import completed!"
+msgstr "Η εισαγωγή ολοκληρώθηκε!"
+
+msgid "Import completed. Ready."
+msgstr "Η εισαγωγή ολοκληρώθηκε. Έτοιμο."
+
+msgid "Import error: {0}"
+msgstr "Σφάλμα εισαγωγής: {0}"
+
+msgid "Import events to calendar"
+msgstr "Εισαγωγή συμβάντων στο ημερολόγιο"
+
+msgid "Import vCard File"
+msgstr "Εισαγωγή αρχείου vCard"
+
+msgid "Imported ICS Files"
+msgstr "Εισήχθησαν αρχεία ICS"
+
+msgid "Imported: %d"
+msgstr "Εισήχθησαν: %d"
+
+msgid "Imported: {0}"
+msgstr "Εισήχθησαν: {0}"
+
+msgid "Imported: {0} contacts"
+msgstr "Εισήχθησαν: {0} επαφές"
+
+msgid "Importing iCalendar File"
+msgstr "Εισαγωγή αρχείου iCalendar"
+
+msgid "Importing vCard File"
+msgstr "Εισαγωγή αρχείου vCard"
+
+msgid "Initializing..."
+msgstr "Αρχικοποίηση..."
+
+msgid "Invalid birthday format. Use YYYY-MM-DD"
+msgstr "Μη έγκυρη μορφή ημερομηνίας γέννησης. Χρησιμοποιήστε ΕΕΕΕ-ΜΜ-ΗΗ"
+
+msgid "Invalid date format. Use YYYY-MM-DD"
+msgstr "Μη έγκυρη μορφή ημερομηνίας. Χρησιμοποιήστε ΕΕΕΕ-ΜΜ-ΗΗ"
+
+#, fuzzy
+msgid "Invalid time format! Use HH:MM (00:00 to 23:59)"
+msgstr "Μη έγκυρη μορφή ώρας! Παρακαλώ χρησιμοποιήστε ΩΩ:ΛΛ (00:00 έως 23:59)"
+
+msgid "Invalid time format. Use HH:MM"
+msgstr "Μη έγκυρη μορφή ώρας. Χρησιμοποιήστε ΩΩ:ΛΛ"
+
+msgid "January"
+msgstr "Ιανουάριος"
+
+msgid "July"
+msgstr "Ιούλιος"
+
+msgid "June"
+msgstr "Ιούνιος"
+
+msgid "Labels (comma separated)"
+msgstr "Ετικέτες (διαχωρισμένες με κόμμα)"
+
+msgid "Legacy format (text files)"
+msgstr "Παλαιά μορφή (αρχεία κειμένου)"
+
+msgid "Manage Contacts"
+msgstr "Διαχείριση επαφών"
+
+msgid "Manage Event"
+msgstr "Διαχείριση συμβάντων"
+
+msgid "Manage ICS Events"
+msgstr "Διαχείριση συμβάντων ICS"
+
+msgid "Manage ICS Files"
+msgstr "Διαχείριση αρχείων ICS"
+
+msgid "March"
+msgstr "Μάρτιος"
+
+msgid "May"
+msgstr "Μάιος"
+
+msgid "Modified: {0}"
+msgstr "Τροποποιήθηκε: {0}"
+
+msgid "Mon"
+msgstr "Δευ"
+
+msgid "Month +"
+msgstr "Μήνας +"
+
+msgid "Month -"
+msgstr "Μήνας -"
+
+msgid "Name"
+msgstr "Όνομα"
+
+msgid "Name is required"
+msgstr "Το όνομα είναι υποχρεωτικό"
+
+msgid "Network Share"
+msgstr "Δικτυακή κοινή χρήση"
+
+msgid "New Date"
+msgstr "Νέα ημερομηνία"
+
+msgid "Newest file: {0}"
+msgstr "Νεότερο αρχείο: {0}"
+
+msgid "Next Field"
+msgstr "Επόμενο πεδίο"
+
+msgid "No ICS directory found"
+msgstr "Δεν βρέθηκε κατάλογος ICS"
+
+msgid "No ICS events found"
+msgstr "Δεν βρέθηκαν συμβάντα ICS"
+
+msgid "No ICS files found"
+msgstr "Δεν βρέθηκαν αρχεία ICS"
+
+msgid "No ICS files in archive"
+msgstr "Δεν υπάρχουν αρχεία ICS στο αρχείο"
+
+msgid "No TV service currently playing"
+msgstr "Δεν αναπαράγεται τηλεοπτική υπηρεσία αυτήν τη στιγμή"
+
+msgid "No contact files found"
+msgstr "Δεν βρέθηκαν αρχεία επαφών"
+
+msgid "No contact selected"
+msgstr "Δεν έχει επιλεγεί επαφή"
+
+msgid "No contacts found in database"
+msgstr "Δεν βρέθηκαν επαφές στη βάση δεδομένων"
+
+msgid "No data found to convert"
+msgstr "Δεν βρέθηκαν δεδομένα προς μετατροπή"
+
+msgid "No data to export"
+msgstr "Δεν υπάρχουν δεδομένα προς εξαγωγή"
+
+msgid "No duplicates found"
+msgstr "Δεν βρέθηκαν διπλότυπα"
+
+msgid "No event selected"
+msgstr "Δεν έχει επιλεγεί συμβάν"
+
+msgid "No events database found"
+msgstr "Δεν βρέθηκε βάση δεδομένων συμβάντων"
+
+msgid "No events for today"
+msgstr "Δεν υπάρχουν συμβάντα για σήμερα"
+
+msgid "No events to convert"
+msgstr "Δεν υπάρχουν συμβάντα προς μετατροπή"
+
+msgid "No file in database..."
+msgstr "Δεν υπάρχει αρχείο στη βάση δεδομένων..."
+
+msgid "No file selected"
+msgstr "Δεν έχει επιλεγεί αρχείο"
+
+msgid "No past events to remove"
+msgstr "Δεν υπάρχουν παλαιά συμβάντα προς αφαίρεση"
+
+msgid "No sorting (original order)"
+msgstr "Χωρίς ταξινόμηση (αρχική σειρά)"
+
+msgid "No sound"
+msgstr "Χωρίς ήχο"
+
+#, fuzzy
+msgid "Note"
+msgstr "Σημειώσεις"
+
+#, fuzzy
+msgid "Note:"
+msgstr "Σημειώσεις"
+
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+msgid "Notification sound type"
+msgstr "Τύπος ήχου ειδοποίησης"
+
+msgid "Notification tone"
+msgstr "Ήχος ειδοποίησης"
+
+msgid "Notify"
+msgstr "Ειδοποίηση"
+
+msgid "Notify:"
+msgstr "Ειδοποίηση:"
+
+msgid "November"
+msgstr "Νοέμβριος"
+
+msgid "October"
+msgstr "Οκτώβριος"
+
+msgid "Oldest file: {0}\n"
+msgstr "Παλαιότερο αρχείο: {0}\n"
+
+msgid "Orange"
+msgstr "Πορτοκαλί"
+
+msgid "P:{0}/{1}"
+msgstr "P:{0}/{1}"
+
+msgid "Phone"
+msgstr "Τηλέφωνο"
+
+msgid "Play a sound when event notification appears"
+msgstr "Αναπαραγωγή ήχου όταν εμφανίζεται ειδοποίηση συμβάντος"
+
+msgid "Play sound with notifications"
+msgstr "Αναπαραγωγή ήχου με τις ειδοποιήσεις"
+
+msgid "Please restart Enigma2 manually."
+msgstr "Παρακαλώ επανεκκινήστε το Enigma2 χειροκίνητα."
+
+msgid "Plugin Directory"
+msgstr "Κατάλογος πρόσθετου"
+
+msgid "Plugin is up to date"
+msgstr "Το πρόσθετο είναι ενημερωμένο"
+
+msgid "Press GREEN to import"
+msgstr "Πατήστε το ΠΡΑΣΙΝΟ για εισαγωγή"
+
+msgid "Press TEXT to search"
+msgstr "Πατήστε TEXT για αναζήτηση"
+
+msgid "Preview file content"
+msgstr "Προεπισκόπηση περιεχομένου αρχείου"
+
+msgid "Progress: {0}%"
+msgstr "Πρόοδος: {0}%"
+
+msgid "Re-import"
+msgstr "Επανεισαγωγή"
+
+msgid "Red"
+msgstr "Κόκκινο"
+
+msgid "Refresh"
+msgstr "Ανανέωση"
+
+msgid "Refreshed"
+msgstr "Ανανεώθηκε"
+
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+msgid "Remove Date"
+msgstr "Αφαίρεση ημερομηνίας"
+
+msgid "Removed {0} past events"
+msgstr "Αφαιρέθηκαν {0} παλαιά συμβάντα"
+
+msgid "Repeat"
+msgstr "Επανάληψη"
+
+msgid "Repeat (none/daily/weekly/monthly/yearly)"
+msgstr "Επανάληψη (καμία/καθημερινά/εβδομαδιαία/μηνιαία/ετήσια)"
+
+msgid "Repeat:"
+msgstr "Επανάληψη:"
+
+msgid "Repeat: {0}"
+msgstr "Επανάληψη: {0}"
+
+msgid "Root Home (/home/root)"
+msgstr "Αρχικός κατάλογος root (/home/root)"
+
+msgid "S:{0}"
+msgstr "S:{0}"
+
+msgid "SCHEDULED EVENTS:"
+msgstr "ΠΡΟΓΡΑΜΜΑΤΙΣΜΕΝΑ ΣΥΜΒΑΝΤΑ:"
+
+msgid "Sat"
+msgstr "Σαβ"
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Search contacts"
+msgstr "Αναζήτηση επαφών"
+
+msgid "Search events"
+msgstr "Αναζήτηση συμβάντων"
+
+msgid "Search:"
+msgstr "Αναζήτηση:"
+
+msgid "Seconds between event checks (advanced)"
+msgstr "Δευτερόλεπτα μεταξύ ελέγχων συμβάντων (για προχωρημένους)"
+
+msgid "Seconds to wait after boot before starting notifications"
+msgstr "Δευτερόλεπτα αναμονής μετά την εκκίνηση πριν ξεκινήσουν οι ειδοποιήσεις"
+
+msgid "Select .ics file to import"
+msgstr "Επιλέξτε αρχείο .ics για εισαγωγή"
+
+msgid "Select a file, not a folder"
+msgstr "Επιλέξτε αρχείο, όχι φάκελο"
+
+msgid "Select vCard file to import"
+msgstr "Επιλέξτε αρχείο vCard για εισαγωγή"
+
+msgid "Selected: {0}"
+msgstr "Επιλέχθηκαν: {0}"
+
+msgid "September"
+msgstr "Σεπτέμβριος"
+
+msgid "Short beep"
+msgstr "Σύντομο μπιπ"
+
+msgid "Show 'H' marker on holiday days"
+msgstr "Εμφάνιση δείκτη 'H' στις ημέρες αργιών"
+
+msgid "Show Statistics"
+msgstr "Εμφάνιση στατιστικών"
+
+msgid "Show Today's Holidays"
+msgstr "Εμφάνιση σημερινών αργιών"
+
+msgid "Show Upcoming Holidays"
+msgstr "Εμφάνιση επερχόμενων αργιών"
+
+msgid "Show debug messages in console/log"
+msgstr "Εμφάνιση μηνυμάτων εντοπισμού σφαλμάτων στην κονσόλα/αρχείο καταγραφής"
+
+msgid "Show event indicators"
+msgstr "Εμφάνιση ενδείξεων συμβάντων"
+
+msgid "Show event statistics"
+msgstr "Εμφάνιση στατιστικών συμβάντων"
+
+msgid "Show holiday indicators"
+msgstr "Εμφάνιση ενδείξεων αργιών"
+
+msgid "Show markers on days with events"
+msgstr "Εμφάνιση δεικτών στις ημέρες με συμβάντα"
+
+msgid "Show notifications for upcoming events"
+msgstr "Εμφάνιση ειδοποιήσεων για επερχόμενα συμβάντα"
+
+msgid "Sign"
+msgstr "Ζώδιο"
+
+msgid "Sign:"
+msgstr "Ζώδιο:"
+
+msgid "Size: {0:.1f} KB"
+msgstr "Μέγεθος: {0:.1f} KB"
+
+msgid "Size: {0:.1f} MB"
+msgstr "Μέγεθος: {0:.1f} MB"
+
+msgid "Skipped: %d"
+msgstr "Παραλείφθηκαν: %d"
+
+msgid "Skipped: {0}"
+msgstr "Παραλείφθηκαν: {0}"
+
+msgid "Skipped: {0} (duplicates)"
+msgstr "Παραλείφθηκαν: {0} (διπλότυπα)"
+
+msgid "Sort"
+msgstr "Ταξινόμηση"
+
+msgid "Sort by birthday (month/day)"
+msgstr "Ταξινόμηση κατά ημ/νία γέννησης (μήνας/ημέρα)"
+
+msgid "Sort by category"
+msgstr "Ταξινόμηση κατά κατηγορία"
+
+msgid "Sort by name (alphabetical)"
+msgstr "Ταξινόμηση κατά όνομα (αλφαβητικά)"
+
+msgid "Sorted by birthday"
+msgstr "Ταξινόμηση κατά ημ/νία γέννησης"
+
+msgid "Sorted by category"
+msgstr "Ταξινόμηση κατά κατηγορία"
+
+msgid "Sorted by date"
+msgstr "Ταξινόμηση κατά ημερομηνία"
+
+msgid "Sorted by name"
+msgstr "Ταξινόμηση κατά όνομα"
+
+msgid "Sorted by title"
+msgstr "Ταξινόμηση κατά τίτλο"
+
+msgid "Sorted by: Birthday"
+msgstr "Ταξινόμηση: Ημ/νία γέννησης"
+
+msgid "Sorted by: Category"
+msgstr "Ταξινόμηση: Κατηγορία"
+
+msgid "Sorted by: Date"
+msgstr "Ταξινόμηση: Ημερομηνία"
+
+msgid "Sorted by: Name"
+msgstr "Ταξινόμηση: Όνομα"
+
+msgid "Sorted by: Title"
+msgstr "Ταξινόμηση: Τίτλος"
+
+msgid "Start event notifications in background (recommended)"
+msgstr "Έναρξη ειδοποιήσεων συμβάντων στο παρασκήνιο (συνιστάται)"
+
+msgid "Subdirectory name for exports (created automatically)"
+msgstr "Όνομα υποκαταλόγου για εξαγωγές (δημιουργείται αυτόματα)"
+
+msgid "Successfully converted {0} entries to ICS format"
+msgstr "Η μετατροπή {0} εγγραφών σε μορφή ICS ολοκληρώθηκε με επιτυχία"
+
+msgid "Sun"
+msgstr "Κυρ"
+
+msgid "Tags: {0}"
+msgstr "Ετικέτες: {0}"
+
+msgid "Temporary Storage (/tmp)"
+msgstr "Προσωρινή αποθήκευση (/tmp)"
+
+msgid "Test error: %s"
+msgstr "Σφάλμα δοκιμής: %s"
+
+msgid "Text format"
+msgstr "Μορφή κειμένου"
+
+msgid "Thu"
+msgstr "Πεμ"
+
+msgid "Time"
+msgstr "Ώρα"
+
+msgid "Time (HH:MM)"
+msgstr "Ώρα (ΩΩ:ΛΛ)"
+
+msgid "Time:"
+msgstr "Ώρα:"
+
+msgid "Title"
+msgstr "Τίτλος"
+
+msgid "Title and date are required!"
+msgstr "Απαιτούνται τίτλος και ημερομηνία!"
+
+msgid "Title is required"
+msgstr "Ο τίτλος είναι υποχρεωτικός"
+
+msgid "Title:"
+msgstr "Τίτλος:"
+
+msgid "Today"
+msgstr "Σήμερα"
+
+msgid "Total events: {0}"
+msgstr "Συνολικά συμβάντα: {0}"
+
+msgid "Total files: {0}\n"
+msgstr "Σύνολο αρχείων: {0}\n"
+
+msgid "Total size: {0:.1f} KB\n"
+msgstr "Συνολικό μέγεθος: {0:.1f} KB\n"
+
+msgid "Total: %d"
+msgstr "Σύνολο: %d"
+
+msgid "Total: {0}"
+msgstr "Σύνολο: {0}"
+
+msgid "Tue"
+msgstr "Τρι"
+
+msgid "Type of sound to play with notifications"
+msgstr "Τύπος ήχου που θα αναπαράγεται με τις ειδοποιήσεις"
+
+msgid "U:{0}"
+msgstr "U:{0}"
+
+msgid "USB Drive"
+msgstr "Μονάδα USB"
+
+msgid "USB Drive (/media/usb)"
+msgstr "Μονάδα USB (/media/usb)"
+
+msgid "Unable to play test sound"
+msgstr "Δεν είναι δυνατή η αναπαραγωγή δοκιμαστικού ήχου"
+
+msgid "Update available!"
+msgstr "Διαθέσιμη ενημέρωση!"
+
+msgid "Update cancelled"
+msgstr "Η ενημέρωση ακυρώθηκε"
+
+msgid "Update check error"
+msgstr "Σφάλμα ελέγχου ενημερώσεων"
+
+msgid "Update check failed"
+msgstr "Ο έλεγχος ενημερώσεων απέτυχε"
+
+msgid "Update completed successfully!"
+msgstr "Η ενημέρωση ολοκληρώθηκε με επιτυχία!"
+
+msgid "Update error: %s"
+msgstr "Σφάλμα ενημέρωσης: %s"
+
+msgid "Update failed"
+msgstr "Η ενημέρωση απέτυχε"
+
+msgid "Update failed and backup restore also failed!"
+msgstr "Η ενημέρωση απέτυχε και η επαναφορά από το αντίγραφο ασφαλείας επίσης απέτυχε!"
+
+msgid "Update failed. Restored from backup."
+msgstr "Η ενημέρωση απέτυχε. Έγινε επαναφορά από το αντίγραφο ασφαλείας."
+
+msgid "Update successful!"
+msgstr "Η ενημέρωση ολοκληρώθηκε με επιτυχία!"
+
+msgid "Updated: {0}"
+msgstr "Ενημερώθηκαν: {0}"
+
+msgid "Updating plugin... Please wait"
+msgstr "Ενημέρωση προσθέτου... Παρακαλώ περιμένετε"
+
+msgid "Using legacy database format"
+msgstr "Χρήση παλαιάς μορφής βάσης δεδομένων"
+
+msgid "View"
+msgstr "Προβολή"
+
+msgid "Waiting for thread to stop..."
+msgstr "Αναμονή για τερματισμό του νήματος..."
+
+msgid "Wed"
+msgstr "Τετ"
+
+msgid "White"
+msgstr "Λευκό"
+
+msgid "Yellow"
+msgstr "Κίτρινο"
+
+msgid "You have the latest version of Calendar."
+msgstr "Έχετε την πιο πρόσφατη έκδοση του Calendar."
+
+msgid "not sorted"
+msgstr "χωρίς ταξινόμηση"
+
+msgid "sorted by birthday"
+msgstr "ταξινόμηση κατά ημερομηνία γέννησης"
+
+msgid "sorted by category"
+msgstr "ταξινόμηση κατά κατηγορία"
+
+msgid "sorted by name"
+msgstr "ταξινόμηση κατά όνομα"
+
+msgid "vCard format"
+msgstr "mορφή vCard"
+
+msgid "vCard format (standard)"
+msgstr "mορφή vCard (τυπική)"
+
+msgid "vCard import feature not available: {0}"
+msgstr "h δυνατότητα εισαγωγής vCard δεν είναι διαθέσιμη: {0}"
+
+#~ msgid "--- DEBUG ---"
+#~ msgstr "--- ΕΝΤΟΠΙΣΜΟΣ ΣΦΑΛΜΑΤΩΝ ---"
+
+#~ msgid "Date People"
+#~ msgstr "Άτομα ανά ημερομηνία"
+
+#~ msgid "Date People:"
+#~ msgstr "Άτομα ανά ημερομηνία:"
+
+#~ msgid "Debug completed. Check logs."
+#~ msgstr "Ο εντοπισμός σφαλμάτων ολοκληρώθηκε. Ελέγξτε τα αρχεία καταγραφής."
+
+#~ msgid "Edit Date People"
+#~ msgstr "Επεξεργασία ατόμων ανά ημερομηνία"
+
+#~ msgid "Edit Month People"
+#~ msgstr "Επεξεργασία ατόμων ανά μήνα"
+
+#~ msgid "Month People"
+#~ msgstr "Άτομα ανά μήνα"
+
+#~ msgid "Month People:"
+#~ msgstr "Άτομα ανά μήνα:"
+
+#~ msgid "Sound playback started"
+#~ msgstr "Η αναπαραγωγή ήχου ξεκίνησε"
+
+#~ msgid "Test Debug Config"
+#~ msgstr "Δοκιμή ρυθμίσεων εντοπισμού σφαλμάτων"
+
+#~ msgid "Test Event Time Conversion"
+#~ msgstr "Δοκιμή μετατροπής ώρας συμβάντος"
+
+#~ msgid "Test Fix Event Now"
+#~ msgstr "Δοκιμή άμεσης διόρθωσης συμβάντος"
+
+#~ msgid "Test Force Event Conversion Event Time"
+#~ msgstr "Δοκιμή εξαναγκασμένης μετατροπής ώρας συμβάντος"
+
+#~ msgid "Test Force Save all Config"
+#~ msgstr "Δοκιμή εξαναγκασμένης αποθήκευσης όλων των ρυθμίσεων"
+
+#~ msgid "Test Holiday Loading"
+#~ msgstr "Δοκιμή φόρτωσης αργιών"
+
+#~ msgid "Test Notification Now"
+#~ msgstr "Δοκιμή ειδοποίησης τώρα"
+
+#~ msgid "Test Sound Playback"
+#~ msgstr "Δοκιμή αναπαραγωγής ήχου"
+
+#~ msgid "Test notification sent"
+#~ msgstr "Η δοκιμαστική ειδοποίηση στάλθηκε"

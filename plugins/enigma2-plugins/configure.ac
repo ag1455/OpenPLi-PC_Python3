@@ -126,11 +126,5 @@ servicemp3/Makefile
 servicemp3/plugin/Makefile
 servicemp3/servicemp3/Makefile
 
-systemtime/Makefile
-systemtime/meta/Makefile
-systemtime/po/Makefile
-systemtime/src/Makefile
-systemtime/src/images/Makefile
-
 ])
 AC_OUTPUT

@@ -1,0 +1,53 @@
+<setupxml>
+    <setup key="settingCalendar" title="Calendar Settings">
+        <!-- Database Format -->
+        <item level="0" text="Database format" description="Choose between legacy text files or standard vCard format">config.plugins.calendar.database_format</item>
+
+        <!-- Event System -->
+        <item level="0" text="Enable event system" description="Enable event management with date/time">config.plugins.calendar.events_enabled</item>
+        <if conditional="config.plugins.calendar.events_enabled.value">
+            <item level="0" text="Default event time" description="Default time for new events (HH:MM format)">config.plugins.calendar.default_event_time</item>
+            <item level="0" text="Default notification minutes" description="Default minutes before event to show notification">config.plugins.calendar.default_notify_minutes</item>
+            <item level="0" text="Enable notifications" description="Show notifications for upcoming events">config.plugins.calendar.events_notifications</item>
+            <if conditional="config.plugins.calendar.events_notifications.value">
+                <item level="0" text="Enable autostart" description="Start event notifications in background (recommended)">config.plugins.calendar.autostart_enabled</item>
+                <if conditional="config.plugins.calendar.autostart_enabled.value">
+                    <item level="0" text="Autostart delay" description="Seconds to wait after boot before starting notifications">config.plugins.calendar.autostart_delay</item>
+                </if>
+                <item level="0" text="Play sound with notifications" description="Play a sound when event notification appears">config.plugins.calendar.events_play_sound</item>
+                <if conditional="config.plugins.calendar.events_play_sound.value">
+                    <item level="0" text="Notification sound type" description="Type of sound to play with notifications">config.plugins.calendar.events_sound_type</item>
+                </if>
+                <item level="1" text="Event check interval" description="Seconds between event checks (advanced)">config.plugins.calendar.check_interval</item>
+            </if>
+            <item level="0" text="Show event indicators" description="Show markers on days with events">config.plugins.calendar.events_show_indicators</item>
+            <if conditional="config.plugins.calendar.events_show_indicators.value">
+                <item level="0" text="Event color" description="Color for days with events">config.plugins.calendar.events_color</item>
+            </if>
+        </if>
+
+        <!-- Holiday Settings -->
+        <item level="0" text="Enable holiday coloring" description="Color days with holidays">config.plugins.calendar.holidays_enabled</item>
+        <if conditional="config.plugins.calendar.holidays_enabled.value">
+            <item level="0" text="Show holiday indicators" description="Show 'H' marker on holiday days">config.plugins.calendar.holidays_show_indicators</item>
+            <if conditional="config.plugins.calendar.holidays_show_indicators.value">
+                <item level="0" text="Holiday color" description="Color for holiday days">config.plugins.calendar.holidays_color</item>
+            </if>
+        </if>
+
+        <!-- Export Settings -->
+        <item level="0" text="Export format" description="Default format for exported files">config.plugins.calendar.export_format</item>
+        <item level="0" text="Export location" description="Choose where to save exported files">config.plugins.calendar.export_location</item>
+        <item level="0" text="Export subdirectory" description="Subdirectory name for exports (created automatically)">config.plugins.calendar.export_subdir</item>
+        <item level="0" text="Add timestamp to filename" description="Add date and time to exported filenames">config.plugins.calendar.export_add_timestamp</item>
+        
+        <!-- Performance Settings -->
+        <item level="1" text="Clean old notifications" description="Automatically clean old notified events">config.plugins.calendar.auto_clean_notifications</item>
+        <if conditional="config.plugins.calendar.auto_clean_notifications.value">
+            <item level="1" text="Clean after days" description="Days to keep notifications in cache">config.plugins.calendar.notification_cache_days</item>
+        </if>
+
+        <!-- Debug Settings -->
+        <item level="0" text="Enable debug mode" description="Show debug messages in console/log">config.plugins.calendar.debug_enabled</item>
+    </setup>
+</setupxml>

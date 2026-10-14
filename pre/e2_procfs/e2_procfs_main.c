@@ -403,7 +403,19 @@ static int e2procfs_release(struct inode *inode, struct file *file)
 
 	return 0;
 }
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+
+#if LINUX_VERSION_CODE <= KERNEL_VERSION(7,6,0)
+static const struct proc_ops e2procfs_fops = {
+	.proc_open	= e2procfs_open,
+	.proc_read	= seq_read,
+	.proc_write	= e2procfs_write,
+	.proc_lseek	= noop_llseek,
+	.proc_poll	= e2procfs_poll,
+	.proc_mmap	= NULL,
+	.proc_release	= e2procfs_release,
+};
+#else
+//For kernel >= 5.6.0
 static const struct proc_ops e2procfs_fops = {
 	.proc_open	= e2procfs_open,
 	.proc_read	= seq_read,
@@ -413,18 +425,8 @@ static const struct proc_ops e2procfs_fops = {
 	.proc_mmap	= NULL,
 	.proc_release	= e2procfs_release,
 };
-#else
-static const struct file_operations e2procfs_fops = {
-	.owner          = THIS_MODULE,
-	.open           = e2procfs_open,
-	.read           = seq_read,
-	.write          = e2procfs_write,
-	.llseek         = no_llseek,
-	.poll           = e2procfs_poll,
-	.mmap           = NULL,
-	.release        = e2procfs_release,
-};
 #endif
+
 static int __init e2procfs_init_module(void)
 {
 	int i;

@@ -1,0 +1,1224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Calendar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 13:01+0100\n"
+"PO-Revision-Date: 2025-12-30 22:23+0100\n"
+"Last-Translator: Manfred Aabye <openmanniland@gmx.de>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "(Search: '{0}')"
+msgstr ""
+
+msgid "(truncated)"
+msgstr ""
+
+msgid "--- CONTACTS ---"
+msgstr ""
+
+msgid "--- DATABASE ---"
+msgstr ""
+
+msgid "--- EVENTS ---"
+msgstr ""
+
+msgid "--- HOLIDAYS ---"
+msgstr ""
+
+msgid "--- PERSONAL DATA ---"
+msgstr ""
+
+msgid "--- SYSTEM ---"
+msgstr ""
+
+msgid "..."
+msgstr ""
+
+msgid ".............."
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active:"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add Contact"
+msgstr ""
+
+msgid "Add Event"
+msgstr ""
+
+msgid "Add date and time to exported filenames"
+msgstr ""
+
+msgid "Add timestamp to filename"
+msgstr ""
+
+msgid "Alert sound"
+msgstr ""
+
+msgid "Already on today's event"
+msgstr ""
+
+msgid "April"
+msgstr "April"
+
+msgid "August"
+msgstr "August"
+
+msgid "Automatically clean old notified events"
+msgstr ""
+
+msgid "Autostart delay"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Birthday (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Birthdays: {0}"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Browse ICS Files"
+msgstr ""
+
+msgid "CONTACTS WITH BIRTHDAYS TODAY:"
+msgstr ""
+
+msgid "CSV format"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Calendar Planner"
+msgstr ""
+
+msgid "Calendar Planner | Ready"
+msgstr ""
+
+msgid "Calendar Settings"
+msgstr ""
+
+msgid "Calendar with events and notifications"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancelling..."
+msgstr ""
+
+msgid "Cannot delete: Contact has no ID"
+msgstr ""
+
+msgid "Cannot initialize event system: {0}"
+msgstr ""
+
+msgid "Categories (comma separated)"
+msgstr ""
+
+msgid "Check for Updates"
+msgstr ""
+
+msgid "Checking for updates..."
+msgstr ""
+
+msgid "Choose between legacy text files or standard vCard format"
+msgstr ""
+
+msgid "Choose where to save exported files"
+msgstr ""
+
+msgid "Clean after days"
+msgstr ""
+
+msgid "Clean old notifications"
+msgstr ""
+
+msgid "Cleaned {0} duplicate events"
+msgstr ""
+
+msgid "Cleaned {0} old ICS files"
+msgstr ""
+
+msgid "Cleanup Old Files"
+msgstr ""
+
+msgid "Cleanup duplicate events"
+msgstr ""
+
+msgid "Cleanup past events"
+msgstr ""
+
+msgid "Clear ALL holiday entries from all date files?"
+msgstr ""
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Clear Holiday Database"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Color days with holidays"
+msgstr ""
+
+msgid "Color for days with events"
+msgstr ""
+
+msgid "Color for holiday days"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact '{0}' deleted successfully"
+msgstr ""
+
+msgid "Contact:"
+msgstr ""
+
+msgid "Contacts directory not found"
+msgstr ""
+
+msgid "Contacts imported from ICS file!"
+msgstr ""
+
+msgid "Contacts: 0"
+msgstr ""
+
+msgid "Contacts: {0}/{1}"
+msgstr ""
+
+msgid "Conversion error: {0}"
+msgstr ""
+
+msgid "Convert all existing data to vCard format?"
+msgstr ""
+
+msgid "Convert to ICS format"
+msgstr ""
+
+msgid "Convert to legacy format"
+msgstr ""
+
+msgid "Convert to vCard format"
+msgstr ""
+
+msgid "Converted {0} events to {1}"
+msgstr ""
+
+msgid "Could not check for updates. Check internet connection."
+msgstr ""
+
+msgid "Could not check for updates: %s"
+msgstr ""
+
+msgid "Could not read file"
+msgstr ""
+
+msgid "Cyan"
+msgstr ""
+
+msgid "Database converted to vCard format"
+msgstr ""
+
+msgid "Database format"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Date range: {0} to {1}"
+msgstr ""
+
+msgid "Date:"
+msgstr ""
+
+msgid "Day +"
+msgstr "Tag +"
+
+msgid "Day -"
+msgstr "Tag -"
+
+msgid "Days to keep notifications in cache"
+msgstr ""
+
+msgid "December"
+msgstr "Dezember"
+
+msgid "Default event time"
+msgstr ""
+
+msgid "Default format for exported files"
+msgstr ""
+
+msgid "Default minutes before event to show notification"
+msgstr ""
+
+msgid "Default notification minutes"
+msgstr ""
+
+msgid "Default time for new events (HH:MM format)"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete ALL ICS events"
+msgstr ""
+
+msgid "Delete ALL contacts"
+msgstr ""
+
+msgid "Delete ALL events"
+msgstr ""
+
+msgid "Delete File"
+msgstr ""
+
+msgid "Delete ICS files older than 30 days?"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "Delete {0}?"
+msgstr ""
+
+msgid "Delete: {0}"
+msgstr ""
+
+msgid "Deleted {0} ICS events"
+msgstr ""
+
+msgid "Deleted {0} contacts from database"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Directory: {0}"
+msgstr ""
+
+msgid "Disk"
+msgstr ""
+
+msgid "Duplicates cleaned: %d"
+msgstr ""
+
+msgid "E:{0}"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Contact"
+msgstr ""
+
+msgid "Edit Contact ({0}/{1})"
+msgstr ""
+
+msgid "Edit Date"
+msgstr ""
+
+msgid "Edit Description"
+msgstr ""
+
+msgid "Edit Event"
+msgstr ""
+
+msgid "Edit Event ({0}/{1})"
+msgstr ""
+
+msgid "Edit Event ({0}/{1}) - Today"
+msgstr ""
+
+msgid "Edit Holiday"
+msgstr ""
+
+msgid "Edit ICS Event"
+msgstr ""
+
+msgid "Edit Note"
+msgstr ""
+
+msgid "Edit Sign"
+msgstr ""
+
+msgid "Edit: {0}"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Enable autostart"
+msgstr ""
+
+msgid "Enable debug mode"
+msgstr ""
+
+msgid "Enable event management with date/time"
+msgstr ""
+
+msgid "Enable event system"
+msgstr ""
+
+msgid "Enable holiday coloring"
+msgstr ""
+
+msgid "Enable notifications"
+msgstr ""
+
+msgid "Enter"
+msgstr ""
+
+msgid "Error deleting contact"
+msgstr ""
+
+msgid "Error deleting contact '{0}'"
+msgstr ""
+
+msgid "Error deleting database: {0}"
+msgstr ""
+
+msgid "Error getting ICS statistics"
+msgstr ""
+
+msgid "Error opening ICS browser: %s"
+msgstr ""
+
+msgid "Error opening ICS importer: {0}"
+msgstr ""
+
+msgid "Error opening event dialog"
+msgstr ""
+
+msgid "Error saving ICS data"
+msgstr ""
+
+msgid "Error saving contact"
+msgstr ""
+
+msgid "Error saving data"
+msgstr ""
+
+msgid "Error saving event"
+msgstr ""
+
+msgid "Error: {0}"
+msgstr ""
+
+msgid "Errors: %d"
+msgstr ""
+
+msgid "Errors: {0}"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Event '{0}' deleted successfully"
+msgstr ""
+
+msgid "Event '{0}' saved successfully"
+msgstr ""
+
+msgid "Event check interval"
+msgstr ""
+
+msgid "Event color"
+msgstr ""
+
+msgid "Event manager not available"
+msgstr ""
+
+msgid "Event manager not initialized"
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings first."
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings."
+msgstr ""
+
+msgid "Event system is not enabled"
+msgstr ""
+
+msgid "Events found: {0}"
+msgstr ""
+
+msgid "Events imported successfully"
+msgstr ""
+
+msgid "Export All to ICS File"
+msgstr ""
+
+msgid "Export error: {0}"
+msgstr ""
+
+msgid "Export failed or no contacts to export"
+msgstr ""
+
+msgid "Export format"
+msgstr ""
+
+msgid "Export location"
+msgstr ""
+
+msgid "Export subdirectory"
+msgstr ""
+
+msgid "Export vCard File"
+msgstr ""
+
+msgid "Exporting contacts..."
+msgstr ""
+
+msgid "Failed to create backup. Update cancelled."
+msgstr ""
+
+msgid "Failed to start import"
+msgstr ""
+
+msgid "February"
+msgstr "Februar"
+
+msgid "Field {0}/{1}: {2}"
+msgstr ""
+
+msgid "File deleted"
+msgstr ""
+
+msgid "File not found!"
+msgstr ""
+
+msgid "File re-imported successfully"
+msgstr ""
+
+msgid "File re-imported. Found {0} potential duplicates."
+msgstr ""
+
+msgid "File: {0}"
+msgstr ""
+
+msgid "Files is Empty..."
+msgstr ""
+
+msgid "Found {0} ICS files"
+msgstr ""
+
+msgid "Fri"
+msgstr "Fr"
+
+msgid "Green"
+msgstr ""
+
+msgid "Hard Disk"
+msgstr ""
+
+msgid "Hard Disk (/media/hdd)"
+msgstr ""
+
+msgid "Holiday"
+msgstr ""
+
+msgid "Holiday color"
+msgstr ""
+
+msgid "Holiday:"
+msgstr ""
+
+msgid "Holidays imported"
+msgstr ""
+
+msgid "I:{0}"
+msgstr ""
+
+msgid "ICS Events: 0"
+msgstr ""
+
+msgid "ICS Events: {0}/{1}"
+msgstr ""
+
+msgid "ICS format"
+msgstr ""
+
+msgid "ICS format (google calendar)"
+msgstr ""
+
+msgid "ICS import feature not yet available: {0}"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Import All"
+msgstr ""
+
+msgid "Import Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import Holidays"
+msgstr ""
+
+msgid "Import ICS Contacts Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import completed"
+msgstr ""
+
+msgid "Import completed - Sorting contacts..."
+msgstr ""
+
+msgid "Import completed!"
+msgstr ""
+
+msgid "Import completed. Ready."
+msgstr ""
+
+msgid "Import error: {0}"
+msgstr ""
+
+msgid "Import events to calendar"
+msgstr ""
+
+msgid "Import vCard File"
+msgstr ""
+
+msgid "Imported ICS Files"
+msgstr ""
+
+msgid "Imported: %d"
+msgstr ""
+
+msgid "Imported: {0}"
+msgstr ""
+
+msgid "Imported: {0} contacts"
+msgstr ""
+
+msgid "Importing iCalendar File"
+msgstr ""
+
+msgid "Importing vCard File"
+msgstr ""
+
+msgid "Initializing..."
+msgstr ""
+
+msgid "Invalid birthday format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid date format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid time format! Use HH:MM (00:00 to 23:59)"
+msgstr ""
+
+msgid "Invalid time format. Use HH:MM"
+msgstr ""
+
+msgid "January"
+msgstr "Januar"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "Labels (comma separated)"
+msgstr ""
+
+msgid "Legacy format (text files)"
+msgstr ""
+
+msgid "Manage Contacts"
+msgstr ""
+
+msgid "Manage Event"
+msgstr ""
+
+msgid "Manage ICS Events"
+msgstr ""
+
+msgid "Manage ICS Files"
+msgstr ""
+
+msgid "March"
+msgstr "März"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Modified: {0}"
+msgstr ""
+
+msgid "Mon"
+msgstr "Mo"
+
+msgid "Month +"
+msgstr "Monat +"
+
+msgid "Month -"
+msgstr "Monat -"
+
+msgid "Name"
+msgstr ""
+
+msgid "Name is required"
+msgstr ""
+
+msgid "Network Share"
+msgstr ""
+
+msgid "New Date"
+msgstr ""
+
+msgid "Newest file: {0}"
+msgstr ""
+
+msgid "Next Field"
+msgstr ""
+
+msgid "No ICS directory found"
+msgstr ""
+
+msgid "No ICS events found"
+msgstr ""
+
+msgid "No ICS files found"
+msgstr ""
+
+msgid "No ICS files in archive"
+msgstr ""
+
+msgid "No TV service currently playing"
+msgstr ""
+
+msgid "No contact files found"
+msgstr ""
+
+msgid "No contact selected"
+msgstr ""
+
+msgid "No contacts found in database"
+msgstr ""
+
+msgid "No data found to convert"
+msgstr ""
+
+msgid "No data to export"
+msgstr ""
+
+msgid "No duplicates found"
+msgstr ""
+
+msgid "No event selected"
+msgstr ""
+
+msgid "No events database found"
+msgstr ""
+
+msgid "No events for today"
+msgstr ""
+
+msgid "No events to convert"
+msgstr ""
+
+msgid "No file in database..."
+msgstr "Keine Datei in der Datenbank..."
+
+msgid "No file selected"
+msgstr ""
+
+msgid "No past events to remove"
+msgstr ""
+
+msgid "No sorting (original order)"
+msgstr ""
+
+msgid "No sound"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Note:"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Notification sound type"
+msgstr ""
+
+msgid "Notification tone"
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Notify:"
+msgstr ""
+
+msgid "November"
+msgstr "November"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Oldest file: {0}\n"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "P:{0}/{1}"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Play a sound when event notification appears"
+msgstr ""
+
+msgid "Play sound with notifications"
+msgstr ""
+
+msgid "Please restart Enigma2 manually."
+msgstr ""
+
+msgid "Plugin Directory"
+msgstr ""
+
+msgid "Plugin is up to date"
+msgstr ""
+
+msgid "Press GREEN to import"
+msgstr ""
+
+msgid "Press TEXT to search"
+msgstr ""
+
+msgid "Preview file content"
+msgstr ""
+
+msgid "Progress: {0}%"
+msgstr ""
+
+msgid "Re-import"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Refreshed"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove Date"
+msgstr ""
+
+msgid "Removed {0} past events"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Repeat (none/daily/weekly/monthly/yearly)"
+msgstr ""
+
+msgid "Repeat:"
+msgstr ""
+
+msgid "Repeat: {0}"
+msgstr ""
+
+msgid "Root Home (/home/root)"
+msgstr ""
+
+msgid "S:{0}"
+msgstr ""
+
+msgid "SCHEDULED EVENTS:"
+msgstr ""
+
+msgid "Sat"
+msgstr "Sa"
+
+msgid "Save"
+msgstr ""
+
+msgid "Search contacts"
+msgstr ""
+
+msgid "Search events"
+msgstr ""
+
+msgid "Search:"
+msgstr ""
+
+msgid "Seconds between event checks (advanced)"
+msgstr ""
+
+msgid "Seconds to wait after boot before starting notifications"
+msgstr ""
+
+msgid "Select .ics file to import"
+msgstr ""
+
+msgid "Select a file, not a folder"
+msgstr ""
+
+msgid "Select vCard file to import"
+msgstr ""
+
+msgid "Selected: {0}"
+msgstr ""
+
+msgid "September"
+msgstr "September"
+
+msgid "Short beep"
+msgstr ""
+
+msgid "Show 'H' marker on holiday days"
+msgstr ""
+
+msgid "Show Statistics"
+msgstr ""
+
+msgid "Show Today's Holidays"
+msgstr ""
+
+msgid "Show Upcoming Holidays"
+msgstr ""
+
+msgid "Show debug messages in console/log"
+msgstr ""
+
+msgid "Show event indicators"
+msgstr ""
+
+msgid "Show event statistics"
+msgstr ""
+
+msgid "Show holiday indicators"
+msgstr ""
+
+msgid "Show markers on days with events"
+msgstr ""
+
+msgid "Show notifications for upcoming events"
+msgstr ""
+
+msgid "Sign"
+msgstr ""
+
+msgid "Sign:"
+msgstr ""
+
+msgid "Size: {0:.1f} KB"
+msgstr ""
+
+msgid "Size: {0:.1f} MB"
+msgstr ""
+
+msgid "Skipped: %d"
+msgstr ""
+
+msgid "Skipped: {0}"
+msgstr ""
+
+msgid "Skipped: {0} (duplicates)"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Sort by birthday (month/day)"
+msgstr ""
+
+msgid "Sort by category"
+msgstr ""
+
+msgid "Sort by name (alphabetical)"
+msgstr ""
+
+msgid "Sorted by birthday"
+msgstr ""
+
+msgid "Sorted by category"
+msgstr ""
+
+msgid "Sorted by date"
+msgstr ""
+
+msgid "Sorted by name"
+msgstr ""
+
+msgid "Sorted by title"
+msgstr ""
+
+msgid "Sorted by: Birthday"
+msgstr ""
+
+msgid "Sorted by: Category"
+msgstr ""
+
+msgid "Sorted by: Date"
+msgstr ""
+
+msgid "Sorted by: Name"
+msgstr ""
+
+msgid "Sorted by: Title"
+msgstr ""
+
+msgid "Start event notifications in background (recommended)"
+msgstr ""
+
+msgid "Subdirectory name for exports (created automatically)"
+msgstr ""
+
+msgid "Successfully converted {0} entries to ICS format"
+msgstr ""
+
+msgid "Sun"
+msgstr "So"
+
+msgid "Tags: {0}"
+msgstr ""
+
+msgid "Temporary Storage (/tmp)"
+msgstr ""
+
+msgid "Test error: %s"
+msgstr ""
+
+msgid "Text format"
+msgstr ""
+
+msgid "Thu"
+msgstr "Do"
+
+msgid "Time"
+msgstr ""
+
+msgid "Time (HH:MM)"
+msgstr ""
+
+msgid "Time:"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title and date are required!"
+msgstr ""
+
+msgid "Title is required"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Total events: {0}"
+msgstr ""
+
+msgid "Total files: {0}\n"
+msgstr ""
+
+msgid "Total size: {0:.1f} KB\n"
+msgstr ""
+
+msgid "Total: %d"
+msgstr ""
+
+msgid "Total: {0}"
+msgstr ""
+
+msgid "Tue"
+msgstr "Di"
+
+msgid "Type of sound to play with notifications"
+msgstr ""
+
+msgid "U:{0}"
+msgstr ""
+
+msgid "USB Drive"
+msgstr ""
+
+msgid "USB Drive (/media/usb)"
+msgstr ""
+
+msgid "Unable to play test sound"
+msgstr ""
+
+msgid "Update available!"
+msgstr ""
+
+msgid "Update cancelled"
+msgstr ""
+
+msgid "Update check error"
+msgstr ""
+
+msgid "Update check failed"
+msgstr ""
+
+msgid "Update completed successfully!"
+msgstr ""
+
+msgid "Update error: %s"
+msgstr ""
+
+msgid "Update failed"
+msgstr ""
+
+msgid "Update failed and backup restore also failed!"
+msgstr ""
+
+msgid "Update failed. Restored from backup."
+msgstr ""
+
+msgid "Update successful!"
+msgstr ""
+
+msgid "Updated: {0}"
+msgstr ""
+
+msgid "Updating plugin... Please wait"
+msgstr ""
+
+msgid "Using legacy database format"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Waiting for thread to stop..."
+msgstr ""
+
+msgid "Wed"
+msgstr "Mi"
+
+msgid "White"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "You have the latest version of Calendar."
+msgstr ""
+
+msgid "not sorted"
+msgstr ""
+
+msgid "sorted by birthday"
+msgstr ""
+
+msgid "sorted by category"
+msgstr ""
+
+msgid "sorted by name"
+msgstr ""
+
+msgid "vCard format"
+msgstr ""
+
+msgid "vCard format (standard)"
+msgstr ""
+
+msgid "vCard import feature not available: {0}"
+msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "Calendar\n"
+#~| "Developer: Sirius0103 \n"
+#~| "Homepage: www.gisclub.tv \n"
+#~| "\n"
+#~| "Donate:\n"
+#~| "WMZ  Z395874509364\n"
+#~| "WMR  R213063691482"
+#~ msgid ""
+#~ "Calendar\n"
+#~ "Developer: Sirius0103 \n"
+#~ "Homepage: www.gisclub.tv \n"
+#~ "\n"
+#~ "Donate:\n"
+#~ "WMZ  Z395874509364\n"
+#~ "WME  E284580190260\n"
+#~ "WMR  R213063691482\n"
+#~ "WMU  U658742613505"
+#~ msgstr ""
+#~ "Kalender\n"
+#~ "Entwickler: Sirius0103 \n"
+#~ "Homepage: www.gisclub.tv \n"
+#~ "\n"
+#~ "Spenden:\n"
+#~ "WMZ  Z395874509364\n"
+#~ "WMR  R213063691482"
+
+#~ msgid "Configuration is saved"
+#~ msgstr "Konfiguration wird gespeichert"
+
+#~ msgid "Germany"
+#~ msgstr "Deutschland"
+
+#~ msgid "Latvia"
+#~ msgstr "Lettland"
+
+#~ msgid "Location:"
+#~ msgstr "Standort:"
+
+#~ msgid "Mo Tu We Th Fr Sa Su"
+#~ msgstr "Mo Di Mi Do Fr Sa So"
+
+#~ msgid "Russia"
+#~ msgstr "Russland"
+
+#~ msgid "Ukraine"
+#~ msgstr "Ukraine"

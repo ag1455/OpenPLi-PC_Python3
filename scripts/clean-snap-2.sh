@@ -1,0 +1,8 @@
+#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -eu
+LANG=C snap list --all | awk '/disabled/{print $1, $3}' | while read snapname revision; do snap remove "$snapname" --revision="$revision"; done
+snap list --all
+rm -rf /var/lib/snapd/cache/*
+du -sh /var/lib/snapd

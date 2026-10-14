@@ -14,8 +14,7 @@ SUBDIRS = \
 	pluginhider \
 	recordinfobar \
 	satipclient \
-	servicemp3 \
-	systemtime
+	servicemp3
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml

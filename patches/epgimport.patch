@@ -1,0 +1,350 @@
+diff -ruN o/src/EPGImport/EPGConfig.py pc/src/EPGImport/EPGConfig.py
+--- o/src/EPGImport/EPGConfig.py	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/EPGConfig.py	2026-09-27 17:35:42.651583786 +0300
+@@ -19,7 +19,7 @@
+ from Components.config import config
+ 
+ # User selection stored here, so it goes into a user settings backup
+-SETTINGS_FILE = "/etc/enigma2/epgimport.conf"
++SETTINGS_FILE = "/usr/local/e2/etc/enigma2/epgimport.conf"
+ 
+ channelCache = {}
+ global filterCustomChannel
+@@ -58,7 +58,7 @@
+ def set_channel_id_filter():
+     full_filter = ""
+     try:
+-        with open("/etc/epgimport/channel_id_filter.conf", "r") as channel_id_file:
++        with open("/usr/local/e2/etc/epgimport/channel_id_filter.conf", "r") as channel_id_file:
+             for channel_id_line in channel_id_file:
+                 # Skipping comments in channel_id_filter.conf
+                 if not channel_id_line.startswith("#"):
+@@ -167,7 +167,7 @@
+             traceback.print_exc()
+ 
+     def update(self, filterCallback, downloadedFile=None):
+-        customFile = "/etc/epgimport/custom.channels.xml"
++        customFile = "/usr/local/e2/etc/epgimport/custom.channels.xml"
+         # Always read custom file since we don't know when it was last updated
+         # and we don't have multiple download from server problem since it is always a local file.
+         if exists(customFile):
+diff -ruN o/src/EPGImport/epgdat_importer.py pc/src/EPGImport/epgdat_importer.py
+--- o/src/EPGImport/epgdat_importer.py	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/epgdat_importer.py	2026-09-27 17:35:26.937022744 +0300
+@@ -11,7 +11,7 @@
+ 	settingspath = '.'
+ else:
+ 	tmppath = '/tmp'
+-	settingspath = '/etc/enigma2'
++	settingspath = '/usr/local/e2/etc/enigma2'
+ 
+ 
+ class epgdatclass:
+diff -ruN o/src/EPGImport/epgdat.py pc/src/EPGImport/epgdat.py
+--- o/src/EPGImport/epgdat.py	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/epgdat.py	2026-09-27 17:33:25.773768429 +0300
+@@ -115,7 +115,7 @@
+ class epgdat_class:
+ 	# temp files used for EPG.DAT creation
+ 
+-	LAMEDB = '/etc/enigma2/lamedb'
++	LAMEDB = '/usr/local/e2/etc/enigma2/lamedb'
+ 
+ 	EPGDAT_FILENAME = 'epgtest.dat'
+ 	EPGDAT_TMP_FILENAME = 'epgdat.tmp'
+diff -ruN o/src/EPGImport/filtersServices.py pc/src/EPGImport/filtersServices.py
+--- o/src/EPGImport/filtersServices.py	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/filtersServices.py	2026-09-27 17:36:05.880797806 +0300
+@@ -67,8 +67,8 @@
+ 
+ 	def saveTo(self, filename):
+ 		try:
+-			if not os.path.isdir('/etc/epgimport'):
+-				os.system('mkdir /etc/epgimport')
++			if not os.path.isdir('/usr/local/e2/etc/epgimport'):
++				os.system('mkdir /usr/local/e2/etc/epgimport')
+ 			cfg = open(filename, 'w')
+ 		except:
+ 			return
+@@ -77,7 +77,7 @@
+ 		cfg.close()
+ 
+ 	def load(self):
+-		self.loadFrom('/etc/epgimport/ignore.conf')
++		self.loadFrom('/usr/local/e2/etc/epgimport/ignore.conf')
+ 
+ 	def reload(self):
+ 		self.services = []
+@@ -87,7 +87,7 @@
+ 		return self.services
+ 
+ 	def save(self):
+-		self.saveTo('/etc/epgimport/ignore.conf')
++		self.saveTo('/usr/local/e2/etc/epgimport/ignore.conf')
+ 
+ 	def addService(self, ref):
+ 		if isinstance(ref, str):
+diff -ruN o/src/EPGImport/locale/ar.po pc/src/EPGImport/locale/ar.po
+--- o/src/EPGImport/locale/ar.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/ar.po	2026-09-27 17:40:54.919067456 +0300
+@@ -344,7 +344,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/cs.po pc/src/EPGImport/locale/cs.po
+--- o/src/EPGImport/locale/cs.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/cs.po	2026-09-27 17:37:36.310637064 +0300
+@@ -353,7 +353,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/de.po pc/src/EPGImport/locale/de.po
+--- o/src/EPGImport/locale/de.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/de.po	2026-09-27 17:39:16.795921290 +0300
+@@ -347,7 +347,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/el.po pc/src/EPGImport/locale/el.po
+--- o/src/EPGImport/locale/el.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/el.po	2026-09-27 17:40:00.679234262 +0300
+@@ -330,7 +330,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/en_GB.po pc/src/EPGImport/locale/en_GB.po
+--- o/src/EPGImport/locale/en_GB.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/en_GB.po	2026-09-27 17:41:31.745205017 +0300
+@@ -350,7 +350,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/es.po pc/src/EPGImport/locale/es.po
+--- o/src/EPGImport/locale/es.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/es.po	2026-09-27 17:39:45.010162971 +0300
+@@ -346,7 +346,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/et.po pc/src/EPGImport/locale/et.po
+--- o/src/EPGImport/locale/et.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/et.po	2026-09-27 17:41:21.014178218 +0300
+@@ -342,7 +342,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/fi.po pc/src/EPGImport/locale/fi.po
+--- o/src/EPGImport/locale/fi.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/fi.po	2026-09-27 17:41:57.528388919 +0300
+@@ -342,8 +342,8 @@
+ msgstr "Käynnistynyt vastaanotin palaa valmiustilaan, automaattisen EPG latauksen jälkeen."
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
+-msgstr "Tämä on edistyneille käyttäjille, jotka käyttävät kanavan id:een suodatus ominaisuutta. Jos on käytössä, suodatinsäännöt määritellään /etc/epgimport/channel_id_filter.conf soveltaa myös /etc/epgimport/custom.channels.xml tiedosto."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
++msgstr "Tämä on edistyneille käyttäjille, jotka käyttävät kanavan id:een suodatus ominaisuutta. Jos on käytössä, suodatinsäännöt määritellään /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf soveltaa myös /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml tiedosto."
+ 
+ #: ../plugin.py:360
+ msgid "This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."
+diff -ruN o/src/EPGImport/locale/fr.po pc/src/EPGImport/locale/fr.po
+--- o/src/EPGImport/locale/fr.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/fr.po	2026-09-27 17:38:18.485514141 +0300
+@@ -338,8 +338,8 @@
+ msgstr "Votre récepteur sera remis en veille après un réveil automatique pour l'importation automatique de l'EPG."
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
+-msgstr "Ceci est pour les utilisateurs avancés qui utilisent la fonction de filtrage du channel id. Si activé, les règles de filtrages définies dans /etc/epgimport/channel_id_filter.conf seront également appliquées sur votre fichier /etc/epgimport/custom.channels.xml."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
++msgstr "Ceci est pour les utilisateurs avancés qui utilisent la fonction de filtrage du channel id. Si activé, les règles de filtrages définies dans /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf seront également appliquées sur votre fichier /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml."
+ 
+ #: ../plugin.py:360
+ msgid "This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."
+diff -ruN o/src/EPGImport/locale/hu.po pc/src/EPGImport/locale/hu.po
+--- o/src/EPGImport/locale/hu.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/hu.po	2026-09-27 17:38:32.588613496 +0300
+@@ -348,7 +348,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/it.po pc/src/EPGImport/locale/it.po
+--- o/src/EPGImport/locale/it.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/it.po	2026-09-27 17:40:37.451535268 +0300
+@@ -380,12 +380,12 @@
+ #: ../plugin.py:361
+ msgid ""
+ "This is for advanced users that are using the channel id filtering feature. "
+-"If enabled, the filter rules defined into /etc/epgimport/channel_id_filter."
+-"conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++"If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter."
++"conf will also be applied on your /usr/local/e2/usr/local/e2/usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ "Per gli utenti avanzati che utilizzano la funzione di filtraggio dell'ID "
+-"canale. Se abilitate, le regole di filtro definite in /etc/epgimport/"
+-"channel_id_filter.conf verranno applicate anche al file /etc/epgimport/custom."
++"canale. Se abilitate, le regole di filtro definite in /usr/local/e2/usr/local/e2/usr/local/e2/usr/local/e2/etc/epgimport/"
++"channel_id_filter.conf verranno applicate anche al file /usr/local/e2/usr/local/e2/usr/local/e2/usr/local/e2/etc/epgimport/custom."
+ "channels.xml."
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/nb.po pc/src/EPGImport/locale/nb.po
+--- o/src/EPGImport/locale/nb.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/nb.po	2026-09-27 17:40:46.701688554 +0300
+@@ -342,7 +342,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/nl.po pc/src/EPGImport/locale/nl.po
+--- o/src/EPGImport/locale/nl.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/nl.po	2026-09-27 17:39:07.158140122 +0300
+@@ -366,8 +366,8 @@
+ msgstr "Indien geactiveerd, dan zal de box na het ontwaken en automatisch importeren weer naar stand-by gaan."
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
+-msgstr "Deze optie is voor gevorderde gebruiker die een filter voor zender-ID's gebruikt. Indien ingeschakeld, dan zullen de filterregels die zijn gedefinieerd in /etc/epgimport/channel_id_filter.conf ook worden toegepast op uw /etc/epgimport/custom.channels.xml bestand."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
++msgstr "Deze optie is voor gevorderde gebruiker die een filter voor zender-ID's gebruikt. Indien ingeschakeld, dan zullen de filterregels die zijn gedefinieerd in /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf ook worden toegepast op uw /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml bestand."
+ 
+ #: ../plugin.py:360
+ msgid "This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."
+diff -ruN o/src/EPGImport/locale/pl.po pc/src/EPGImport/locale/pl.po
+--- o/src/EPGImport/locale/pl.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/pl.po	2026-09-27 17:37:49.058380349 +0300
+@@ -347,7 +347,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/pt.po pc/src/EPGImport/locale/pt.po
+--- o/src/EPGImport/locale/pt.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/pt.po	2026-09-27 17:41:40.308927999 +0300
+@@ -341,7 +341,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/ru.po pc/src/EPGImport/locale/ru.po
+--- o/src/EPGImport/locale/ru.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/ru.po	2026-09-27 17:39:36.242347054 +0300
+@@ -235,7 +235,7 @@
+ 
+ #: ../plugin.py:315
+ msgid "Manual"
+-msgstr "В ручную"
++msgstr "Вручную"
+ 
+ #: ../plugin.py:90
+ msgid "Monday"
+@@ -338,8 +338,8 @@
+ msgstr "Ресивер будет переведен в режим ожидания после включения для автоматического импорта EPG."
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
+-msgstr "Это для опытных пользователей, которые используют функцию фильтрации идентификаторов каналов. Если этот параметр включен, правила фильтрации, определенные в /etc/epgimport/channel_id_filter.conf, также будут применены к вашему файлу /etc/epgimport/custom.channels.xml."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
++msgstr "Это для опытных пользователей, которые используют функцию фильтрации идентификаторов каналов. Если этот параметр включен, правила фильтрации, определенные в /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf, также будут применены к вашему файлу /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml."
+ 
+ #: ../plugin.py:360
+ msgid "This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."
+diff -ruN o/src/EPGImport/locale/sv.po pc/src/EPGImport/locale/sv.po
+--- o/src/EPGImport/locale/sv.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/sv.po	2026-09-27 17:38:42.117836252 +0300
+@@ -342,7 +342,7 @@
+ msgstr ""
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."
+ msgstr ""
+ 
+ #: ../plugin.py:360
+diff -ruN o/src/EPGImport/locale/uk.po pc/src/EPGImport/locale/uk.po
+--- o/src/EPGImport/locale/uk.po	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/locale/uk.po	2026-09-27 17:41:11.562613250 +0300
+@@ -342,8 +342,8 @@
+ msgstr "Після автоматичного оновлення EPG тюнер буде переведено в режим очікування."
+ 
+ #: ../plugin.py:361
+-msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."
+-msgstr "Це для просунутих користувачів, які використовують функцію фільтрації id-каналу. Якщо ввімкнено, правила фільтрування, визначені у /etc/epgimport/channel_id_filter.conf, також застосовуватимуться до вашого /etc/epgimport/custom.channels.xml файлу."
++msgid "This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml file."
++msgstr "Це для просунутих користувачів, які використовують функцію фільтрації id-каналу. Якщо ввімкнено, правила фільтрування, визначені у /usr/local/e2/usr/local/e2/etc/epgimport/channel_id_filter.conf, також застосовуватимуться до вашого /usr/local/e2/usr/local/e2/etc/epgimport/custom.channels.xml файлу."
+ 
+ #: ../plugin.py:360
+ msgid "This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."
+diff -ruN o/src/EPGImport/plugin.py pc/src/EPGImport/plugin.py
+--- o/src/EPGImport/plugin.py	2026-06-16 22:58:14.000000000 +0300
++++ pc/src/EPGImport/plugin.py	2026-09-27 17:43:25.613608979 +0300
+@@ -97,7 +97,7 @@
+ ]
+ 
+ # historically located (not a problem, we want to update it)
+-CONFIG_PATH = '/etc/epgimport'
++CONFIG_PATH = '/usr/local/e2/etc/epgimport'
+ STANDBY_FLAG_FILE = "/tmp/enigmastandby"
+ # Global variable
+ autoStartTimer = None
+@@ -359,7 +359,7 @@
+ 		self.cfg_longDescDays = getConfigListEntry(_("Load long descriptions up to X days"), self.EPG.longDescDays, _("Define the number of days that you want to get the full EPG data, reducing this number can help you to save memory usage on your box. But you are also limited with the EPG provider available data. You will not have 15 days EPG if it only provide 7 days data."))
+ 		self.cfg_parse_autotimer = getConfigListEntry(_("Run AutoTimer after import"), self.EPG.parse_autotimer, _("You can start automatically the plugin AutoTimer after the EPG data update to have it refreshing its scheduling after EPG data refresh."))
+ 		self.cfg_clear_oldepg = getConfigListEntry(_("Clearing current EPG before import"), config.plugins.epgimport.clear_oldepg, _("This will clear the current EPG data in memory before updating the EPG data. This allows you to always have a clean new EPG with the latest EPG data, for example in case of program changes between refresh, otherwise EPG data are cumulative."))
+-		self.cfg_filter_custom_channel = getConfigListEntry(_("Also apply \"channel id\" filtering on custom.channels.xml"), self.EPG.filter_custom_channel, _("This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /etc/epgimport/channel_id_filter.conf will also be applied on your /etc/epgimport/custom.channels.xml file."))
++		self.cfg_filter_custom_channel = getConfigListEntry(_("Also apply \"channel id\" filtering on custom.channels.xml"), self.EPG.filter_custom_channel, _("This is for advanced users that are using the channel id filtering feature. If enabled, the filter rules defined into /usr/local/e2/etc/epgimport/channel_id_filter.conf will also be applied on your /usr/local/e2/etc/epgimport/custom.channels.xml file."))
+ 		self.cfg_execute_shell = getConfigListEntry(_("Execute shell command before import EPG"), self.EPG.execute_shell, _("When enabled, then you can run the desired script before starting the import, after which the import of the EPG will begin."))
+ 		self.cfg_shell_name = getConfigListEntry(dx + _("Shell command name"), self.EPG.shell_name, _("Enter shell command name."))
+ 		self.cfg_run_after_standby = getConfigListEntry(_("Start import after standby"), self.EPG.run_after_standby, _("Start import after resuming from standby mode."))

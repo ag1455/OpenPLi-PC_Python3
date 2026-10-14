@@ -1,0 +1,1238 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Calendar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-22 15:12+0100\n"
+"PO-Revision-Date: 2026-01-02 21:32+0100\n"
+"Last-Translator: Warder <ciksa@seznam.cz>\n"
+"Language-Team: <ekekaz@gmail.com>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "(Search: '{0}')"
+msgstr ""
+
+msgid "(truncated)"
+msgstr ""
+
+msgid "--- CONTACTS ---"
+msgstr ""
+
+msgid "--- DATABASE ---"
+msgstr ""
+
+msgid "--- EVENTS ---"
+msgstr ""
+
+msgid "--- HOLIDAYS ---"
+msgstr ""
+
+msgid "--- PERSONAL DATA ---"
+msgstr ""
+
+msgid "--- SYSTEM ---"
+msgstr ""
+
+msgid "..."
+msgstr "…"
+
+msgid ".............."
+msgstr ".............."
+
+msgid "Active"
+msgstr "Aktív"
+
+msgid "Active:"
+msgstr "Aktív:"
+
+msgid "Add"
+msgstr "Hozzáadás"
+
+msgid "Add Contact"
+msgstr ""
+
+msgid "Add Event"
+msgstr "Esemény hozzáadása"
+
+msgid "Add date and time to exported filenames"
+msgstr ""
+
+msgid "Add timestamp to filename"
+msgstr ""
+
+msgid "Alert sound"
+msgstr "Figyelmeztető hang"
+
+msgid "Already on today's event"
+msgstr ""
+
+msgid "April"
+msgstr "Április"
+
+msgid "August"
+msgstr "Augusztus"
+
+msgid "Automatically clean old notified events"
+msgstr ""
+
+msgid "Autostart delay"
+msgstr ""
+
+msgid "Back"
+msgstr "Vissza"
+
+msgid "Birthday (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Birthdays: {0}"
+msgstr ""
+
+msgid "Blue"
+msgstr "Kék"
+
+msgid "Browse ICS Files"
+msgstr ""
+
+msgid "CONTACTS WITH BIRTHDAYS TODAY:"
+msgstr ""
+
+msgid "CSV format"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Calendar Planner"
+msgstr "Naptártervező"
+
+msgid "Calendar Planner | Ready"
+msgstr "Naptártervező | Készen áll"
+
+msgid "Calendar Settings"
+msgstr ""
+
+msgid "Calendar with events and notifications"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Mégsem"
+
+msgid "Cancelling..."
+msgstr ""
+
+msgid "Cannot delete: Contact has no ID"
+msgstr ""
+
+msgid "Cannot initialize event system: {0}"
+msgstr ""
+
+msgid "Categories (comma separated)"
+msgstr ""
+
+msgid "Check for Updates"
+msgstr "Frissítések keresése"
+
+msgid "Checking for updates..."
+msgstr "Frissítések keresése..."
+
+msgid "Choose between legacy text files or standard vCard format"
+msgstr ""
+
+msgid "Choose where to save exported files"
+msgstr ""
+
+msgid "Clean after days"
+msgstr ""
+
+msgid "Clean old notifications"
+msgstr ""
+
+msgid "Cleaned {0} duplicate events"
+msgstr ""
+
+msgid "Cleaned {0} old ICS files"
+msgstr ""
+
+msgid "Cleanup Old Files"
+msgstr ""
+
+msgid "Cleanup duplicate events"
+msgstr ""
+
+msgid "Cleanup past events"
+msgstr "Korábbi események takarítása"
+
+msgid "Clear ALL holiday entries from all date files?"
+msgstr "Törli az ÖSSZES ünnepnap-bejegyzést az összes dátumfájlból?"
+
+msgid "Clear All"
+msgstr ""
+
+msgid "Clear Holiday Database"
+msgstr "Ünnepi adatbázis törlése"
+
+msgid "Close"
+msgstr "Bezár"
+
+msgid "Color days with holidays"
+msgstr ""
+
+msgid "Color for days with events"
+msgstr ""
+
+msgid "Color for holiday days"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact '{0}' deleted successfully"
+msgstr ""
+
+msgid "Contact:"
+msgstr ""
+
+msgid "Contacts directory not found"
+msgstr ""
+
+msgid "Contacts imported from ICS file!"
+msgstr ""
+
+msgid "Contacts: 0"
+msgstr ""
+
+msgid "Contacts: {0}/{1}"
+msgstr ""
+
+msgid "Conversion error: {0}"
+msgstr ""
+
+msgid "Convert all existing data to vCard format?"
+msgstr ""
+
+msgid "Convert to ICS format"
+msgstr ""
+
+msgid "Convert to legacy format"
+msgstr ""
+
+msgid "Convert to vCard format"
+msgstr ""
+
+msgid "Converted {0} events to {1}"
+msgstr ""
+
+msgid "Could not check for updates. Check internet connection."
+msgstr "Nem sikerült frissítéseket keresni. Ellenőrizze az internetkapcsolatot."
+
+msgid "Could not check for updates: %s"
+msgstr "Nem sikerült frissítéseket keresni: %s"
+
+msgid "Could not read file"
+msgstr ""
+
+msgid "Cyan"
+msgstr "Ciánkék"
+
+msgid "Database converted to vCard format"
+msgstr ""
+
+msgid "Database format"
+msgstr ""
+
+msgid "Date"
+msgstr "Dátum"
+
+msgid "Date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Date range: {0} to {1}"
+msgstr ""
+
+msgid "Date:"
+msgstr "Dátum:"
+
+msgid "Day +"
+msgstr "NAPPAL"
+
+msgid "Day -"
+msgstr "NAPPAL"
+
+msgid "Days to keep notifications in cache"
+msgstr ""
+
+msgid "December"
+msgstr "December"
+
+msgid "Default event time"
+msgstr ""
+
+msgid "Default format for exported files"
+msgstr ""
+
+msgid "Default minutes before event to show notification"
+msgstr ""
+
+msgid "Default notification minutes"
+msgstr ""
+
+msgid "Default time for new events (HH:MM format)"
+msgstr ""
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Delete ALL ICS events"
+msgstr ""
+
+msgid "Delete ALL contacts"
+msgstr ""
+
+msgid "Delete ALL events"
+msgstr ""
+
+msgid "Delete File"
+msgstr "Fájl törlése"
+
+msgid "Delete ICS files older than 30 days?"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "Delete {0}?"
+msgstr ""
+
+msgid "Delete: {0}"
+msgstr ""
+
+msgid "Deleted {0} ICS events"
+msgstr ""
+
+msgid "Deleted {0} contacts from database"
+msgstr ""
+
+msgid "Description"
+msgstr "Leírás"
+
+msgid "Description:"
+msgstr "Leírás:"
+
+msgid "Directory: {0}"
+msgstr ""
+
+msgid "Disk"
+msgstr ""
+
+msgid "Duplicates cleaned: %d"
+msgstr ""
+
+msgid "E:{0}"
+msgstr ""
+
+msgid "Edit"
+msgstr "Szerkesztés"
+
+msgid "Edit Contact"
+msgstr ""
+
+msgid "Edit Contact ({0}/{1})"
+msgstr ""
+
+msgid "Edit Date"
+msgstr "Dátum szerkesztése"
+
+msgid "Edit Description"
+msgstr "Leírás szerkesztése"
+
+msgid "Edit Event"
+msgstr ""
+
+msgid "Edit Event ({0}/{1})"
+msgstr ""
+
+msgid "Edit Event ({0}/{1}) - Today"
+msgstr ""
+
+msgid "Edit Holiday"
+msgstr "Ünnepnap szerkesztése"
+
+msgid "Edit ICS Event"
+msgstr ""
+
+#, fuzzy
+msgid "Edit Note"
+msgstr "Dátum szerkesztése"
+
+msgid "Edit Sign"
+msgstr "Szerkesztési jel"
+
+msgid "Edit: {0}"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Enable autostart"
+msgstr ""
+
+msgid "Enable debug mode"
+msgstr ""
+
+msgid "Enable event management with date/time"
+msgstr ""
+
+msgid "Enable event system"
+msgstr ""
+
+msgid "Enable holiday coloring"
+msgstr ""
+
+msgid "Enable notifications"
+msgstr ""
+
+msgid "Enter"
+msgstr ""
+
+msgid "Error deleting contact"
+msgstr ""
+
+msgid "Error deleting contact '{0}'"
+msgstr ""
+
+msgid "Error deleting database: {0}"
+msgstr ""
+
+msgid "Error getting ICS statistics"
+msgstr ""
+
+msgid "Error opening ICS browser: %s"
+msgstr ""
+
+msgid "Error opening ICS importer: {0}"
+msgstr ""
+
+msgid "Error opening event dialog"
+msgstr "Hiba az esemény párbeszédpanelének megnyitásakor"
+
+msgid "Error saving ICS data"
+msgstr ""
+
+msgid "Error saving contact"
+msgstr ""
+
+msgid "Error saving data"
+msgstr "Hiba az adatok mentése során"
+
+msgid "Error saving event"
+msgstr ""
+
+msgid "Error: {0}"
+msgstr ""
+
+msgid "Errors: %d"
+msgstr ""
+
+msgid "Errors: {0}"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Event '{0}' deleted successfully"
+msgstr ""
+
+msgid "Event '{0}' saved successfully"
+msgstr ""
+
+msgid "Event check interval"
+msgstr ""
+
+msgid "Event color"
+msgstr ""
+
+msgid "Event manager not available"
+msgstr ""
+
+msgid "Event manager not initialized"
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings first."
+msgstr ""
+
+msgid "Event system is disabled. Enable it in settings."
+msgstr "Az eseményrendszer le van tiltva. Engedélyezze a beállításokban."
+
+msgid "Event system is not enabled"
+msgstr ""
+
+msgid "Events found: {0}"
+msgstr ""
+
+msgid "Events imported successfully"
+msgstr ""
+
+msgid "Export All to ICS File"
+msgstr ""
+
+msgid "Export error: {0}"
+msgstr ""
+
+msgid "Export failed or no contacts to export"
+msgstr ""
+
+msgid "Export format"
+msgstr ""
+
+msgid "Export location"
+msgstr ""
+
+msgid "Export subdirectory"
+msgstr ""
+
+msgid "Export vCard File"
+msgstr ""
+
+msgid "Exporting contacts..."
+msgstr ""
+
+msgid "Failed to create backup. Update cancelled."
+msgstr "Nem sikerült biztonsági mentést készíteni. Frissítés megszakítva."
+
+msgid "Failed to start import"
+msgstr ""
+
+msgid "February"
+msgstr "Február"
+
+msgid "Field {0}/{1}: {2}"
+msgstr ""
+
+msgid "File deleted"
+msgstr ""
+
+msgid "File not found!"
+msgstr "Fájl nem található!"
+
+msgid "File re-imported successfully"
+msgstr ""
+
+msgid "File re-imported. Found {0} potential duplicates."
+msgstr ""
+
+msgid "File: {0}"
+msgstr ""
+
+msgid "Files is Empty..."
+msgstr "A fájlok üresek..."
+
+msgid "Found {0} ICS files"
+msgstr ""
+
+msgid "Fri"
+msgstr "Pén"
+
+msgid "Green"
+msgstr "Zöld"
+
+msgid "Hard Disk"
+msgstr ""
+
+msgid "Hard Disk (/media/hdd)"
+msgstr ""
+
+msgid "Holiday"
+msgstr "Ünnepnap"
+
+msgid "Holiday color"
+msgstr ""
+
+msgid "Holiday:"
+msgstr ""
+
+msgid "Holidays imported"
+msgstr ""
+
+msgid "I:{0}"
+msgstr ""
+
+msgid "ICS Events: 0"
+msgstr ""
+
+msgid "ICS Events: {0}/{1}"
+msgstr ""
+
+msgid "ICS format"
+msgstr ""
+
+msgid "ICS format (google calendar)"
+msgstr ""
+
+msgid "ICS import feature not yet available: {0}"
+msgstr ""
+
+msgid "Import"
+msgstr "Importálás"
+
+msgid "Import All"
+msgstr "Összes importálása"
+
+msgid "Import Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import Holidays"
+msgstr "Import ünnepek"
+
+msgid "Import ICS Contacts Google Calendar (.ics)"
+msgstr ""
+
+msgid "Import completed"
+msgstr ""
+
+msgid "Import completed - Sorting contacts..."
+msgstr ""
+
+msgid "Import completed!"
+msgstr ""
+
+msgid "Import completed. Ready."
+msgstr ""
+
+msgid "Import error: {0}"
+msgstr ""
+
+msgid "Import events to calendar"
+msgstr ""
+
+msgid "Import vCard File"
+msgstr ""
+
+msgid "Imported ICS Files"
+msgstr ""
+
+msgid "Imported: %d"
+msgstr ""
+
+msgid "Imported: {0}"
+msgstr ""
+
+msgid "Imported: {0} contacts"
+msgstr ""
+
+msgid "Importing iCalendar File"
+msgstr ""
+
+msgid "Importing vCard File"
+msgstr ""
+
+msgid "Initializing..."
+msgstr ""
+
+msgid "Invalid birthday format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid date format. Use YYYY-MM-DD"
+msgstr ""
+
+msgid "Invalid time format! Use HH:MM (00:00 to 23:59)"
+msgstr ""
+
+msgid "Invalid time format. Use HH:MM"
+msgstr ""
+
+msgid "January"
+msgstr "Január"
+
+msgid "July"
+msgstr "Július"
+
+msgid "June"
+msgstr "Június"
+
+msgid "Labels (comma separated)"
+msgstr ""
+
+msgid "Legacy format (text files)"
+msgstr ""
+
+msgid "Manage Contacts"
+msgstr ""
+
+#, fuzzy
+msgid "Manage Event"
+msgstr "Események kezelése"
+
+msgid "Manage ICS Events"
+msgstr ""
+
+msgid "Manage ICS Files"
+msgstr ""
+
+msgid "March"
+msgstr "Március"
+
+msgid "May"
+msgstr "Máj"
+
+msgid "Modified: {0}"
+msgstr ""
+
+msgid "Mon"
+msgstr "Hé"
+
+msgid "Month +"
+msgstr "Hónap +"
+
+msgid "Month -"
+msgstr "Hónap -"
+
+msgid "Name"
+msgstr ""
+
+msgid "Name is required"
+msgstr ""
+
+msgid "Network Share"
+msgstr ""
+
+msgid "New Date"
+msgstr "Új dátum"
+
+msgid "Newest file: {0}"
+msgstr ""
+
+msgid "Next Field"
+msgstr ""
+
+msgid "No ICS directory found"
+msgstr ""
+
+msgid "No ICS events found"
+msgstr ""
+
+msgid "No ICS files found"
+msgstr ""
+
+msgid "No ICS files in archive"
+msgstr ""
+
+msgid "No TV service currently playing"
+msgstr ""
+
+msgid "No contact files found"
+msgstr ""
+
+msgid "No contact selected"
+msgstr ""
+
+msgid "No contacts found in database"
+msgstr ""
+
+msgid "No data found to convert"
+msgstr ""
+
+msgid "No data to export"
+msgstr ""
+
+msgid "No duplicates found"
+msgstr ""
+
+msgid "No event selected"
+msgstr ""
+
+msgid "No events database found"
+msgstr ""
+
+msgid "No events for today"
+msgstr ""
+
+msgid "No events to convert"
+msgstr ""
+
+msgid "No file in database..."
+msgstr "Nincs fájl az adatbázisban..."
+
+msgid "No file selected"
+msgstr ""
+
+msgid "No past events to remove"
+msgstr "Nincsenek eltávolítható múltbeli események"
+
+msgid "No sorting (original order)"
+msgstr ""
+
+msgid "No sound"
+msgstr "Nincs hang"
+
+msgid "Note"
+msgstr ""
+
+msgid "Note:"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Notification sound type"
+msgstr ""
+
+msgid "Notification tone"
+msgstr ""
+
+msgid "Notify"
+msgstr "Értesítés"
+
+msgid "Notify:"
+msgstr "Értesítés:"
+
+msgid "November"
+msgstr "November"
+
+msgid "October"
+msgstr "Október"
+
+msgid "Oldest file: {0}\n"
+msgstr ""
+
+msgid "Orange"
+msgstr "Narancssárga"
+
+msgid "P:{0}/{1}"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Play a sound when event notification appears"
+msgstr ""
+
+msgid "Play sound with notifications"
+msgstr ""
+
+msgid "Please restart Enigma2 manually."
+msgstr "Kérjük, indítsa újra manuálisan az Enigma2-t."
+
+msgid "Plugin Directory"
+msgstr ""
+
+msgid "Plugin is up to date"
+msgstr "A bővítmény naprakész"
+
+msgid "Press GREEN to import"
+msgstr ""
+
+msgid "Press TEXT to search"
+msgstr ""
+
+msgid "Preview file content"
+msgstr ""
+
+msgid "Progress: {0}%"
+msgstr ""
+
+msgid "Re-import"
+msgstr ""
+
+msgid "Red"
+msgstr "Piros"
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Refreshed"
+msgstr ""
+
+msgid "Remove"
+msgstr "Eltávolítás"
+
+msgid "Remove Date"
+msgstr "Dátum eltávolítása"
+
+msgid "Removed {0} past events"
+msgstr "Eltávolított {0} korábbi eseményt"
+
+msgid "Repeat"
+msgstr "Ismétlés"
+
+msgid "Repeat (none/daily/weekly/monthly/yearly)"
+msgstr ""
+
+msgid "Repeat:"
+msgstr "Ismételje meg:"
+
+msgid "Repeat: {0}"
+msgstr ""
+
+msgid "Root Home (/home/root)"
+msgstr ""
+
+msgid "S:{0}"
+msgstr ""
+
+msgid "SCHEDULED EVENTS:"
+msgstr "MEGRENDEZETT ESEMÉNYEK:"
+
+msgid "Sat"
+msgstr "Szo"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Search contacts"
+msgstr ""
+
+msgid "Search events"
+msgstr ""
+
+msgid "Search:"
+msgstr ""
+
+msgid "Seconds between event checks (advanced)"
+msgstr ""
+
+msgid "Seconds to wait after boot before starting notifications"
+msgstr ""
+
+msgid "Select .ics file to import"
+msgstr ""
+
+msgid "Select a file, not a folder"
+msgstr ""
+
+msgid "Select vCard file to import"
+msgstr ""
+
+msgid "Selected: {0}"
+msgstr ""
+
+msgid "September"
+msgstr "Szeptember"
+
+msgid "Short beep"
+msgstr "Rövid sípolás"
+
+msgid "Show 'H' marker on holiday days"
+msgstr ""
+
+msgid "Show Statistics"
+msgstr ""
+
+msgid "Show Today's Holidays"
+msgstr ""
+
+msgid "Show Upcoming Holidays"
+msgstr "Közelgő ünnepek megjelenítése"
+
+msgid "Show debug messages in console/log"
+msgstr ""
+
+msgid "Show event indicators"
+msgstr ""
+
+msgid "Show event statistics"
+msgstr ""
+
+msgid "Show holiday indicators"
+msgstr ""
+
+msgid "Show markers on days with events"
+msgstr ""
+
+msgid "Show notifications for upcoming events"
+msgstr ""
+
+msgid "Sign"
+msgstr "Aláírás"
+
+msgid "Sign:"
+msgstr ""
+
+msgid "Size: {0:.1f} KB"
+msgstr ""
+
+msgid "Size: {0:.1f} MB"
+msgstr ""
+
+msgid "Skipped: %d"
+msgstr ""
+
+msgid "Skipped: {0}"
+msgstr ""
+
+msgid "Skipped: {0} (duplicates)"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Sort by birthday (month/day)"
+msgstr ""
+
+msgid "Sort by category"
+msgstr ""
+
+msgid "Sort by name (alphabetical)"
+msgstr ""
+
+msgid "Sorted by birthday"
+msgstr ""
+
+msgid "Sorted by category"
+msgstr ""
+
+msgid "Sorted by date"
+msgstr ""
+
+msgid "Sorted by name"
+msgstr ""
+
+msgid "Sorted by title"
+msgstr ""
+
+msgid "Sorted by: Birthday"
+msgstr ""
+
+msgid "Sorted by: Category"
+msgstr ""
+
+msgid "Sorted by: Date"
+msgstr ""
+
+msgid "Sorted by: Name"
+msgstr ""
+
+msgid "Sorted by: Title"
+msgstr ""
+
+msgid "Start event notifications in background (recommended)"
+msgstr ""
+
+msgid "Subdirectory name for exports (created automatically)"
+msgstr ""
+
+msgid "Successfully converted {0} entries to ICS format"
+msgstr ""
+
+msgid "Sun"
+msgstr "Vas"
+
+msgid "Tags: {0}"
+msgstr ""
+
+msgid "Temporary Storage (/tmp)"
+msgstr ""
+
+#, fuzzy
+msgid "Test error: %s"
+msgstr "Frissítési hiba: %s"
+
+msgid "Text format"
+msgstr ""
+
+msgid "Thu"
+msgstr "Csü"
+
+msgid "Time"
+msgstr "Idő"
+
+msgid "Time (HH:MM)"
+msgstr ""
+
+msgid "Time:"
+msgstr "Idő:"
+
+msgid "Title"
+msgstr "Cím"
+
+msgid "Title and date are required!"
+msgstr "A cím és a dátum megadása kötelező!"
+
+msgid "Title is required"
+msgstr ""
+
+msgid "Title:"
+msgstr "Cím:"
+
+msgid "Today"
+msgstr ""
+
+msgid "Total events: {0}"
+msgstr ""
+
+msgid "Total files: {0}\n"
+msgstr ""
+
+msgid "Total size: {0:.1f} KB\n"
+msgstr ""
+
+msgid "Total: %d"
+msgstr ""
+
+msgid "Total: {0}"
+msgstr ""
+
+msgid "Tue"
+msgstr "Kedd"
+
+msgid "Type of sound to play with notifications"
+msgstr ""
+
+msgid "U:{0}"
+msgstr ""
+
+msgid "USB Drive"
+msgstr ""
+
+msgid "USB Drive (/media/usb)"
+msgstr ""
+
+msgid "Unable to play test sound"
+msgstr ""
+
+msgid "Update available!"
+msgstr ""
+"{server_version} {version_server}\n"
+"{installed_version} {version}\n"
+"\n"
+"{update_available}"
+
+msgid "Update cancelled"
+msgstr "Frissítés megszakítva"
+
+msgid "Update check error"
+msgstr "Frissítés-ellenőrzési hiba"
+
+msgid "Update check failed"
+msgstr "Frissítésellenőrzés sikertelen"
+
+msgid "Update completed successfully!"
+msgstr "A frissítés sikeresen befejeződött!"
+
+msgid "Update error: %s"
+msgstr "Frissítési hiba: %s"
+
+msgid "Update failed"
+msgstr "Frissítés sikertelen"
+
+msgid "Update failed and backup restore also failed!"
+msgstr "A frissítés és a biztonsági mentés visszaállítása sem sikerült!"
+
+msgid "Update failed. Restored from backup."
+msgstr "Frissítés sikertelen. Visszaállítva a biztonsági mentésből."
+
+msgid "Update successful!"
+msgstr "Sikeres frissítés!"
+
+msgid "Updated: {0}"
+msgstr ""
+
+msgid "Updating plugin... Please wait"
+msgstr "Bővítmény frissítése... Kérjük, várjon"
+
+msgid "Using legacy database format"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Waiting for thread to stop..."
+msgstr ""
+
+msgid "Wed"
+msgstr "Sze"
+
+msgid "White"
+msgstr "Fehér"
+
+msgid "Yellow"
+msgstr "Sárga"
+
+msgid "You have the latest version of Calendar."
+msgstr "A Naptár legújabb verziójával rendelkezel."
+
+msgid "not sorted"
+msgstr ""
+
+msgid "sorted by birthday"
+msgstr ""
+
+msgid "sorted by category"
+msgstr ""
+
+msgid "sorted by name"
+msgstr ""
+
+msgid "vCard format"
+msgstr ""
+
+msgid "vCard format (standard)"
+msgstr ""
+
+msgid "vCard import feature not available: {0}"
+msgstr ""
+
+#, python-format
+#~ msgid ""
+#~ "%s\n"
+#~ "\n"
+#~ "Restart Enigma2 now for changes to take effect."
+#~ msgstr ""
+#~ "%s\n"
+#~ "\n"
+#~ "Indítsa újra az Enigma2-t, hogy a változtatások érvénybe lépjenek."
+
+#~ msgid ""
+#~ "A new version is available!\n"
+#~ "\n"
+#~ "Update now?\n"
+#~ "\n"
+#~ "(Recommended to backup first)"
+#~ msgstr ""
+#~ "Új verzió érhető el!\n"
+#~ "\n"
+#~ "Frissít most?\n"
+#~ "\n"
+#~ "(Először a biztonsági mentés ajánlott)"
+
+#~ msgid "Calendar Planner v.%s"
+#~ msgstr "Naptártervező v.%s"
+
+#~ msgid "Date People"
+#~ msgstr "Randevúzz emberekkel"
+
+#~ msgid "Edit Date People"
+#~ msgstr "Dátum szerkesztése Személyek"
+
+#~ msgid "Edit Month People"
+#~ msgstr "Hónap Személyek Szerkesztése"
+
+#~ msgid "Exit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Magenta"
+#~ msgstr "Magenta"
+
+#~ msgid "Month People"
+#~ msgstr "Hónap Emberek"
+
+#~ msgid "Purple"
+#~ msgstr "Lila"
+
+#~ msgid "TODAY'S EVENTS:"
+#~ msgstr "MAI ESEMÉNYEK:"
+
+#~ msgid "no"
+#~ msgstr "nem"
+
+#~ msgid "yes"
+#~ msgstr "igen"

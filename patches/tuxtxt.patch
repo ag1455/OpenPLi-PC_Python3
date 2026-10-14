@@ -1,6 +1,6 @@
 diff -ruN o/libtuxtxt/acinclude.m4 pc/libtuxtxt/acinclude.m4
 --- o/libtuxtxt/acinclude.m4	2021-06-20 20:03:04.000000000 +0300
-+++ pc/libtuxtxt/acinclude.m4	2021-08-02 16:47:20.385638489 +0300
++++ pc/libtuxtxt/acinclude.m4	2026-09-11 13:37:59.718483891 +0300
 @@ -189,7 +189,7 @@
  #include <linux/dvb/version.h>
  version DVB_API_VERSION
@@ -12,7 +12,7 @@ diff -ruN o/libtuxtxt/acinclude.m4 pc/libtuxtxt/acinclude.m4
  	AC_MSG_NOTICE([found dvb version $DVB_API_VERSION])
 diff -ruN o/libtuxtxt/tuxtxt_common.h pc/libtuxtxt/tuxtxt_common.h
 --- o/libtuxtxt/tuxtxt_common.h	2021-06-20 20:03:04.000000000 +0300
-+++ pc/libtuxtxt/tuxtxt_common.h	2021-08-02 16:47:20.387638398 +0300
++++ pc/libtuxtxt/tuxtxt_common.h	2026-09-11 13:38:37.210895130 +0300
 @@ -4061,14 +4061,6 @@
  *************************************************************************/
  
@@ -30,7 +30,7 @@ diff -ruN o/libtuxtxt/tuxtxt_common.h pc/libtuxtxt/tuxtxt_common.h
  #define TOPMENUSTARTY renderinfo->StartY
 diff -ruN o/tuxtxt/acinclude.m4 pc/tuxtxt/acinclude.m4
 --- o/tuxtxt/acinclude.m4	2021-06-20 20:03:04.000000000 +0300
-+++ pc/tuxtxt/acinclude.m4	2021-08-02 16:47:20.387638398 +0300
++++ pc/tuxtxt/acinclude.m4	2026-09-11 13:37:05.788886937 +0300
 @@ -189,7 +189,7 @@
  #include <linux/dvb/version.h>
  version DVB_API_VERSION
@@ -40,19 +40,10 @@ diff -ruN o/tuxtxt/acinclude.m4 pc/tuxtxt/acinclude.m4
  	rm -f conftest*
  
  	AC_MSG_NOTICE([found dvb version $DVB_API_VERSION])
-diff -ruN o/tuxtxt/data/Makefile.am pc/tuxtxt/data/Makefile.am
---- o/tuxtxt/data/Makefile.am	2021-06-20 20:03:04.000000000 +0300
-+++ pc/tuxtxt/data/Makefile.am	2021-08-02 16:47:20.387638398 +0300
-@@ -1,4 +1,4 @@
--installdir = $(sysconfdir)/tuxtxt/
-+installdir = /usr/local/e2/tuxtxt/
- 
- install_DATA = \
- 	tuxtxt2.conf
 diff -ruN o/tuxtxt/tuxtxt.h pc/tuxtxt/tuxtxt.h
 --- o/tuxtxt/tuxtxt.h	2021-06-20 20:03:04.000000000 +0300
-+++ pc/tuxtxt/tuxtxt.h	2021-08-02 16:47:20.387638398 +0300
-@@ -94,17 +94,13 @@
++++ pc/tuxtxt/tuxtxt.h	2026-09-11 14:05:42.787403217 +0300
+@@ -94,7 +94,7 @@
  #endif
  
  #ifndef FB_DEV
@@ -60,15 +51,4 @@ diff -ruN o/tuxtxt/tuxtxt.h pc/tuxtxt/tuxtxt.h
 +# define FB_DEV "/dev/fb0"
  #endif
  
--#define TUXTXTCONF CONFIGDIR "/tuxtxt/tuxtxt2.conf"
--
-+#define TUXTXTCONF CONFIGDIR "/usr/local/e2/tuxtxt/tuxtxt2.conf"
- 
- #define fontwidth_small_lcd 8
- 
--
--
--
- /* rc codes */
- #if HAVE_DVB_API_VERSION < 3
- #define KEY_0       0x5C00
+ #define TUXTXTCONF CONFIGDIR "/tuxtxt/tuxtxt2.conf"

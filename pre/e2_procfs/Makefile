@@ -13,11 +13,8 @@ strip:
 
 clean: $(clean_more)
 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~ *.a
-	rm -fr .tmp_versions
+	rm -fr .tmp_versions .module-common.o
 	rm -fr Module.symvers ; rm -fr Module.markers ; rm -fr modules.order
-	cd core ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko
-	cd hal ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko
-	cd os_dep ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko
 else
 EXTRA_CFLAGS += -Wenum-compare
 ccflags-y += -D__CHECK_ENDIAN__

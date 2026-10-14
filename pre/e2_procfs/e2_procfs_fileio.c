@@ -109,6 +109,67 @@ int file_write(struct file* file, unsigned char* data, unsigned int size)
 	return ret;
 }
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(7,0,0)
+int remove_file(char *path)
+{
+#ifdef set_fs
+	mm_segment_t oldfs;
+#endif
+
+	int ret;
+	struct path ndpath;
+	struct dentry *dentry;
+	char *filename;
+	struct qstr qname;
+
+#ifdef set_fs
+	oldfs = get_fs();
+	set_fs(KERNEL_DS);
+#endif
+
+	// 1. Находим путь к родительской директории
+	ret = kern_path(path, LOOKUP_PARENT, &ndpath);
+	if (ret != 0)
+	{
+		return -ENOENT;
+	}
+
+	// 2. Выделяем только имя файла (базовое имя) из пути
+	filename = basename(path);
+	qname = QSTR(filename);
+
+	// 3. Выполняем поиск dentry без проверки прав
+	// ИСПРАВЛЕНО: &qname идет первым, ndpath.dentry вторым
+	dentry = lookup_noperm(&qname, ndpath.dentry);
+	if (IS_ERR(dentry))
+	{
+		path_put(&ndpath);
+		return -EACCES;
+	}
+
+#ifdef set_fs
+	vfs_unlink(ndpath.dentry->d_inode, dentry,NULL);
+#endif
+
+	// 4. Удаляем файл через VFS
+	inode_lock(d_inode(ndpath.dentry));
+	ret = vfs_unlink(mnt_idmap(ndpath.mnt), d_inode(ndpath.dentry), dentry, NULL);
+	inode_unlock(d_inode(ndpath.dentry));
+
+	// 5. Освобождаем ресурсы
+	dput(dentry);
+	path_put(&ndpath);
+
+#ifdef set_fs
+	set_fs(oldfs);
+#endif
+
+	dput(dentry);
+
+	return ret;
+}
+#else
+// Для ядер от 5.6.0 до 7.0.0
 int remove_file(char *path)
 {
 #ifdef set_fs
@@ -150,6 +211,7 @@ int remove_file(char *path)
 
 	return ret;
 }
+#endif
 
 int save_data_to_file(char *path, int flags, char *data, int size)
 {
